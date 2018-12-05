@@ -1,0 +1,16 @@
+- alias: 'Wohnzimmerlicht Temperatur nach Sonnenstand'
+  id: licht_wohnzimmer_temperatur_sonnenstand
+  trigger: 
+    platform: time
+    minutes: '/1'
+    seconds: 0
+  condition:
+    condition: 'state'
+    entity_id: light.wohnzimmer_licht
+    state: 'on'
+  action:
+    service: light.turn_on
+    data_template: 
+      entity_id: light.wohnzimmer_licht
+      color_temp: '{{ 500-(([states.sun.sun.attributes.elevation,0]|max) / 60 * 350 + 50) |int }}'
+      brightness: '{{ [(((states.sun.sun.attributes.elevation+10) / 30*255)+50 )| int,255] |min }}'

@@ -1,0 +1,11 @@
+notify_rp:
+  alias: 'Notify Rocketchat and Pushover'
+  sequence:
+    - service: notify.rocket
+      data_template:
+        message: "{{ message }}"
+    - service: notify.pushover
+      data_template:
+        title: "{{ title }}"
+        message: "{{ message }}"
+

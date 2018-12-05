@@ -1,0 +1,99 @@
+homeassistant:
+  name: Seehaus
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: 450
+  unit_system: metric
+  time_zone: Europe/Zurich
+  customize: !include customize.yaml
+
+frontend:
+
+config:
+
+http:
+  api_password: !secret http_api_password
+  base_url: !secret http_uri 
+  server_host: 0.0.0.0
+  trusted_proxies: 10.4.0.8
+  use_x_forwarded_for: true
+#updater:
+  # reporting: False
+  # include_used_components: true
+
+logger:
+  default: info
+
+history:
+
+logbook:
+
+map:
+
+sun:
+
+##################INTEGRATIONS###################
+homematic:
+  interfaces:
+    ip:
+      host: 10.5.0.3 
+      port: 2010
+      username: !secret homematic_ip_user
+      password: !secret homematic_ip_password
+    rf:
+      host: 10.5.0.3
+      username: !secret homematic_rf_user
+      password: !secret homematic_rf_password
+  hosts:
+    ccu2:
+      host: 10.5.0.3
+      username: !secret homematic_ccu2_user
+      password: !secret homematic_ccu2_password
+
+hue:
+  bridges:
+    - host: 10.5.0.4
+
+influxdb:
+  host: menegroth.ahome
+  port: 3000
+  database: smarthome
+
+homekit:
+  auto_start: False
+  filter:
+    include_entities:
+      - automation.wohnzimmerlicht_temperatur_nach_sonnenstand
+      - binary_sensor.0000d8a991d263_state
+      - binary_sensor.0000d8a991d301_state
+      - binary_sensor.0000d8a991d331_state
+      - binary_sensor.0000d8a991d35c_state
+      - light.hue_lightstrip_plus_1
+      - light.schlafzimmer
+      - light.wohnzimmer_licht
+      - sensor.000ed8a9909c6d_actual_temperature
+      - sensor.000ed8a9909c6d_humidity
+      - sensor.000ed8a9909c6f_actual_temperature
+      - sensor.000ed8a9909c6f_humidity
+      - sensor.000ed8a9909c8e_actual_temperature
+      - sensor.000ed8a9909c8e_humidity
+      - switch.hmespmsw1pldnr5_meq1478516
+
+notify: !include_dir_list notifications
+
+######################CONFIGURATION###############
+group: !include groups.yaml
+automation: !include_dir_merge_list automations
+script: !include_dir_merge_named scripts
+
+#Shitty lamp with 5 bulbs....
+light:
+  - platform: group
+    name: Wohnzimmer Licht
+    entities:
+      - light.w1
+      - light.w2
+      - light.w3
+      - light.w4
+      - light.w5
+

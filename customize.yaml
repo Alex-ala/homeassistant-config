@@ -1,0 +1,120 @@
+homematic.ccu2:
+  hidden: true
+
+group.all_automations:
+  hidden: false
+  name: Automations
+##########   Fensterkontakte   ###########
+binary_sensor.0000d8a991d263_state:
+  friendly_name: Terassentür
+  icon: mdi:door-closed
+binary_sensor.0000d8a991d301_state:
+  friendly_name: Küchenfenster
+  icon: mdi:application
+binary_sensor.0000d8a991d331_state:
+  friendly_name: Schlafzimmerfenster
+  icon: mdi:application
+binary_sensor.0000d8a991d35c_state:
+  friendly_name: Haustür
+  icon: mdi:door
+
+##########   Temperatur/Luftfeutchtigkeit   #########
+# Terrasse
+sensor.000ed8a9909c6d_actual_temperature:
+  friendly_name: Temperatur Terrasse
+  icon: mdi:thermometer-lines
+sensor.000ed8a9909c6d_humidity:
+  friendly_name: Luftfeuchtigkeit Terrasse
+  icon: mdi:water-percent
+# Wohnzimmer
+sensor.000ed8a9909c6f_actual_temperature:
+  friendly_name: Temperatur Wohnzimmer
+  icon: mdi:thermometer-lines
+sensor.000ed8a9909c6f_humidity:
+  friendly_name: Luftfeuchtigkeit Wohnzimmer
+  icon: mdi:water-percent
+# Schlafzimmer
+sensor.000ed8a9909c8e_actual_temperature:
+  friendly_name: Temperatur Schlafzimmer
+  icon: mdi:thermometer-lines
+sensor.000ed8a9909c8e_humidity:
+  friendly_name: Luftfeuchtigkeit Schlafzimmer
+  icon: mdi:water-percent
+# Reduit
+sensor.000ed8a9909e0e_actual_temperature:
+  friendly_name: Temperatur Reduit
+  icon: mdi:thermometer-lines
+sensor.000ed8a9909e0e_humidity:
+  friendly_name: Luftfeuchtigkeit Reduit
+  icon: mdi:water-percent
+# Bad
+sensor.000ed8a9909c09_actual_temperature:
+  friendly_name: Temperatur Bad
+  icon: mdi:thermometer-lines
+sensor.000ed8a9909c09_humidity:
+  friendly_name: Luftfeuchtigkeit Bad
+  icon: mdi:water-percent
+
+##########    Bewegungsmelder    ##########
+binary_sensor.000915699a427d_motion:
+  firendly_name: Bewegunsmelder Wohnzimmer
+  icon: mdi:run
+
+##########    Strom-Messgeräte   ##########
+# Brunnen Wohnzimmer
+sensor.hmespmsw1pldnr5_meq1478516_current:
+  friendly_name: Brunnen Stromstärke
+  unit_of_measurement: mA
+sensor.hmespmsw1pldnr5_meq1478516_energy_counter:
+  friendly_name: Brunnen Gesamtverbrauch
+  unit_of_measurement: Wh
+sensor.hmespmsw1pldnr5_meq1478516_frequency:
+  friendly_name: Brunnen Frequenz
+  unit_of_measurement: Hz
+sensor.hmespmsw1pldnr5_meq1478516_power:
+  friendly_name: Brunnen Verbrauch
+  unit_of_measurement: W
+sensor.hmespmsw1pldnr5_meq1478516_voltage:
+  friendly_name: Brunnen Spannung
+  unit_of_measurement: V
+# Schreibtisch
+sensor.001015699eacfa_current:
+  friendly_name: Schreibtisch Stromstärke
+  unit_of_measurement: mA
+sensor.001015699eacfa_energy_counter:
+  friendly_name: Schreibtisch Gesamtverbrauch
+  unit_of_measurement: Wh
+sensor.001015699eacfa_frequency:
+  friendly_name: Schreibtisch Frequenz
+  unit_of_measurement: Hz
+sensor.001015699eacfa_power:
+  friendly_name: Schreibtisch Verbrauch
+  unit_of_measurement: W
+sensor.001015699eacfa_voltage:
+  friendly_name: Schreibtisch Spannung
+  unit_of_measurement: V
+
+##########   Strom-Schalter   ##########
+switch.hmespmsw1pldnr5_meq1478516:
+  friendly_name: Brunnen
+  icon: mdi:water
+switch.001015699eacfa:
+  friendly_name: Schreibtisch
+  icon: mdi:desktop-classic
+
+##########   Licht-Schalter   ##########
+light.w1:
+  hidden: true
+light.w2:
+  hidden: true
+light.w3:
+  hidden: true
+light.w4:
+  hidden: true
+light.w5:
+  hidden: true
+light.wohnzimmer:
+  hidden: true
+light.hue_lightstrip_plus_1:
+  friendly_name: Schrank-LED
+ 

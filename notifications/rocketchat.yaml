@@ -1,0 +1,6 @@
+platform: rocketchat
+name: rocket
+url: !secret rocket_url 
+username: !secret rocket_user
+password: !secret rocket_password
+room: 'private_smarthome'

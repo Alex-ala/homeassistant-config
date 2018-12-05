@@ -1,0 +1,128 @@
+# Multiple value devices
+temperatur_terrasse:
+  name: Terrasse
+  entities: 
+    - sensor.000ed8a9909c6d_actual_temperature
+    - sensor.000ed8a9909c6d_humidity
+
+temperatur_wohnzimmer:
+  name: Wohnzimmer
+  entities:
+    - sensor.000ed8a9909c6f_actual_temperature
+    - sensor.000ed8a9909c6f_humidity
+
+temperatur_schlafzimmer:
+  name: Schlafzimmer
+  entities:
+    - sensor.000ed8a9909c8e_actual_temperature
+    - sensor.000ed8a9909c8e_humidity
+
+temperatur_reduit:
+  name: Reduit
+  entities:
+    - sensor.000ed8a9909e0e_actual_temperature
+    - sensor.000ed8a9909e0e_humidity
+
+temperatur_bad:
+  name: Bad
+  entities:
+    - sensor.000ed8a9909c09_actual_temperature
+    - sensor.000ed8a9909c09_humidity
+
+strom_schreibtisch:
+  name: Strom Schreibtisch
+  entities:
+    - switch.001015699eacfa
+    - sensor.001015699eacfa_current
+    - sensor.001015699eacfa_energy_counter
+    - sensor.001015699eacfa_frequency
+    - sensor.001015699eacfa_power
+    - sensor.001015699eacfa_voltage
+
+strom_brunnen:
+  name: Strom Brunnen
+  entities:
+    - switch.hmespmsw1pldnr5_meq1478516
+    - sensor.hmespmsw1pldnr5_meq1478516_current
+    - sensor.hmespmsw1pldnr5_meq1478516_energy_counter
+    - sensor.hmespmsw1pldnr5_meq1478516_frequency
+    - sensor.hmespmsw1pldnr5_meq1478516_power
+    - sensor.hmespmsw1pldnr5_meq1478516_voltage
+
+# Group of devices
+fenster:
+  name: Fenster
+  entities:
+    - binary_sensor.0000d8a991d301_state
+    - binary_sensor.0000d8a991d331_state
+
+tueren:
+  name: Türen
+  entities:
+    - binary_sensor.0000d8a991d35c_state
+    - binary_sensor.0000d8a991d263_state
+
+licht:
+  name: Licht
+  entities:
+    - light.wohnzimmer_licht
+    - light.schlafzimmer
+    - light.hue_lightstrip_plus_1
+
+schalter:
+  name: Schalter
+  entities:
+    - switch.hmespmsw1pldnr5_meq1478516
+    - switch.001015699eacfa
+
+verbraucher:
+  name: Verbraucher
+  entities:
+    - group.strom_schreibtisch
+    - group.strom_brunnen
+
+bewegung:
+  name: Bewegungsmelder
+  entities:
+    - binary_sensor.000915699a427d_motion
+
+################## TABS ##################
+
+#default_view:
+home:
+  name: Home
+  view: true
+  entities:
+    - group.licht
+    - group.schalter
+
+klima:
+  name: Klima
+  view: true
+  entities:
+    - group.temperatur_terrasse
+    - group.temperatur_wohnzimmer
+    - group.temperatur_schlafzimmer
+    - group.temperatur_reduit
+    - group.temperatur_bad
+
+sicherheit:
+  name: Sicherheit
+  view: true
+  entities:
+    - group.tueren
+    - group.fenster
+    - group.bewegung
+
+Verbrauch:
+  name: Verbrauch
+  view: true
+  entities:
+    - group.verbraucher
+
+automation:
+  name: Automation
+  view: true
+  entities:
+    - group.all_automations
+

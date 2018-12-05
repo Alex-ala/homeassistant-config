@@ -1,0 +1,27 @@
+- alias: 'Meldung Küchenfenster offen'
+  id: meldung_küchenfensterfenster_offen
+  trigger: 
+    platform: state
+    entity_id: binary_sensor.0000d8a991d301_state
+  action:
+    - service: script.notify_rp
+      data: 
+        title: 'Fenster Zustand'
+        message: >
+          Fenster Zustand geändert:
+
+          Küchenfenster : {{ states['binary_sensor']['0000d8a991d301_state'].state }}
+
+- alias: 'Meldung Schlafzimmerfenster offen'
+  id: meldung_schlafzimmefenster_offen
+  trigger:
+    platform: state
+    entity_id: binary_sensor.0000D8A991D331_state
+  action:
+    - service: script.notify_rp
+      data:
+        title: 'Fenster Zustand'
+        message: >
+          Fenster Zustand geändert:
+
+          Schlafzimmer : {{ states['binary_sensor']['0000d8a991d331_state'].state }}
