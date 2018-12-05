@@ -51,11 +51,11 @@ schalter_brunnen:
   name: Schalter Brunnen
   entities:
     - switch.hmespmsw1pldnr5_meq1478516
-    -
+
 schalter_schreibtisch:
   name: Schalter Schreibtisch
   entities:
-  - switch.001015699eacfa
+    - switch.001015699eacfa
 
 # Group of devices
 fenster:
