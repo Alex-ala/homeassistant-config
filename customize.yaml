@@ -57,7 +57,7 @@ sensor.000ed8a9909c09_humidity:
 
 ##########    Bewegungsmelder    ##########
 binary_sensor.000915699a427d_motion:
-  firendly_name: Bewegunsmelder Wohnzimmer
+  friendly_name: Bewegunsmelder Wohnzimmer
   icon: mdi:run
 
 ##########    Strom-Messgeräte   ##########
