@@ -32,7 +32,6 @@ temperatur_bad:
 strom_schreibtisch:
   name: Strom Schreibtisch
   entities:
-    - switch.001015699eacfa
     - sensor.001015699eacfa_current
     - sensor.001015699eacfa_energy_counter
     - sensor.001015699eacfa_frequency
@@ -42,12 +41,21 @@ strom_schreibtisch:
 strom_brunnen:
   name: Strom Brunnen
   entities:
-    - switch.hmespmsw1pldnr5_meq1478516
     - sensor.hmespmsw1pldnr5_meq1478516_current
     - sensor.hmespmsw1pldnr5_meq1478516_energy_counter
     - sensor.hmespmsw1pldnr5_meq1478516_frequency
     - sensor.hmespmsw1pldnr5_meq1478516_power
     - sensor.hmespmsw1pldnr5_meq1478516_voltage
+
+schalter_brunnen:
+  name: Schalter Brunnen
+  entities:
+    - switch.hmespmsw1pldnr5_meq1478516
+    -
+schalter_schreibtisch:
+  name: Schalter Schreibtisch
+  entities:
+  - switch.001015699eacfa
 
 # Group of devices
 fenster:
@@ -72,14 +80,8 @@ licht:
 schalter:
   name: Schalter
   entities:
-    - switch.hmespmsw1pldnr5_meq1478516
-    - switch.001015699eacfa
-
-verbraucher:
-  name: Verbraucher
-  entities:
-    - group.strom_schreibtisch
-    - group.strom_brunnen
+    - group.schalter_brunnen
+    - group.schalter_schreibtisch
 
 bewegung:
   name: Bewegungsmelder
@@ -118,7 +120,8 @@ Verbrauch:
   name: Verbrauch
   view: true
   entities:
-    - group.verbraucher
+    - group.strom_brunnen
+    - group.strom_schreibtisch
 
 automation:
   name: Automation
