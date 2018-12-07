@@ -5,13 +5,6 @@ group.all_automations:
   hidden: false
   name: Automations
 
-##########   Meta-Schalter     ###########
-input_boolean:
-  at_home:
-    name: Zuhause
-    initial: off
-    icon: mdi:sign-in
-
 ##########   Fensterkontakte   ###########
 binary_sensor.0000d8a991d263_state:
   friendly_name: Terassentür

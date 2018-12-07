@@ -97,3 +97,9 @@ light:
       - light.w4
       - light.w5
 
+##########   Meta-Schalter     ###########
+input_boolean:
+  at_home:
+    name: Zuhause
+    initial: off
+    icon: mdi:sign-in
