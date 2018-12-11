@@ -13,7 +13,7 @@
   id: camera_sauron_timed
   trigger:
     platform: time
-    seconds: '/30'
+    minutes: '/1'
   condition:
     condition: 'state'
     entity_id: binary_sensor.000915699a427d_motion
