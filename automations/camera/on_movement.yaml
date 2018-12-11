@@ -1,0 +1,23 @@
+#Trigger and make a picture when movement is detected
+- alias: 'Sauron bei Bewegung'
+  id: sauron_on_movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.000915699a427d_motion
+    to: 'on'
+  action:
+    service: shell_command.sauron_image
+
+
+- alias: 'Sauron nach Bewegung'
+  id: camera_sauron_timed
+  trigger:
+    platform: time
+    seconds: '/30'
+  condition:
+    condition: 'state'
+    entity_id: binary_sensor.000915699a427d_motion
+    state: 'on'
+  action:
+    service: shell_command.sauron_image
+

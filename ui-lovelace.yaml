@@ -1,0 +1,160 @@
+resources:
+  - url: /local/plan-coordinates.js?v=1
+    type: js
+
+title: Seehaus
+views:
+  - icon: mdi:home-assistant
+    id: home
+    title: Home
+    cards:
+      - type: horizontal-stack
+        cards:
+    #  - type: custom:plan-coordinates
+          - type: picture-elements
+            image: /local/floorplan.PNG
+            elements:
+              ########## FENSTER/TUEREN ##############
+              #Haustür
+              - type: state-icon
+                entity: binary_sensor.0000d8a991d35c_state
+                style:
+                  left: 13%
+                  top: 5%
+              #Schlafzimmerfenster
+              - type: state-icon
+                entity: binary_sensor.0000d8a991d331_state
+                style:
+                  left: 87%
+                  top: 13%
+              #Küchenfenster
+              - type: state-icon
+                entity: binary_sensor.0000d8a991d301_state
+                style:
+                  left: 89%
+                  top: 49%
+              #Terrassentür
+              - type: state-icon
+                entity: binary_sensor.0000d8a991d263_state
+                style:
+                  left: 28%
+                  top: 98%
+              ########## Lichter ##############
+              - type: state-icon
+                entity: light.hue_lightstrip_plus_1
+                tap_action: toggle
+                hold_action: more-info
+                style:
+                  left: 8%
+                  top: 80%
+              - type: state-icon
+                entity: light.wohnzimmer_licht
+                tap_action: toggle
+                hold_action: more-info
+                style:
+                  left: 70%
+                  top: 72%
+              - type: state-icon
+                entity: light.schlafzimmer
+                tap_action: toggle
+                hold_action: more-info
+                style:
+                  left: 71%
+                  top: 22%
+              ########## Temperatur/Luftfeuchte ##############
+              # Wohnzimmer
+              - type: state-label
+                entity: sensor.000ed8a9909c6f_actual_temperature
+                style:
+                  text-align: center
+                  font-size: 18px
+                  color: red
+                  font-family: Helvetica
+                  left: 45%
+                  top: 74%
+              - type: state-label
+                entity: sensor.000ed8a9909c6f_humidity
+                style:
+                  text-align: center
+                  font-size: 18px
+                  color: red
+                  font-family: Helvetica
+                  left: 45%
+                  top: 78%
+              # Schlafzimmer
+              - type: state-label
+                entity: sensor.000ed8a9909c8e_actual_temperature
+                style:
+                  text-align: center
+                  font-size: 18px
+                  color: red
+                  font-family: Helvetica
+                  left: 71%
+                  top: 28%
+              - type: state-label
+                entity: sensor.000ed8a9909c8e_humidity
+                style:
+                  text-align: center
+                  font-size: 18px
+                  color: red
+                  font-family: Helvetica
+                  left: 71%
+                  top: 32%
+              # Reduit
+              - type: state-label
+                entity: sensor.000ed8a9909e0e_actual_temperature
+                style:
+                  text-align: center
+                  font-size: 14px
+                  color: red
+                  font-family: Helvetica
+                  left: 15%
+                  top: 46%
+              - type: state-label
+                entity: sensor.000ed8a9909e0e_humidity
+                style:
+                  text-align: center
+                  font-size: 14px
+                  color: red
+                  font-family: Helvetica
+                  left: 15%
+                  top: 49%
+              # Bad
+              - type: state-label
+                entity: sensor.000ed8a9909c09_actual_temperature
+                style:
+                  text-align: center
+                  font-size: 14px
+                  color: red
+                  font-family: Helvetica
+                  left: 15%
+                  top: 20%
+              - type: state-label
+                entity: sensor.000ed8a9909c09_humidity
+                style:
+                  text-align: center
+                  font-size: 14px
+                  color: red
+                  font-family: Helvetica
+                  left: 15%
+                  top: 23%
+          - type: vertical-stack
+            cards:
+              - type: entities
+                title: Auto
+                entities:
+                  - group.notify_fenster
+                  - group.notify_brunnen
+              - type: sensor
+                entity: sensor.000ed8a9909c6d_actual_temperature
+                name: Aussentemperatur
+                graph: line
+                unit: °C
+                detail: 6
+      - type: picture-glance
+        title: Wohnzimmer
+        camera_image: camera.sauron
+        entities:
+          - switch.hmespmsw1pldnr5_meq1478516
+          - switch.001015699eacfa
+          - binary_sensor.000915699a427d_motion

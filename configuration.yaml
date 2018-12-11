@@ -61,23 +61,6 @@ influxdb:
 
 homekit:
   auto_start: False
-  filter:
-    include_entities:
-      - automation.wohnzimmerlicht_temperatur_nach_sonnenstand
-      - binary_sensor.0000d8a991d263_state
-      - binary_sensor.0000d8a991d301_state
-      - binary_sensor.0000d8a991d331_state
-      - binary_sensor.0000d8a991d35c_state
-      - light.hue_lightstrip_plus_1
-      - light.schlafzimmer
-      - light.wohnzimmer_licht
-      - sensor.000ed8a9909c6d_actual_temperature
-      - sensor.000ed8a9909c6d_humidity
-      - sensor.000ed8a9909c6f_actual_temperature
-      - sensor.000ed8a9909c6f_humidity
-      - sensor.000ed8a9909c8e_actual_temperature
-      - sensor.000ed8a9909c8e_humidity
-      - switch.hmespmsw1pldnr5_meq1478516
 
 notify: !include_dir_list notifications
 
@@ -97,9 +80,20 @@ light:
       - light.w4
       - light.w5
 
+##########   Kamera   #########
+camera:
+  - platform: generic
+    still_image_url: !secret sauron_url
+    name: Sauron
+
+##########   Shell-Commands  ########
+shell_command:
+  sauron_image: /home/homeassistant/.homeassistant/shell-scripts/sauron-image.sh
+
 ##########   Meta-Schalter     ###########
 input_boolean:
   at_home:
     name: Zuhause
     initial: off
     icon: mdi:sign-in
+

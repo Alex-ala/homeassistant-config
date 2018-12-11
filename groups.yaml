@@ -88,6 +88,27 @@ bewegung:
   entities:
     - binary_sensor.000915699a427d_motion
 
+# Automatisierungen
+notify_brunnen:
+  name: Brunnen
+  entities:
+    - automation.brunnen_bei_feuchter_luft
+    - automation.brunnen_bei_trockener_luft
+
+notify_fenster:
+  name: Fenster/Türen
+  entities:
+    - automation.meldung_kuchenfenster_offen
+    - automation.meldung_schlafzimmerfenster_offen
+    - automation.meldung_turen_offen
+
+notifications:
+  name: Notifications
+  entities:
+    - group.notify_fenster
+    - group.notify_brunnen
+
+#
 ################## TABS ##################
 
 #default_view:
