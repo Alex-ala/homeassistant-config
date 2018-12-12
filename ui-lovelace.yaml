@@ -151,6 +151,17 @@ views:
                 graph: line
                 unit: °C
                 detail: 6
+      - type: vertical-stack
+        cards:
+          - type: entities
+            title: Verbrauch Brunnen
+            entities:
+              - group.strom_brunnen
+              - group.strom_schreibtisch
+          - type: entities
+            title: Automatisierungen
+            entities:
+              - group.all_automations
       - type: picture-glance
         title: Wohnzimmer
         camera_image: camera.sauron
