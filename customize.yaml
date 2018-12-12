@@ -202,11 +202,11 @@ cover.storen_kueche_rechts:
   friendly_name: Storen Küche rechts
   assumed_state: true
   device_class: window
-cover.storen_schlafzimmer_links:
+cover.schlafzimmer_links:
   friendly_name: Storen Schlafzimmer links
   assumed_state: true
   device_class: window
-cover.storen_schlafzimmer_rechts:
+cover.schlafzimmer_rechts:
   friendly_name: Storen Schlafzimmer rechts
   assumed_state: true
   device_class: window

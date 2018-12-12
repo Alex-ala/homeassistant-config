@@ -15,7 +15,7 @@ views:
       - id: 799c85636b9b47bd93d1d23d456ae840  # Automatically created id
         type: horizontal-stack
         cards:
-          #- type: custom:plan-coordinates
+         # - type: custom:plan-coordinates
           - type: picture-elements
             image: /local/floorplan.PNG
             elements:
@@ -30,14 +30,14 @@ views:
               - type: state-icon
                 entity: binary_sensor.0000d8a991d331_state
                 style:
-                  left: 87%
+                  left: 75%
                   top: 13%
               #Küchenfenster
               - type: state-icon
                 entity: binary_sensor.0000d8a991d301_state
                 style:
-                  left: 89%
-                  top: 49%
+                  left: 85%
+                  top: 48%
               #Terrassentür
               - type: state-icon
                 entity: binary_sensor.0000d8a991d263_state
@@ -158,6 +158,56 @@ views:
                   font-family: Helvetica
                   left: 15%
                   top: 23%
+              ####### Storen #######
+              - type: icon
+                entity: cover.schlafzimmer_links
+                icon: mdi:window-closed
+                style:
+                  left: 91%
+                  top: 11%
+              - type: icon
+                entity: cover.schlafzimmer_rechts
+                icon: mdi:window-closed
+                style:
+                  left: 96%
+                  top: 20%
+              - type: icon
+                entity: cover.storen_kueche_links
+                icon: mdi:window-closed
+                style:
+                  left: 95%
+                  top: 48%
+              - type: icon
+                entity: cover.storen_kueche_rechts
+                icon: mdi:window-closed
+                style:
+                  left: 95%
+                  top: 67%
+              - type: icon
+                entity: cover.storen_wohnzimmer_links
+                icon: mdi:window-closed
+                style:
+                  left: 95%
+                  top: 83%
+              - type: icon
+                entity: cover.storen_wohnzimmer_rechts
+                icon: mdi:window-closed
+                style:
+                  left: 86%
+                  top: 93%
+              - type: icon
+                entity: cover.storen_terrasse_links
+                icon: mdi:window-closed
+                style:
+                  left: 58%
+                  top: 98%
+              - type: icon
+                entity: cover.storen_terrasse_rechts
+                icon: mdi:window-closed
+                style:
+                  left: 20%
+                  top: 98%
+
           - type: vertical-stack
             cards:
               - type: entities
