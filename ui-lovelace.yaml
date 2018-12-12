@@ -1,6 +1,10 @@
 resources:
   - url: /local/plan-coordinates.js?v=1
     type: js
+  - url: /local/card-group.js
+    type: js
+  - url: /local/thermostat-card.js
+    type: module
 
 title: Seehaus
 views:
@@ -8,9 +12,10 @@ views:
     id: home
     title: Home
     cards:
-      - type: horizontal-stack
+      - id: 799c85636b9b47bd93d1d23d456ae840  # Automatically created id
+        type: horizontal-stack
         cards:
-    #  - type: custom:plan-coordinates
+          #- type: custom:plan-coordinates
           - type: picture-elements
             image: /local/floorplan.PNG
             elements:
@@ -61,6 +66,21 @@ views:
                 style:
                   left: 71%
                   top: 22%
+              - type: state-icon
+                entity: switch.000898a9932fdf
+                tap_action: toggle
+                hold_action: more-info
+                style:
+                  left: 68%
+                  top: 48%
+              - type: state-icon
+                entity: switch.000898a9951e58
+                tap_action: toggle
+                hold_action: more-info
+                style:
+                  left: 35%
+                  top: 31%
+
               ########## Temperatur/Luftfeuchte ##############
               # Wohnzimmer
               - type: state-label
@@ -141,7 +161,7 @@ views:
           - type: vertical-stack
             cards:
               - type: entities
-                title: Auto
+                title: Notifications
                 entities:
                   - group.notify_fenster
                   - group.notify_brunnen
@@ -151,21 +171,45 @@ views:
                 graph: line
                 unit: °C
                 detail: 6
-      - type: vertical-stack
+      - type: horizontal-stack
         cards:
-          - type: entities
-            title: Verbrauch Brunnen
-            entities:
-              - group.strom_brunnen
-              - group.strom_schreibtisch
-          - type: entities
-            title: Automatisierungen
-            entities:
-              - group.all_automations
-      - type: picture-glance
+          - type: custom:thermostat-card
+            title: Schlafzimmer
+            entity: climate.000c98a99501f3
+          - type: custom:thermostat-card
+            title: Wohnzimmer
+            entity: climate.000c98a99501c4
+      - id: 3349c36a202d46cd85e867774c33418f  # Automatically created id
+        type: picture-glance
         title: Wohnzimmer
         camera_image: camera.sauron
         entities:
           - switch.hmespmsw1pldnr5_meq1478516
           - switch.001015699eacfa
           - binary_sensor.000915699a427d_motion
+  - icon: mdi:robot
+    id: automations
+    title: Automatisierungen
+    cards:
+      - type: "custom:group-card"
+        title: Automatisierungen
+        group: group.all_automations
+  - icon: mdi:flash
+    id: verbrauch
+    title: Verbrauch
+    cards:
+      - type: "custom:group-card"
+        title: Brunnen
+        group: group.strom_brunnen
+      - type: "custom:group-card"
+        title: PC
+        group: group.strom_schreibtisch
+      - type: "custom:group-card"
+        title: Flur
+        group: group.strom_flur
+      - type: "custom:group-card"
+        title: Küche
+        group: group.strom_kueche
+      - type: "custom:group-card"
+        title: Wohnzimmer
+        group: group.strom_wohnzimmer

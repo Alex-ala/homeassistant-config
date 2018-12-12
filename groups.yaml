@@ -32,20 +32,47 @@ temperatur_bad:
 strom_schreibtisch:
   name: Strom Schreibtisch
   entities:
-    - sensor.001015699eacfa_current
-    - sensor.001015699eacfa_energy_counter
-    - sensor.001015699eacfa_frequency
     - sensor.001015699eacfa_power
+    - sensor.001015699eacfa_energy_counter
+    - sensor.001015699eacfa_current
     - sensor.001015699eacfa_voltage
+    - sensor.001015699eacfa_frequency
 
 strom_brunnen:
   name: Strom Brunnen
   entities:
-    - sensor.hmespmsw1pldnr5_meq1478516_current
-    - sensor.hmespmsw1pldnr5_meq1478516_energy_counter
-    - sensor.hmespmsw1pldnr5_meq1478516_frequency
     - sensor.hmespmsw1pldnr5_meq1478516_power
+    - sensor.hmespmsw1pldnr5_meq1478516_energy_counter
+    - sensor.hmespmsw1pldnr5_meq1478516_current
     - sensor.hmespmsw1pldnr5_meq1478516_voltage
+    - sensor.hmespmsw1pldnr5_meq1478516_frequency
+
+strom_flur:
+  name: Strom Flurlicht
+  entities:
+    - sensor.000898a9951e58_power
+    - sensor.000898a9951e58_energy_counter
+    - sensor.000898a9951e58_current
+    - sensor.000898a9951e58_voltage
+    - sensor.000898a9951e58_frequency
+
+strom_wohnzimmer:
+  name: Strom Wohnzimmer Sofa
+  entities:
+    - sensor.000898a9951a7c_power
+    - sensor.000898a9951a7c_energy_counter
+    - sensor.000898a9951a7c_current
+    - sensor.000898a9951a7c_voltage
+    - sensor.000898a9951a7c_frequency
+
+strom_kueche:
+  name: Strom Küchenlicht
+  entities:
+    - sensor.000898a9932fdf_power
+    - sensor.000898a9932fdf_energy_counter
+    - sensor.000898a9932fdf_current
+    - sensor.000898a9932fdf_voltage
+    - sensor.000898a9932fdf_frequency
 
 schalter_brunnen:
   name: Schalter Brunnen
@@ -76,6 +103,8 @@ licht:
     - light.wohnzimmer_licht
     - light.schlafzimmer
     - light.hue_lightstrip_plus_1
+    - switch.000898a9951e58
+    - switch.000898a9932fdf
 
 schalter:
   name: Schalter
