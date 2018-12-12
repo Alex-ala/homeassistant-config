@@ -4,7 +4,7 @@
     platform: numeric_state
     entity_id: sensor.001015699eacfa_power
     value_template: '{{ state.attributes.power }}'
-    below: 10
+    below: 20
     for:
       minutes: 5
   action:
