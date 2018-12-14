@@ -112,35 +112,35 @@ sensor.000898a9951e58_frequency:
   unit_of_measurement: Hz
 #Wohnzimmer
 sensor.000898a9951a7c_power:
-  friendly_name: Flur Verbrauch
+  friendly_name: Wohnzimmer Verbrauch
   unit_of_measurement: W
 sensor.000898a9951a7c_energy_counter:
-  friendly_name: Flur Gesamtverbrauch
+  friendly_name: Wohnzimmer Gesamtverbrauch
   unit_of_measurement: Wh
 sensor.000898a9951a7c_current:
-  friendly_name: Flur Stromstärke
+  friendly_name: Wohnzimmer Stromstärke
   unit_of_measurement: mA
 sensor.000898a9951a7c_voltage:
-  friendly_name: Flur Spannung
+  friendly_name: Wohnzimmer Spannung
   unit_of_measurement: V
 sensor.000898a9951a7c_frequency:
-  friendly_name: Flur Frequenz
+  friendly_name: Wohnzimmer Frequenz
   unit_of_measurement: Hz
 #Küche
 sensor.000898a9932fdf_power:
-  friendly_name: Flur Verbrauch
+  friendly_name: Küche Verbrauch
   unit_of_measurement: W
 sensor.000898a9932fdf_energy_counter:
-  friendly_name: Flur Gesamtverbrauch
+  friendly_name: FlKücheur Gesamtverbrauch
   unit_of_measurement: Wh
 sensor.000898a9932fdf_current:
-  friendly_name: Flur Stromstärke
+  friendly_name: Küche Stromstärke
   unit_of_measurement: mA
 sensor.000898a9932fdf_voltage:
-  friendly_name: Flur Spannung
+  friendly_name: Küche Spannung
   unit_of_measurement: V
 sensor.000898a9932fdf_frequency:
-  friendly_name: Flur Frequenz
+  friendly_name: Küche Frequenz
   unit_of_measurement: Hz
 
 ##########   Strom-Schalter   ##########

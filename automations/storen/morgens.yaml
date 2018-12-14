@@ -1,0 +1,17 @@
+- alias: 'Storen morgens halb öffnen'
+  id: storen_halb_oeffnen
+  trigger:
+    platform: template
+    value_template: "{{ (states.input_datetime.storen_halb_oeffnen.attributes.timestamp | int + ( range(-10,10)|random | multiply(60))| int) | timestamp_custom('%H:%M', False)}}"
+  action:
+    service: cover.open_cover_tilt
+    entity_id: cover.storen_schlafzimmer_links, cover.storen_schlafzimmer_rechts
+
+- alias: 'Storen morgens ganz öffnen'
+  id: storen_ganz_oeffnen
+  trigger:
+    platform: template
+    value_template:  "{{ (states.input_datetime.storen_ganz_oeffnen.attributes.timestamp | int + ( range(-10,10)|random | multiply(60))| int) | timestamp_custom('%H:%M', False)}}"
+  action:
+    service: cover.open_cover
+    entity_id: cover.storen_schlafzimmer_links, cover.storen_schlafzimmer_rechts
