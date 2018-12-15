@@ -29,10 +29,10 @@ sensor.000ed8a9909c6d_humidity:
   icon: mdi:water-percent
 # Wohnzimmer
 sensor.000ed8a9909c6f_actual_temperature:
-  friendly_name: Temperatur Wohnzimmer
+  friendly_name: Temperatur Schreibtisch
   icon: mdi:thermometer-lines
 sensor.000ed8a9909c6f_humidity:
-  friendly_name: Luftfeuchtigkeit Wohnzimmer
+  friendly_name: Luftfeuchtigkeit Schreibtisch
   icon: mdi:water-percent
 # Schlafzimmer
 sensor.000ed8a9909c8e_actual_temperature:
@@ -131,7 +131,7 @@ sensor.000898a9932fdf_power:
   friendly_name: Küche Verbrauch
   unit_of_measurement: W
 sensor.000898a9932fdf_energy_counter:
-  friendly_name: FlKücheur Gesamtverbrauch
+  friendly_name: Küche Gesamtverbrauch
   unit_of_measurement: Wh
 sensor.000898a9932fdf_current:
   friendly_name: Küche Stromstärke

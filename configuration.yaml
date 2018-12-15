@@ -93,6 +93,23 @@ sensor:
       - 'date'
   - platform: random
 
+########## Covers ########
+cover:
+  - platform: group
+    name: Wohnzimmer
+    entities:
+      - cover.storen_terrasse_links
+      - cover.storen_terrasse_rechts
+      - cover.storen_wohnzimmer_links
+      - cover.storen_wohnzimmer_rechts
+      - cover.storen_kueche_links
+      - cover.storen_kueche_rechts
+  - platform: group
+    name: Schlafzimmer
+    entities:
+      - cover.schlafzimmer_links
+      - cover.schlafzimmer_rechts
+
 ##########   Shell-Commands  ########
 shell_command:
   sauron_image: /home/homeassistant/.homeassistant/shell-scripts/sauron-image.sh
@@ -113,3 +130,4 @@ input_datetime:
     name: Storen ganz öffnen
     has_time: true
     has_date: false
+
