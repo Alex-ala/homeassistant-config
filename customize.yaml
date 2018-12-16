@@ -29,10 +29,10 @@ sensor.000ed8a9909c6d_humidity:
   icon: mdi:water-percent
 # Wohnzimmer
 sensor.000ed8a9909c6f_actual_temperature:
-  friendly_name: Temperatur Wohnzimmer
+  friendly_name: Temperatur Schreibtisch
   icon: mdi:thermometer-lines
 sensor.000ed8a9909c6f_humidity:
-  friendly_name: Luftfeuchtigkeit Wohnzimmer
+  friendly_name: Luftfeuchtigkeit Schreibtisch
   icon: mdi:water-percent
 # Schlafzimmer
 sensor.000ed8a9909c8e_actual_temperature:
@@ -94,6 +94,54 @@ sensor.001015699eacfa_power:
 sensor.001015699eacfa_voltage:
   friendly_name: Schreibtisch Spannung
   unit_of_measurement: V
+#Flur
+sensor.000898a9951e58_power:
+  friendly_name: Flur Verbrauch
+  unit_of_measurement: W
+sensor.000898a9951e58_energy_counter:
+  friendly_name: Flur Gesamtverbrauch
+  unit_of_measurement: Wh
+sensor.000898a9951e58_current:
+  friendly_name: Flur Stromstärke
+  unit_of_measurement: mA
+sensor.000898a9951e58_voltage:
+  friendly_name: Flur Spannung
+  unit_of_measurement: V
+sensor.000898a9951e58_frequency:
+  friendly_name: Flur Frequenz
+  unit_of_measurement: Hz
+#Wohnzimmer
+sensor.000898a9951a7c_power:
+  friendly_name: Wohnzimmer Verbrauch
+  unit_of_measurement: W
+sensor.000898a9951a7c_energy_counter:
+  friendly_name: Wohnzimmer Gesamtverbrauch
+  unit_of_measurement: Wh
+sensor.000898a9951a7c_current:
+  friendly_name: Wohnzimmer Stromstärke
+  unit_of_measurement: mA
+sensor.000898a9951a7c_voltage:
+  friendly_name: Wohnzimmer Spannung
+  unit_of_measurement: V
+sensor.000898a9951a7c_frequency:
+  friendly_name: Wohnzimmer Frequenz
+  unit_of_measurement: Hz
+#Küche
+sensor.000898a9932fdf_power:
+  friendly_name: Küche Verbrauch
+  unit_of_measurement: W
+sensor.000898a9932fdf_energy_counter:
+  friendly_name: Küche Gesamtverbrauch
+  unit_of_measurement: Wh
+sensor.000898a9932fdf_current:
+  friendly_name: Küche Stromstärke
+  unit_of_measurement: mA
+sensor.000898a9932fdf_voltage:
+  friendly_name: Küche Spannung
+  unit_of_measurement: V
+sensor.000898a9932fdf_frequency:
+  friendly_name: Küche Frequenz
+  unit_of_measurement: Hz
 
 ##########   Strom-Schalter   ##########
 switch.hmespmsw1pldnr5_meq1478516:
@@ -102,7 +150,9 @@ switch.hmespmsw1pldnr5_meq1478516:
 switch.001015699eacfa:
   friendly_name: Schreibtisch
   icon: mdi:desktop-classic
-
+switch.000898a9951a7c:
+  friendly_name: Wohnzimmer Sofa
+  icon: mdi:airplay
 ##########   Licht-Schalter   ##########
 light.w1:
   hidden: true
@@ -118,4 +168,53 @@ light.wohnzimmer:
   hidden: true
 light.hue_lightstrip_plus_1:
   friendly_name: Schrank-LED
- 
+
+switch.000898a9951e58:
+  friendly_name: Flur-Licht
+  icon: mdi:lightbulb
+switch.000898a9932fdf:
+  friendly_name: Küchenlicht
+  icon: mdi:lightbulb
+
+##########   Storen   ##########
+
+cover.storen_terrasse_links:
+  friendly_name: Storen Terrasse links
+  assumed_state: true
+  device_class: window
+cover.storen_terrasse_rechts:
+  friendly_name: Storen Terrasse rechts
+  assumed_state: true
+  device_class: window
+cover.storen_wohnzimmer_links:
+  friendly_name: Storen Wohnzimmer links
+  assumed_state: true
+  device_class: window
+cover.storen_wohnzimmer_rechts:
+  friendly_name: Storen Wohnzimmer rechts
+  assumed_state: true
+  device_class: window
+cover.storen_kueche_links:
+  friendly_name: Storen Küche links
+  assumed_state: true
+  device_class: window
+cover.storen_kueche_rechts:
+  friendly_name: Storen Küche rechts
+  assumed_state: true
+  device_class: window
+cover.schlafzimmer_links:
+  friendly_name: Storen Schlafzimmer links
+  assumed_state: true
+  device_class: window
+cover.schlafzimmer_rechts:
+  friendly_name: Storen Schlafzimmer rechts
+  assumed_state: true
+  device_class: window
+
+
+##########   Heizung   ##########
+
+climate.000c98a99501f3:
+  friendly_name: Heizung Schlafzimmer
+climate.000c98a99501c4:
+  friendly_name: Heizung Wohnzimmer

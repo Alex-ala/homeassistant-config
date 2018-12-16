@@ -1,0 +1,23 @@
+- alias: 'Storen morgens halb öffnen'
+  id: storen_halb_oeffnen
+  trigger:
+    platform: template
+    value_template: "{{ states.sensor.time.state ==  (states.input_datetime.storen_halb_oeffnen.attributes.timestamp | int | timestamp_custom('%H:%M', False))}}"
+  action:
+    - delay:
+        minutes: "{{ range(0,10) | random | int }}"
+        seconds: "{{ range(0,59) | random | int }}"
+    - service: cover.open_cover_tilt
+      entity_id: cover.schlafzimmer
+
+- alias: 'Storen morgens ganz öffnen'
+  id: storen_ganz_oeffnen
+  trigger:
+    platform: template
+    value_template:  "{{ states.sensor.time.state == (states.input_datetime.storen_ganz_oeffnen.attributes.timestamp | int | timestamp_custom('%H:%M', False))}}"
+  action:
+    - delay:
+        minutes: "{{ range(0,10) | random | int }}"
+        seconds: "{{ range(0,59) | random | int }}"
+    - service: cover.open_cover
+      entity_id: cover.schlafzimmer, cover.wohnzimmer

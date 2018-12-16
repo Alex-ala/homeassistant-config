@@ -12,7 +12,6 @@ frontend:
 config:
 
 http:
-  api_password: !secret http_api_password
   base_url: !secret http_uri 
   server_host: 0.0.0.0
   trusted_proxies: 10.4.0.8
@@ -61,23 +60,6 @@ influxdb:
 
 homekit:
   auto_start: False
-  filter:
-    include_entities:
-      - automation.wohnzimmerlicht_temperatur_nach_sonnenstand
-      - binary_sensor.0000d8a991d263_state
-      - binary_sensor.0000d8a991d301_state
-      - binary_sensor.0000d8a991d331_state
-      - binary_sensor.0000d8a991d35c_state
-      - light.hue_lightstrip_plus_1
-      - light.schlafzimmer
-      - light.wohnzimmer_licht
-      - sensor.000ed8a9909c6d_actual_temperature
-      - sensor.000ed8a9909c6d_humidity
-      - sensor.000ed8a9909c6f_actual_temperature
-      - sensor.000ed8a9909c6f_humidity
-      - sensor.000ed8a9909c8e_actual_temperature
-      - sensor.000ed8a9909c8e_humidity
-      - switch.hmespmsw1pldnr5_meq1478516
 
 notify: !include_dir_list notifications
 
@@ -97,9 +79,55 @@ light:
       - light.w4
       - light.w5
 
+##########   Kamera   #########
+camera:
+  - platform: generic
+    still_image_url: !secret sauron_url
+    name: Sauron
+
+########## Global Sensors ########
+sensor:
+  - platform: time_date
+    display_options:
+      - 'time'
+      - 'date'
+  - platform: random
+
+########## Covers ########
+cover:
+  - platform: group
+    name: Wohnzimmer
+    entities:
+      - cover.storen_terrasse_links
+      - cover.storen_terrasse_rechts
+      - cover.storen_wohnzimmer_links
+      - cover.storen_wohnzimmer_rechts
+      - cover.storen_kueche_links
+      - cover.storen_kueche_rechts
+  - platform: group
+    name: Schlafzimmer
+    entities:
+      - cover.schlafzimmer_links
+      - cover.schlafzimmer_rechts
+
+##########   Shell-Commands  ########
+shell_command:
+  sauron_image: /home/homeassistant/.homeassistant/shell-scripts/sauron-image.sh
+
 ##########   Meta-Schalter     ###########
 input_boolean:
   at_home:
     name: Zuhause
     initial: off
     icon: mdi:sign-in
+
+input_datetime:
+  storen_halb_oeffnen:
+    name: Storen halb öffnen
+    has_time: true
+    has_date: false
+  storen_ganz_oeffnen:
+    name: Storen ganz öffnen
+    has_time: true
+    has_date: false
+
