@@ -9,6 +9,9 @@ homeassistant:
 
 frontend:
 
+lovelace:
+  mode: yaml
+
 config:
 
 http:
