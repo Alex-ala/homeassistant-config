@@ -57,6 +57,17 @@ influxdb:
   host: menegroth.ahome
   port: 3000
   database: smarthome
+  exclude:
+    entities:
+      - sun.sun
+      - sensor.time
+      - sensor.date
+      - sensor.random_sensor
+      - camera.sauron
+    domains:
+      - automation
+      - group
+      - script
 
 homekit:
   auto_start: False
