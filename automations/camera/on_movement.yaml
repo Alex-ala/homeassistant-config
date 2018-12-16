@@ -21,4 +21,3 @@
     state: 'on'
   action:
     service: shell_command.sauron_image
-
