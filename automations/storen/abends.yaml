@@ -1,0 +1,32 @@
+- alias: 'Storen abends schliessen'
+  id: storen_abends
+  trigger:
+    platform: time
+    minutes: '/10'
+    seconds: 0
+  condition:
+    condition: and
+    conditions:
+      - condition: or
+        conditions:
+          - condition: state
+            entity_id: cover.schlafzimmer
+            state: 'open'
+          - condition: state
+            entity_id: cover.wohnzimmer
+            state: 'open'
+      - condition: or
+        conditions:
+          - condition: sun
+            after: sunset
+            after_offset: '+00:45:00'
+          - condition: time
+            after: '21:30:00'
+  action:
+    - delay:
+        minutes: "{{ range(0,9) | random | int }}"
+        seconds: "{{ range(0,59) | random | int }}"
+    - service: cover.close
+      entity_id: cover.schlafzimmer, cover.wohnzimmer
+
+
