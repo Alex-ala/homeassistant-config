@@ -75,6 +75,12 @@ influxdb:
 homekit:
   auto_start: False
 
+device_tracker:
+  - platform: unifi_direct
+    host: 10.4.0.14
+    username: !secret unify_user
+    password: !secret unify_password
+
 notify: !include_dir_list notifications
 
 ######################CONFIGURATION###############
