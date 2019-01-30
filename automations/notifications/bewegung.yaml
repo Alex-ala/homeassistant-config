@@ -1,0 +1,14 @@
+- alias: 'Meldung Bewegung'
+  id: meldung_bewegung
+  trigger:
+    platform: state
+    entity_id: binary_sensor.000915699a427d_motion
+  condition:
+    condition: state
+    entity_id: device_tracker.iphonexr
+    state: 'not_home'
+  action:
+    - service: script.notify_rp
+      data:
+        title: 'Bewegung erkannt'
+        message: 'Bewegung erkannt'

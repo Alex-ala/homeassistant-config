@@ -218,3 +218,7 @@ climate.000c98a99501f3:
   friendly_name: Heizung Schlafzimmer
 climate.000c98a99501c4:
   friendly_name: Heizung Wohnzimmer
+binary_sensor.000c98a99501f3_state:
+  friendly_name: Heizung Schlafzimmer
+binary_sensor.000c98a99501c4_state:
+  friendly_name: Heizung Wohnzimmer

@@ -320,6 +320,11 @@ views:
           - switch.hmespmsw1pldnr5_meq1478516
           - switch.001015699eacfa
           - switch.000898a9951a7c
+      - type: history-graph
+        title: Heizung
+        entities:
+          - binary_sensor.000c98a99501c4_state
+          - binary_sensor.000c98a99501f3_state
   - icon: mdi:cctv
     id: security
     title: Sicherheit
@@ -334,9 +339,16 @@ views:
           - binary_sensor.000915699a427d_motion
       - type: entities
         title: Notifications
+        show_header_toggle: false
         entities:
           - group.notify_fenster
           - group.notify_brunnen
+      - type: entities
+        title: WLAN
+        show_header_toggle: false
+        entities:
+          - device_tracker.iphonexr
+          - device_tracker.lalaith
   - icon: mdi:robot
     id: automations
     title: Automatisierungen
