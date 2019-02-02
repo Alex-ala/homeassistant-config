@@ -15,4 +15,3 @@
           {{ states[domain][device].attributes.friendly_name }} : {{ states[domain][device].state }}
 
           {% endfor %}
-
