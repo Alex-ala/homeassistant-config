@@ -5,5 +5,9 @@
     platform: time
     minutes: '/10'
     seconds: 0
+  condition:
+    condition: state
+    entity_id: device_tracker.iphonexr
+    state: 'not_home'
   action:
     service: shell_command.sauron_image
