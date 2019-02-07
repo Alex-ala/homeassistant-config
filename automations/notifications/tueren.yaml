@@ -3,6 +3,10 @@
   trigger: 
     platform: state
     entity_id: group.tueren
+  condition:
+    condition: state
+    entity_id: device_tracker.iphonexr
+    state: 'not_home'
   action:
     - service: script.notify_rp
       data: 

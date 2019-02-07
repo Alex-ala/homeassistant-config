@@ -1,0 +1,15 @@
+- alias: 'Licht aus wenn raus'
+  id: licht_aus_wenn_raus
+  trigger: 
+    platform: state
+    entity_id: device_tracker.iphonexr
+    from: 'not_home'
+    to: 'home'
+    for:
+      hours: 1
+      minutes: 0
+      seconds: 0
+  action:
+    service: light.turn_off
+    data_template: 
+      entity_id: group.all_lights

@@ -5,6 +5,10 @@
     platform: state
     entity_id: binary_sensor.000915699a427d_motion
     to: 'on'
+  condition:
+    condition: state
+    entity_id: device_tracker.iphonexr
+    state: 'not_home'
   action:
     service: shell_command.sauron_image
 
@@ -16,8 +20,13 @@
     minutes: '/1'
     seconds: 0
   condition:
-    condition: 'state'
-    entity_id: binary_sensor.000915699a427d_motion
-    state: 'on'
+    condition: and
+    conditions:
+      - condition: 'state'
+        entity_id: binary_sensor.000915699a427d_motion
+        state: 'on'
+      - condition: state
+        entity_id: device_tracker.iphonexr
+        state: 'not_home'
   action:
     service: shell_command.sauron_image
