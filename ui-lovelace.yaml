@@ -322,6 +322,7 @@ views:
           - switch.000898a9951a7c
       - type: history-graph
         title: Heizung
+        hours_to_show: 1
         entities:
           - binary_sensor.000c98a99501c4_state
           - binary_sensor.000c98a99501f3_state
