@@ -1,0 +1,66 @@
+- alias: "Schalter - Küche"
+  trigger:
+    platform: event
+    event_type: homematic.keypress
+    event_data:
+      name: 000B58A9A4E598
+      channel: 1
+      param: PRESS_SHORT
+  action:
+    service: switch.toggle
+    entity_id: switch.000898a9932fdf
+- alias: "Schalter - Wohzimmerlicht"
+  trigger:
+    platform: event
+    event_type: homematic.keypress
+    event_data:
+      name: 000B58A9A4E598
+      channel: 2
+      param: PRESS_SHORT
+  action:
+    service: light.toggle
+    entity_id: light.wohnzimmer_licht
+- alias: "Schalter - Storen runter Wohnzimmer"
+  trigger:
+    platform: event
+    event_type: homematic.keypress
+    event_data:
+      name: 000B58A9A4E598
+      channel: 3
+      param: PRESS_SHORT
+  action:
+    service: cover.close_cover
+    entity_id: cover.wohnzimmer
+- alias: "Schalter - Storen zu Wohnzimmer"
+  trigger:
+    platform: event
+    event_type: homematic.keypress
+    event_data:
+      name: 000B58A9A4E598
+      channel: 3
+      param: PRESS_LONG
+  action:
+    service: cover.close_cover_tilt
+    entity_id: cover.wohnzimmer
+- alias: "Schalter - Storen hoch Wohnzimmer"
+  trigger:
+    platform: event
+    event_type: homematic.keypress
+    event_data:
+      name: 000B58A9A4E598
+      channel: 4
+      param: PRESS_SHORT
+  action:
+    service: cover.open_cover
+    entity_id: cover.wohnzimmer
+- alias: "Schalter - Storen auf Wohnzimmer"
+  trigger:
+    platform: event
+    event_type: homematic.keypress
+    event_data:
+      name: 000B58A9A4E598
+      channel: 4
+      param: PRESS_LONG
+  action:
+    service: cover.open_cover_tilt
+    entity_id: cover.wohnzimmer
