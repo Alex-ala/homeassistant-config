@@ -16,9 +16,8 @@
 - alias: 'Sauron nach Bewegung'
   id: camera_sauron_timed
   trigger:
-    platform: time
+    platform: time_pattern
     minutes: '/1'
-    seconds: 0
   condition:
     condition: and
     conditions:

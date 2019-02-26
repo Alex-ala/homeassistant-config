@@ -2,9 +2,8 @@
 - alias: 'Sauron is watching'
   id: camera_sauron_timed
   trigger:
-    platform: time
+    platform: time_pattern
     minutes: '/10'
-    seconds: 0
   condition:
     condition: state
     entity_id: device_tracker.iphonexr

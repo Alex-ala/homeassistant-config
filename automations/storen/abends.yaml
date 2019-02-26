@@ -1,9 +1,8 @@
 - alias: 'Storen abends schliessen'
   id: storen_abends
   trigger:
-    platform: time
+    platform: time_pattern
     minutes: '/10'
-    seconds: 0
   condition:
     condition: and
     conditions:

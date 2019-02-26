@@ -1,9 +1,8 @@
 - alias: 'Wohnzimmerlicht Temperatur nach Sonnenstand'
   id: licht_wohnzimmer_temperatur_sonnenstand
   trigger: 
-    platform: time
+    platform: time_pattern
     minutes: '/1'
-    seconds: 0
   condition:
     condition: 'state'
     entity_id: light.wohnzimmer_licht
