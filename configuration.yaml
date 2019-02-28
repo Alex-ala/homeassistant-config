@@ -82,12 +82,12 @@ device_tracker:
     password: !secret unify_password
     consider_home: 300
 
-vacuum:
-  - platform: roomba
-    host: 10.4.0.16
-    name: Gollum
-    username: !secret roomba_user
-    password: !secret roomba_password
+#vacuum:
+#  - platform: roomba
+#    host: 10.4.0.16
+#    name: Gollum
+#    username: !secret roomba_user
+#    password: !secret roomba_password
 
 notify: !include_dir_list notifications
 
