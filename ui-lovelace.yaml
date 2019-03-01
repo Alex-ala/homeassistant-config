@@ -363,7 +363,7 @@ views:
     title: Staubsauger
     cards:
       - type: iframe
-        url: /local/map/Gollumroomba_map.html
+        url: /local/map/map_notext.png
   - icon: mdi:flash
     id: verbrauch
     title: Verbrauch
