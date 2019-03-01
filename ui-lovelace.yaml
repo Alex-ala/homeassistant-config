@@ -362,8 +362,8 @@ views:
     id: vacuum
     title: Staubsauger
     cards:
-      - type: iframe
-        url: /local/map/map_notext.png
+      - type: picture
+        image: /local/map/map_notext.png
   - icon: mdi:flash
     id: verbrauch
     title: Verbrauch
