@@ -38,7 +38,7 @@ sun:
 homematic:
   interfaces:
     ip:
-      host: 10.5.0.3 
+      host: 10.5.0.3
       port: 2010
       username: !secret homematic_ip_user
       password: !secret homematic_ip_password
@@ -88,6 +88,8 @@ vacuum:
     name: Gollum
     username: !secret roomba_user
     password: !secret roomba_password
+    path: "/home/homeassistant/.homeassistant/www/map"
+    size: '(2000,1000,120,-296,0,0)'
 
 notify: !include_dir_list notifications
 
