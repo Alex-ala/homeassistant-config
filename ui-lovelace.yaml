@@ -7,6 +7,8 @@ resources:
     type: js
   - url: /local/thermostat-card.js
     type: module
+  - url: /local/roomba-card.js
+    type: js
 
 title: Seehaus
 views:
@@ -17,7 +19,7 @@ views:
      # - type: custom:plan-coordinates
       - id: a084d8c80a7b445bad3bd7d4c7d56257  # Automatically created id
         type: picture-elements
-        image: /local/floorplan.PNG
+        image: /local/map/map_notext.png
         elements:
           ########## FENSTER/TUEREN ##############
           #Haustür
@@ -364,6 +366,8 @@ views:
     cards:
       - type: picture
         image: /local/map/map_notext.png
+      - type: custom:roomba-card
+        entity: vacuum.gollum
   - icon: mdi:flash
     id: verbrauch
     title: Verbrauch
