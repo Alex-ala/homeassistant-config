@@ -288,7 +288,13 @@ views:
             icon: mdi:window-closed
             style:
               left: 20%
-              top: 98% ##
+              top: 98%
+          - type: icon
+            entity: vacuum.gollum
+            icon: mdi:robot-vacuum
+            style:
+              left: 10%
+              top: 10%
   - icon: mdi:remote
     id: control
     title: Überblick

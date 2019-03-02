@@ -27,19 +27,19 @@ sensor.000ed8a9909c6d_actual_temperature:
 sensor.000ed8a9909c6d_humidity:
   friendly_name: Luftfeuchtigkeit Terrasse
   icon: mdi:water-percent
-# Wohnzimmer
+# Wohnzimmer (Flügel)
 sensor.000ed8a9909c6f_actual_temperature:
-  friendly_name: Temperatur Schreibtisch
+  friendly_name: Temperatur Flügel
   icon: mdi:thermometer-lines
 sensor.000ed8a9909c6f_humidity:
-  friendly_name: Luftfeuchtigkeit Schreibtisch
+  friendly_name: Luftfeuchtigkeit Flügel
   icon: mdi:water-percent
-# Schlafzimmer
+# Wohnzimmer (Schreibtisch)
 sensor.000ed8a9909c8e_actual_temperature:
-  friendly_name: Temperatur Schlafzimmer
+  friendly_name: Temperatur Schreibtisch
   icon: mdi:thermometer-lines
 sensor.000ed8a9909c8e_humidity:
-  friendly_name: Luftfeuchtigkeit Schlafzimmer
+  friendly_name: Luftfeuchtigkeit Schreibtisch
   icon: mdi:water-percent
 # Reduit
 sensor.000ed8a9909e0e_actual_temperature:
@@ -55,6 +55,39 @@ sensor.000ed8a9909c09_actual_temperature:
 sensor.000ed8a9909c09_humidity:
   friendly_name: Luftfeuchtigkeit Bad
   icon: mdi:water-percent
+# Schlafzimmer
+sensor.000c98a99501f3_actual_temperature:
+  friendly_name: Temperatur Schlafzimmer
+  icon: mdi:thermometer-lines
+sensor.000c98a99501f3_humidity:
+  friendly_name: Luftfeuchtigkeit Schlafzimmer
+  icon: mdi:water-percent
+# Flur
+sensor.000c98a99501c4_actual_temperature:
+  friendly_name: Temperatur Flur
+  icon: mdi:thermometer-lines
+sensor.000c98a99501c4_humidity:
+  friendly_name: Luftfeuchtigkeit Flur
+  icon: mdi:water-percent
+# Garten
+sensor.0017D709AE2F48_actual_temperature:
+  friendly_name: Temperatur Garten
+  icon: mdi:thermometer-lines
+sensor.0017D709AE2F48_humidity:
+  friendly_name: Luftfeuchtigkeit Garten
+  icon: mdi:water-percent
+
+# Wetter
+sensor.0017d709ae2f48_wind_speed:
+  friendly_name: Windgeschwindigkeit
+  icon: mdi:wind-turbine
+sensor.0017d709ae2f48_sunshineduration:
+  friendly_name: Sonneneinstrahlung
+  icon: mdi:sunglasses
+sensor.0017d709ae2f48_illumination:
+  friendly_name: Helligkeit
+  icon: mdi:white-balance-sunny
+
 
 ##########    Bewegungsmelder    ##########
 binary_sensor.000915699a427d_motion:
