@@ -1,6 +1,5 @@
 class RoombaCard extends HTMLElement {
 
-    stateObj;
     set hass(hass) {
         if (!this.content) {
             const card = document.createElement('ha-card');
@@ -65,8 +64,6 @@ class RoombaCard extends HTMLElement {
     }
 
     clean(){
-        print("FUUUUCK");
-        console.log("FUUUCK");
         this.hass.callService('vacuum','clean', { entity_id: this.config.entity});
     }
     stop(){

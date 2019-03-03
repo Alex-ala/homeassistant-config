@@ -5,14 +5,14 @@ temperatur_terrasse:
     - sensor.000ed8a9909c6d_actual_temperature
     - sensor.000ed8a9909c6d_humidity
 
-temperatur_wohnzimmer:
-  name: Wohnzimmer
+temperatur_fluegel:
+  name: Flügel
   entities:
     - sensor.000ed8a9909c6f_actual_temperature
     - sensor.000ed8a9909c6f_humidity
 
-temperatur_schlafzimmer:
-  name: Schlafzimmer
+temperatur_schreibtisch:
+  name: Schreibtisch
   entities:
     - sensor.000ed8a9909c8e_actual_temperature
     - sensor.000ed8a9909c8e_humidity
@@ -28,6 +28,28 @@ temperatur_bad:
   entities:
     - sensor.000ed8a9909c09_actual_temperature
     - sensor.000ed8a9909c09_humidity
+
+temperatur_garten:
+  name: Garten
+  entities:
+    - sensor.0017d709ae2f48_actual_temperature
+    - sensor.0017d709ae2f48_humidity
+    - sensor.0017d709ae2f48_wind_speed
+    - sensor.0017d709ae2f48_illumination
+    - sensor.0017d709ae2f48_sunshineduration
+
+temperatur_schlafzimmer:
+  name: Schlafzimmer
+  entities:
+    - sensor.000c98a99501f3_actual_temperature
+    - sensor.000c98a99501f3_humidity
+
+temperatur_flur:
+  name: Flur
+  entities:
+    - sensor.000c98a99501c4_actual_temperature
+    - sensor.000c98a99501c4_humidity
+
 
 strom_schreibtisch:
   name: Strom Schreibtisch
@@ -153,10 +175,13 @@ klima:
   view: true
   entities:
     - group.temperatur_terrasse
-    - group.temperatur_wohnzimmer
+    - group.temperatur_fluegel
     - group.temperatur_schlafzimmer
     - group.temperatur_reduit
     - group.temperatur_bad
+    - group.temperatur_schreibtisch
+    - group.temperatur_garten
+    - group.temperatur_flur
 
 sicherheit:
   name: Sicherheit
