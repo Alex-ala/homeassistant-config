@@ -47,7 +47,6 @@ class RoombaCard extends HTMLElement {
         <paper-icon-button icon="mdi:stop" on-click="stop"></paper-icon-button>
         <paper-icon-button icon="mdi:home-circle" on-click="return_home"></paper-icon-button>
     </div>
-    <more-info-vacuum></more-info-vacuum>
 </div>`;
     }
     setConfig(config){

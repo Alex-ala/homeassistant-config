@@ -19,7 +19,7 @@ views:
      # - type: custom:plan-coordinates
       - id: a084d8c80a7b445bad3bd7d4c7d56257  # Automatically created id
         type: picture-elements
-        image: /local/map/map_notext.png
+        image: /local/floorplan2.png
         elements:
           ########## FENSTER/TUEREN ##############
           #Haustür
