@@ -89,7 +89,7 @@ vacuum:
     username: !secret roomba_user
     password: !secret roomba_password
     path: "/home/homeassistant/.homeassistant/www/map"
-    size: '(2000,1000,0,0,0,0)'
+    size: '(1200,700,300,-270,0,0)'
 
 notify: !include_dir_list notifications
 

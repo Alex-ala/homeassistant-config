@@ -7,7 +7,7 @@ resources:
     type: js
   - url: /local/thermostat-card.js
     type: module
-  - url: /local/roomba-card.js
+  - url: /local/vacuum-map-card.js
     type: js
 
 title: Seehaus
@@ -372,8 +372,6 @@ views:
     cards:
       - type: picture
         image: /local/map/map_notext.png
-      - type: custom:roomba-card
-        entity: vacuum.gollum
   - icon: mdi:flash
     id: verbrauch
     title: Verbrauch
