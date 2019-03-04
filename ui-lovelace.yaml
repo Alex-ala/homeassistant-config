@@ -371,7 +371,7 @@ views:
     title: Staubsauger
     cards:
       - type: picture
-        image: /local/map/map_notext.png
+        image: /local/map/map.png
   - icon: mdi:flash
     id: verbrauch
     title: Verbrauch
