@@ -334,6 +334,12 @@ views:
         entities:
           - binary_sensor.000c98a99501c4_state
           - binary_sensor.000c98a99501f3_state
+      - type: sensor
+        entity: sensor.0017d709ae2f48_wind_speed
+        name: Windgeschwindigkeit
+        graph: line
+        unit: km/h
+        detail: 6
   - icon: mdi:cctv
     id: security
     title: Sicherheit
