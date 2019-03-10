@@ -7,8 +7,6 @@ resources:
     type: js
   - url: /local/thermostat-card.js
     type: module
-  - url: /local/vacuum-map-card.js
-    type: js
 
 title: Seehaus
 views:
