@@ -12,3 +12,6 @@ home-assistant_v2.db-wal
 .uuid
 .homekit.state
 known_devices.yaml
+
+www/map/map*
+www/map/room*
