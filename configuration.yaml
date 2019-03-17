@@ -25,9 +25,6 @@ http:
 
 logger:
   default: info
-  logs:
-    homeassistant.components.homematic.cover: debug
-    pyhomematic: debug
 
 history:
 
