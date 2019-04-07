@@ -1,0 +1,4 @@
+- name: Alex
+  id: alex
+  device_trackers:
+    - device_tracker.iphonexr

@@ -90,7 +90,23 @@ views:
             style:
               left: 35%
               top: 31%
-
+          ########## Schalter ##############
+          # Schreibtisch
+          - type: state-icon
+            entity: switch.001015699eacfa
+            tap_action:
+              action: toggle
+            style:
+              left: 55%
+              top: 90%
+          # Sofa
+          - type: state-icon
+              entity: switch.001015699eacfa
+              tap_action:
+                action: toggle
+              style:
+                left: 8%
+                top: 65%
           ########## Temperatur/Luftfeuchte ##############
           # Wohnzimmer 1
           - type: state-label
@@ -303,14 +319,12 @@ views:
         graph: line
         unit: °C
         detail: 6
-      - type: horizontal-stack
-        cards:
-          - type: custom:thermostat-card
-            title: Schlafzimmer
-            entity: climate.000c98a99501f3
-          - type: custom:thermostat-card
-            title: Wohnzimmer
-            entity: climate.000c98a99501c4
+      - type: sensor
+        entity: sensor.0017d709ae2f48_wind_speed
+        name: Windgeschwindigkeit
+        graph: line
+        unit: km/h
+        detail: 6
       - id: 7c3ad8c3259f401bb3552dcb4adf5cf6  # Automatically created id
         type: entities
         titel: Storen
@@ -326,18 +340,20 @@ views:
           - switch.hmespmsw1pldnr5_meq1478516
           - switch.001015699eacfa
           - switch.000898a9951a7c
+      - type: horizontal-stack
+        cards:
+          - type: custom:thermostat-card
+            title: Schlafzimmer
+            entity: climate.000c98a99501f3
+          - type: custom:thermostat-card
+            title: Wohnzimmer
+            entity: climate.000c98a99501c4
       - type: history-graph
         title: Heizung
-        hours_to_show: 1
+        hours_to_show: 6
         entities:
           - binary_sensor.000c98a99501c4_state
           - binary_sensor.000c98a99501f3_state
-      - type: sensor
-        entity: sensor.0017d709ae2f48_wind_speed
-        name: Windgeschwindigkeit
-        graph: line
-        unit: km/h
-        detail: 6
   - icon: mdi:cctv
     id: security
     title: Sicherheit
@@ -374,8 +390,11 @@ views:
     id: vacuum
     title: Staubsauger
     cards:
-      - type: picture
+      - type: picture-glance
+        title: Gollum
         image: /local/map/map.png
+        entities:
+          - vacuum.gollum
   - icon: mdi:flash
     id: verbrauch
     title: Verbrauch
