@@ -14,6 +14,8 @@ lovelace:
 
 config:
 
+system_health:
+
 http:
   base_url: !secret http_uri 
   server_host: 0.0.0.0
@@ -35,22 +37,22 @@ map:
 sun:
 
 ##################INTEGRATIONS###################
-homematic:
-  interfaces:
-    ip:
-      host: 10.5.0.3
-      port: 2010
-      username: !secret homematic_ip_user
-      password: !secret homematic_ip_password
-    rf:
-      host: 10.5.0.3
-      username: !secret homematic_rf_user
-      password: !secret homematic_rf_password
-  hosts:
-    ccu2:
-      host: 10.5.0.3
-      username: !secret homematic_ccu2_user
-      password: !secret homematic_ccu2_password
+#homematic:
+#  interfaces:
+#    ip:
+#      host: 10.5.0.3
+#      port: 2010
+#      username: !secret homematic_ip_user
+#      password: !secret homematic_ip_password
+#    rf:
+#      host: 10.5.0.3
+#      username: !secret homematic_rf_user
+#      password: !secret homematic_rf_password
+#  hosts:
+#    ccu2:
+#      host: 10.5.0.3
+#      username: !secret homematic_ccu2_user
+#      password: !secret homematic_ccu2_password
 
 hue:
   bridges:
