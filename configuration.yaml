@@ -91,6 +91,7 @@ vacuum:
     username: !secret roomba_user
     password: !secret roomba_password
     map: /home/homeassistant/.homeassistant/www/map/map.png
+    floorplan: /home/homeassistant/.homeassistant/www/map/floorplan.png
 
 notify: !include_dir_list notifications
 
