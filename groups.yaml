@@ -1,36 +1,36 @@
 # Multiple value devices
 temperatur_terrasse:
-  name: Terrasse
+  name: Temperatur Terrasse
   entities: 
     - sensor.000ed8a9909c6d_actual_temperature
     - sensor.000ed8a9909c6d_humidity
 
 temperatur_fluegel:
-  name: Flügel
+  name: Temperatur Flügel
   entities:
     - sensor.000ed8a9909c6f_actual_temperature
     - sensor.000ed8a9909c6f_humidity
 
 temperatur_schreibtisch:
-  name: Schreibtisch
+  name: Temperatur Schreibtisch
   entities:
     - sensor.000ed8a9909c8e_actual_temperature
     - sensor.000ed8a9909c8e_humidity
 
 temperatur_reduit:
-  name: Reduit
+  name: Temperatur Reduit
   entities:
     - sensor.000ed8a9909e0e_actual_temperature
     - sensor.000ed8a9909e0e_humidity
 
 temperatur_bad:
-  name: Bad
+  name: Temperatur Bad
   entities:
     - sensor.000ed8a9909c09_actual_temperature
     - sensor.000ed8a9909c09_humidity
 
 temperatur_garten:
-  name: Garten
+  name: Temperatur Garten
   entities:
     - sensor.0017d709ae2f48_actual_temperature
     - sensor.0017d709ae2f48_humidity
@@ -39,13 +39,13 @@ temperatur_garten:
     - sensor.0017d709ae2f48_sunshineduration
 
 temperatur_schlafzimmer:
-  name: Schlafzimmer
+  name: Temperatur Schlafzimmer
   entities:
     - sensor.000c98a99501f3_actual_temperature
     - sensor.000c98a99501f3_humidity
 
 temperatur_flur:
-  name: Flur
+  name: Temperatur Flur
   entities:
     - sensor.000c98a99501c4_actual_temperature
     - sensor.000c98a99501c4_humidity

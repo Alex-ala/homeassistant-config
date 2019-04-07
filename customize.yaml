@@ -93,6 +93,17 @@ sensor.0017d709ae2f48_illumination:
 binary_sensor.000915699a427d_motion:
   friendly_name: Bewegunsmelder Wohnzimmer
   icon: mdi:run
+binary_sensor.000915699a427d_motion_detection_active:
+  friendly_name: Bewegungsmelder Wohnzimmer aktiv
+  icon: mdi:run
+sensor.000915699a427d_illumination:
+  friendly_name: Helligkeit Wohnzimmer
+  icon: mdi:run
+
+##########    Rauchmelder    ##########
+sensor.000a58a9ac3c02_smoke_detector_alarm_status:
+  friendly_name: Rauchmelder Wohnzimmer
+  icon: mdi:fire
 
 ##########    Strom-Messgeräte   ##########
 # Brunnen Wohnzimmer
