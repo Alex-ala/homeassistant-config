@@ -1,0 +1,62 @@
+- alias: 'Storen Wohnzimmer bei Sonne halb schliessen'
+  id: storen_bei_sonne_zu
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.0017d709ae2f48_illumination
+    above: 75000
+    for:
+      minutes: 5
+  action:
+    - condition: and
+      conditions:
+        - condition: state
+          entity_id: 'device_tracker.iphonexr'
+          state: 'not_home'
+        - condition: or
+          conditions:
+          - condition: template
+            value_template: '{{ states.cover.storen_terrasse_link.attributes.current_position > 75 }}'
+          - condition: template
+            value_template: '{{ states.cover.storen_terrasse_rechts.attributes.current_position > 75 }}'
+    - service: cover.set_cover_position
+      data:
+        entity_id: cover.storen_terrasse_links
+        position: 60
+    - service: cover.set_cover_position
+      data:
+        entity_id: cover.storen_terrasse_rechts
+        position: 60
+    - service: cover.set_cover_tilt_position
+      data:
+        entity_id: cover.storen_terrasse_links
+        position: 40
+    - service: cover.set_cover_tilt_position
+      data:
+        entity_id: cover.storen_terrasse_rechts
+        position: 40
+
+
+- alias: 'Storen Wohnzimmer nach Sonne wieder öffnen'
+  id: storen_bei_sonne_auf
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.0017d709ae2f48_illumination
+    below: 75000
+    for:
+      minutes: 30
+  action:
+    - condition: and
+      conditions:
+        - condition: state
+          entity_id: 'device_tracker.iphonexr'
+          state: 'not_home'
+        - condition: or
+          conditions:
+            - condition: template
+              value_template: '{{ states.cover.storen_terrasse_link.attributes.current_position < 65 }}'
+            - condition: template
+              value_template: '{{ states.cover.storen_terrasse_rechts.attributes.current_position < 65 }}'
+    - service: cover.open_cover
+      entity_id: cover.storen_terrasse_links
+    - service: cover.open_cover
+      entity_id: cover.storen_terrasse_rechts

@@ -14,6 +14,8 @@ lovelace:
 
 config:
 
+system_health:
+
 http:
   base_url: !secret http_uri 
   server_host: 0.0.0.0
@@ -84,12 +86,11 @@ device_tracker:
 
 vacuum:
   - platform: roomba
-    host: 10.4.0.16
+    host: 10.4.0.17
     name: Gollum
     username: !secret roomba_user
     password: !secret roomba_password
-    path: "/home/homeassistant/.homeassistant/www/map"
-    size: '(10000,700,300,-270,0,0)'
+    map: /home/homeassistant/.homeassistant/www/map/map.png
 
 notify: !include_dir_list notifications
 
