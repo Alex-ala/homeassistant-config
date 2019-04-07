@@ -101,7 +101,7 @@ views:
               top: 90%
           # Sofa
           - type: state-icon
-            entity: switch.001015699eacfa
+            entity: switch.000898a9951a7c
             tap_action:
               action: toggle
             style:
