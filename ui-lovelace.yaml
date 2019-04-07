@@ -101,12 +101,12 @@ views:
               top: 90%
           # Sofa
           - type: state-icon
-              entity: switch.001015699eacfa
-              tap_action:
-                action: toggle
-              style:
-                left: 8%
-                top: 65%
+            entity: switch.001015699eacfa
+            tap_action:
+              action: toggle
+            style:
+              left: 8%
+              top: 65%
           ########## Temperatur/Luftfeuchte ##############
           # Wohnzimmer 1
           - type: state-label
