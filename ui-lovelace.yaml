@@ -366,6 +366,7 @@ views:
           - switch.hmespmsw1pldnr5_meq1478516
           - switch.001015699eacfa
           - binary_sensor.000915699a427d_motion
+          - binary_sensor.0000d8a9aaa854_state
       - type: entities
         title: Notifications
         show_header_toggle: false

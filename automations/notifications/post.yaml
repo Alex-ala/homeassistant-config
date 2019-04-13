@@ -1,0 +1,11 @@
+- alias: 'Meldung Post'
+  id: meldung_post
+  trigger:
+    platform: state
+    entity_id: binary_sensor.0000d8a9aaa854_state
+  action:
+    - service: script.notify_rp
+      data:
+        title: 'Post ist da!'
+        message: >
+            Briefkasten wurde geöffnet. Was wartet da bloss? :3

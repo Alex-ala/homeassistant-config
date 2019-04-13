@@ -18,6 +18,9 @@ binary_sensor.0000d8a991d331_state:
 binary_sensor.0000d8a991d35c_state:
   friendly_name: Haustür
   icon: mdi:door
+binary_sensor.0000d8a9aaa854_state:
+  friendly_name: Briefkasten
+  icon: mdi:mail
 
 ##########   Temperatur/Luftfeutchtigkeit   #########
 # Terrasse
