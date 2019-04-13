@@ -20,7 +20,7 @@ binary_sensor.0000d8a991d35c_state:
   icon: mdi:door
 binary_sensor.0000d8a9aaa854_state:
   friendly_name: Briefkasten
-  icon: mdi:mail
+  icon: mdi:mailbox
 
 ##########   Temperatur/Luftfeutchtigkeit   #########
 # Terrasse
