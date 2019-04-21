@@ -1,0 +1,34 @@
+- alias: 'Storen bei Wind öffnen'
+  id: storen_bei_wind_oeffnen
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.0017d709ae2f48_wind_speed
+    above: 40.0
+  action:
+    - condition: and
+      conditions:
+        - condition: or
+          conditions:
+            - condition: template
+              value_template: '{{ states.cover.storen_terrasse_links.attributes.current_position < 90 }}'
+            - condition: template
+              value_template: '{{ states.cover.storen_terrasse_rechts.attributes.current_position < 90 }}'
+            - condition: template
+              value_template: '{{ states.cover.storen_wohnzimmer_links.attributes.current_position < 90 }}'
+            - condition: template
+              value_template: '{{ states.cover.storen_wohnzimmer_rechts.attributes.current_position < 90 }}'
+            - condition: template
+              value_template: '{{ states.cover.storen_kueche_links.attributes.current_position < 90 }}'
+            - condition: template
+              value_template: '{{ states.cover.storen_kueche_rechts.attributes.current_position < 90 }}'
+            - condition: template
+              value_template: '{{ states.cover.storen_schlafzimmer_links.attributes.current_position < 90 }}'
+            - condition: template
+              value_template: '{{ states.cover.storen_schlafzimmer_rechts.attributes.current_position < 90 }}'
+        # Todo: Condition not WORKING
+    - service: cover.open_cover_tilt
+      entity_id: cover.schlafzimmer, cover.wohnzimmer
+    - delay:
+        seconds: 10
+    - service: cover.open_cover
+      entity_id: cover.schlafzimmer, cover.wohnzimmer

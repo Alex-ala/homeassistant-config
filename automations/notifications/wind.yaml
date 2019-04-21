@@ -1,0 +1,16 @@
+- alias: 'Meldung Wind'
+  id: meldung_wind
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.0017d709ae2f48_wind_speed
+    above: 40.0
+  condition:
+    condition: state
+    entity_id: device_tracker.iphonexr
+    state: 'not_home'
+  action:
+    - service: script.notify_rp
+      data:
+        title: 'STURM INC'
+        message: >
+          Ich hoffe, du hast alles festgemacht!!

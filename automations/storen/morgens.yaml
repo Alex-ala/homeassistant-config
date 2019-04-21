@@ -19,5 +19,9 @@
     - delay:
         minutes: "{{ range(0,10) | random | int }}"
         seconds: "{{ range(0,59) | random | int }}"
+    - service: cover.open_cover_tilt
+      entity_id: cover.schlafzimmer, cover.wohnzimmer
+    - delay:
+        seconds: 10
     - service: cover.open_cover
       entity_id: cover.schlafzimmer, cover.wohnzimmer

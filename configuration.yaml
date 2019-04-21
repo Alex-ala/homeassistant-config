@@ -121,12 +121,7 @@ camera:
     name: Sauron
 
 ########## Global Sensors ########
-sensor:
-  - platform: time_date
-    display_options:
-      - 'time'
-      - 'date'
-  - platform: random
+sensor: !include_dir_merge_named sensors
 
 ########## Covers ########
 cover:
