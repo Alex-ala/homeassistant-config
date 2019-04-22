@@ -28,7 +28,7 @@
         entity_id: cover.storen_wohnzimmer_rechts
         position: 60
     - delay:
-      seconds: 40
+        seconds: 40
     - service: cover.set_cover_tilt_position
       data:
         entity_id: cover.storen_terrasse_rechts
@@ -71,7 +71,7 @@
     - service: cover.open_cover_tilt
       entity_id: cover.storen_wohnzimmer_rechts
     - delay:
-      seconds: 10
+        seconds: 10
     - service: cover.open_cover
       entity_id: cover.storen_terrasse_links
     - service: cover.open_cover
