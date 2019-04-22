@@ -25,7 +25,6 @@
               value_template: '{{ states.cover.storen_schlafzimmer_links.attributes.current_position < 90 }}'
             - condition: template
               value_template: '{{ states.cover.storen_schlafzimmer_rechts.attributes.current_position < 90 }}'
-        # Todo: Condition not WORKING
     - service: cover.open_cover_tilt
       entity_id: cover.schlafzimmer, cover.wohnzimmer
     - delay:
