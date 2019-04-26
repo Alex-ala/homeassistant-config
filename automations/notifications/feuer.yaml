@@ -1,0 +1,11 @@
+- alias: 'Meldung Feuer'
+  id: meldung_feuer
+  trigger:
+    platform: state
+    entity_id: sensor.000a58a9ac3c02_smoke_detector_alarm_status
+  action:
+    - service: script.notify_rp
+      data:
+        title: 'ES BRENNT'
+        message: >
+          ES BRENNT! Schau auf der cam nach!
