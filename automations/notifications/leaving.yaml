@@ -13,10 +13,10 @@
         conditions:
           - condition: state
             entity_id: group.fenster
-            state: on
+            state: 'on'
           - condition: state
             entity_id: binary_sensor.0000d8a991d263_state
-            state: on
+            state: 'on'
   action:
     - service: script.notify_rp
       data:
