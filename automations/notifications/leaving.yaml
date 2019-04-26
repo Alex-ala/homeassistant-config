@@ -1,0 +1,34 @@
+- alias: 'Meldung Fenster/Tür offen gelassen'
+  id: meldung_offen_gelassen
+  trigger:
+    platform: state
+    entity_id: binary_sensor.0000d8a991d35c_state
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: device_tracker.iphonexr
+        state: 'home'
+      - condition: or
+        conditions:
+          - condition: state
+            entity_id: group.fenster
+            state: on
+          - condition: state
+            entity_id: binary_sensor.0000d8a991d263_state
+            state: on
+  action:
+    - service: script.notify_rp
+      data:
+        title: 'Es ist noch was offen!'
+        message: >
+          Türen Zustand geändert:
+
+          {% for entity_id in states.group.tueren.attributes.entity_id %}
+          {% set domain, device = entity_id.split('.') %}
+          {{ states[domain][device].attributes.friendly_name }} : {{ states[domain][device].state }}
+          {% endfor %}
+          {% for entity_id in states.group.fenster.attributes.entity_id %}
+          {% set domain, device = entity_id.split('.') %}
+          {{ states[domain][device].attributes.friendly_name }} : {{ states[domain][device].state }}
+          {% endfor %}

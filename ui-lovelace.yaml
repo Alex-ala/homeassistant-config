@@ -342,11 +342,11 @@ views:
           - switch.000898a9951a7c
       - type: horizontal-stack
         cards:
-          - type: custom:thermostat-card
-            title: Schlafzimmer
+          - type: thermostat
+            name: Schlafzimmer
             entity: climate.000c98a99501f3
-          - type: custom:thermostat-card
-            title: Wohnzimmer
+          - type: thermostat
+            name: Wohnzimmer
             entity: climate.000c98a99501c4
       - type: history-graph
         title: Heizung
