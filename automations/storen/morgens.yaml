@@ -26,4 +26,4 @@
     - service: cover.open_cover
       entity_id: cover.schlafzimmer, cover.wohnzimmer
     - service: automation.turn_on
-      entity_id: automation.storen_abends
+      entity_id: automation.storen_abends_schliessen
