@@ -25,11 +25,11 @@
     - delay:
         minutes: "{{ range(0,9) | random | int }}"
         seconds: "{{ range(0,59) | random | int }}"
-    - service: cover.close_cover
+    - service: cover.close_cover_tilt
       entity_id: cover.schlafzimmer, cover.wohnzimmer
     - delay:
         seconds: 50
-    - service: cover.close_cover_tilt
+    - service: cover.close_cover
       entity_id: cover.schlafzimmer, cover.wohnzimmer
     - service: automation.turn_off
       entity_id: automation.storen_abends
