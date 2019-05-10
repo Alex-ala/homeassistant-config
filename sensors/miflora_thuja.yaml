@@ -1,0 +1,5 @@
+platform: miflora
+name: Thuja
+mac: C4:7C:8D:6A:AB:4B
+force_update: true
+scan_interval: 1800
