@@ -27,6 +27,10 @@ http:
 
 logger:
   default: info
+  logs:
+    miflora: debug
+    btlewrap: debug
+    bluepy: debug
 
 history:
 
@@ -121,7 +125,7 @@ camera:
     name: Sauron
 
 ########## Global Sensors ########
-sensor: !include_dir_merge_list sensors
+sensor: !include_dir_list sensors
 
 ########## Covers ########
 cover:
