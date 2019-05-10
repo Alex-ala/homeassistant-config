@@ -393,7 +393,7 @@ views:
     cards:
       - type: picture-glance
         title: Gollum
-        image: /local/map/map.png
+        camera_image: camera.roomba
         entities:
           - vacuum.gollum
   - icon: mdi:flash
