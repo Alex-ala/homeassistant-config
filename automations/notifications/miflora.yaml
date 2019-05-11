@@ -1,0 +1,31 @@
+- alias: 'Thuja zu wenig Wasser'
+  id: thuja_water_low
+  initial_state: true
+  hide_entity: true
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.thuja_moisture
+    below: 15
+    for:
+      hours: 1
+  action:
+    - service: script.notify_rp
+      data:
+        title: 'Giess mich!'
+        message: 'Die Thujas brauchen Wasser!'
+
+- alias: 'Thuja düngen'
+  id: thuja_fertility_low
+  initial_state: true
+  hide_entity: true
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.thuja_conductivity
+    below: 350
+    for:
+      hours: 1
+  action:
+    - service: script.notify_rp
+      data:
+        title: 'Düng mich!'
+        message: 'Die Thujas brauchen Dünger!'

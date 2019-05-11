@@ -1,0 +1,12 @@
+thuja:
+  sensors:
+    moisture: sensor.thuja_moisture
+    battery: sensor.thuja_battery
+    temperature: sensor.thuja_temperature
+    conductivity: sensor.thuja_conductivity
+    brightness: sensor.thuja_brightness
+  min_moisture: 15
+  max_moisture: 60
+  min_battery: 17
+  min_conductivity: 350
+  min_temperature: 5

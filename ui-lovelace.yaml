@@ -425,3 +425,9 @@ views:
         type: "custom:group-card"
         title: Wohnzimmer
         group: group.strom_wohnzimmer
+  - icon: mdi:flower
+    id: garten
+    title: Garten
+    cards:
+      - type: plant-status
+        entity: plant.thuja
