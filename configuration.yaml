@@ -106,7 +106,7 @@ notify: !include_dir_list notifications
 group: !include groups.yaml
 automation: !include_dir_merge_list automations
 script: !include_dir_merge_named scripts
-plant: !include_dir_list plants
+plant: !include_dir_merge_named plants
 #Shitty lamp with 5 bulbs....
 light:
   - platform: group

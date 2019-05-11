@@ -4,7 +4,7 @@ thuja:
     battery: sensor.thuja_battery
     temperature: sensor.thuja_temperature
     conductivity: sensor.thuja_conductivity
-    brightness: sensor.thuja_brightness
+    brightness: sensor.thuja_light_intensity
   min_moisture: 15
   max_moisture: 60
   min_battery: 17
