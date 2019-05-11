@@ -369,7 +369,9 @@ views:
           - binary_sensor.0000d8a9aaa854_state
       - type: picture-glance
         title: Flügel
-        camera_image: camera.amonsul
+        camera_image: camera.amon_sul
+        entities:
+          - binary_sensor.000915699a427d_motion
       - type: entities
         title: Notifications
         show_header_toggle: false
