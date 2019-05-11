@@ -10,3 +10,16 @@
     state: 'not_home'
   action:
     service: shell_command.sauron_image
+
+#trigger every 10 min or every 30s when movement
+- alias: 'Amon Sul is watching'
+  id: camera_amonsul_timed
+  trigger:
+    platform: time_pattern
+    minutes: '/10'
+  condition:
+    condition: state
+    entity_id: device_tracker.iphonexr
+    state: 'not_home'
+  action:
+    service: shell_command.amonsul_image

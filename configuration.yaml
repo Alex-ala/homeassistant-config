@@ -124,6 +124,9 @@ camera:
     still_image_url: !secret sauron_url
     name: Sauron
   - platform: generic
+    still_image_url: !secret amonsul_url
+    name: Amon Sul
+  - platform: generic
     still_image_url: http://localhost:8123/local/map/map.png
     name: Roomba
 

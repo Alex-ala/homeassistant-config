@@ -29,3 +29,34 @@
         state: 'not_home'
   action:
     service: shell_command.sauron_image
+
+- alias: 'amonsul bei Bewegung'
+  id: amonsul_on_movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.000915699a427d_motion
+    to: 'on'
+  condition:
+    condition: state
+    entity_id: device_tracker.iphonexr
+    state: 'not_home'
+  action:
+    service: shell_command.amonsul_image
+
+
+- alias: 'amonsul nach Bewegung'
+  id: camera_amonsul_timed
+  trigger:
+    platform: time_pattern
+    minutes: '/1'
+  condition:
+    condition: and
+    conditions:
+      - condition: 'state'
+        entity_id: binary_sensor.000915699a427d_motion
+        state: 'on'
+      - condition: state
+        entity_id: device_tracker.iphonexr
+        state: 'not_home'
+  action:
+    service: shell_command.amonsul_image
