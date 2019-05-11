@@ -153,6 +153,7 @@ cover:
 ##########   Shell-Commands  ########
 shell_command:
   sauron_image: /home/homeassistant/.homeassistant/shell-scripts/sauron-image.sh
+  amonsul_image: /home/homeassistant/.homeassistant/shell-scripts/amonsul-image.sh
 
 ##########   Meta-Schalter     ###########
 input_boolean:
