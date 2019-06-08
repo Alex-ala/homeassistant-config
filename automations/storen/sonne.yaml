@@ -15,6 +15,12 @@
         value_template: '{{ states.cover.storen_terrasse_rechts.attributes.current_position > 75 }}'
       - condition: template
         value_template: '{{ states.cover.storen_wohnzimmer_rechts.attributes.current_position > 75 }}'
+      - condition: template
+        value_template: '{{ states.cover.storen_wohnzimmer_links.attributes.current_position > 75 }}'
+      - condition: template
+        value_template: '{{ states.cover.storen_kueche_rechts.attributes.current_position > 75 }}'
+      - condition: template
+        value_template: '{{ states.cover.storen_kueche_links.attributes.current_position > 75 }}'
     - service: cover.set_cover_position
       data:
         entity_id: cover.storen_terrasse_links
@@ -26,7 +32,19 @@
     - service: cover.set_cover_position
       data:
         entity_id: cover.storen_wohnzimmer_rechts
-        position: 60
+        position: 40
+    - service: cover.set_cover_position
+      data:
+        entity_id: cover.storen_wohnzimmer_links
+        position: 40
+    - service: cover.set_cover_position
+      data:
+        entity_id: cover.storen_kueche_rechts
+        position: 40
+    - service: cover.set_cover_position
+      data:
+        entity_id: cover.storen_kueche_links
+        position: 40
     - delay:
         seconds: 40
     - service: cover.set_cover_tilt_position
@@ -40,6 +58,18 @@
     - service: cover.set_cover_tilt_position
       data:
         entity_id: cover.storen_wohnzimmer_rechts
+        position: 75
+    - service: cover.set_cover_tilt_position
+      data:
+        entity_id: cover.storen_wohnzimmer_links
+        position: 75
+    - service: cover.set_cover_tilt_position
+      data:
+        entity_id: cover.storen_kueche_rechts
+        position: 75
+    - service: cover.set_cover_tilt_position
+      data:
+        entity_id: cover.storen_kueche_links
         position: 75
 
 
@@ -64,12 +94,24 @@
               value_template: '{{ states.cover.storen_terrasse_rechts.attributes.current_position < 65 }}'
             - condition: template
               value_template: '{{ states.cover.storen_wohnzimmer_rechts.attributes.current_position < 65 }}'
+            - condition: template
+              value_template: '{{ states.cover.storen_wohnzimmer_links.attributes.current_position < 65 }}'
+            - condition: template
+              value_template: '{{ states.cover.storen_kueche_rechts.attributes.current_position < 65 }}'
+            - condition: template
+              value_template: '{{ states.cover.storen_kueche_links.attributes.current_position < 65 }}'
     - service: cover.open_cover_tilt
       entity_id: cover.storen_terrasse_links
     - service: cover.open_cover_tilt
       entity_id: cover.storen_terrasse_rechts
     - service: cover.open_cover_tilt
       entity_id: cover.storen_wohnzimmer_rechts
+    - service: cover.open_cover_tilt
+      entity_id: cover.storen_wohnzimmer_links
+    - service: cover.open_cover_tilt
+      entity_id: cover.storen_kueche_rechts
+    - service: cover.open_cover_tilt
+      entity_id: cover.storen_kueche_links
     - delay:
         seconds: 10
     - service: cover.open_cover
@@ -78,3 +120,9 @@
       entity_id: cover.storen_terrasse_rechts
     - service: cover.open_cover
       entity_id: cover.storen_wohnzimmer_rechts
+    - service: cover.open_cover
+      entity_id: cover.storen_wohnzimmer_links
+    - service: cover.open_cover
+      entity_id: cover.storen_kueche_rechts
+    - service: cover.open_cover
+      entity_id: cover.storen_kueche_links
