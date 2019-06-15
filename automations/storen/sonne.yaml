@@ -80,7 +80,7 @@
     entity_id: sensor.0017d709ae2f48_illumination
     below: 75000
     for:
-      minutes: 30
+      minutes: 60
   action:
     - condition: and
       conditions:

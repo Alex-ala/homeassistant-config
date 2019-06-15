@@ -26,7 +26,7 @@ http:
   # include_used_components: true
 
 logger:
-  default: info
+  default: warn
   logs:
     miflora: debug
     btlewrap: debug
