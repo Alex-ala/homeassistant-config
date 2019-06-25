@@ -8,7 +8,7 @@
         minutes: "{{ range(0,10) | random | int }}"
         seconds: "{{ range(0,59) | random | int }}"
     - service: cover.open_cover_tilt
-      entity_id: cover.schlafzimmer
+      entity_id: cover.schlafzimmer, cover.wohnzimmer
 
 - alias: 'Storen morgens ganz öffnen'
   id: storen_ganz_oeffnen
