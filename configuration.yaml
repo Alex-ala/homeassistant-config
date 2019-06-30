@@ -80,6 +80,42 @@ influxdb:
 
 homekit:
   auto_start: False
+  filter:
+    include_domains:
+      - vacuum
+      - plant
+    include_entities:
+      - binary_sensor.0000d8a991d263_state
+      - binary_sensor.0000d8a991d301_state
+      - binary_sensor.0000d8a991d331_state
+      - binary_sensor.0000d8a991d35c_state
+      - binary_sensor.0000d8a9aaa854_state
+      - binary_sensor.000915699a427d_motion
+      - camera.amon_sul
+      - camera.sauron
+      - camera.roomba
+      - climate.000c98a99501c4
+      - climate.000c98a99501f3
+      - cover.schlafzimmer
+      - cover.wohnzimmer
+      - light.hue_lightstrip_plus_1
+      - light.schlafzimmer
+      - light.wohnzimmer_licht
+      - plant.thuja
+      - sensor.000915699a427d_illumination
+      - sensor.000a58a9ac3c02_smoke_detector_alarm_status
+      - sensor.000ed8a9909c6d_actual_temperature
+      - sensor.000ed8a9909c6d_humidity
+      - sensor.000ed8a9909c6f_actual_temperature
+      - sensor.000ed8a9909c6f_humidity
+      - sensor.0017d709ae2f48_illumination
+      - sensor.0017d709ae2f48_wind_speed
+      - switch.000898a9932fdf
+      - switch.000898a9951a7c
+      - switch.000898a9951e58
+      - switch.001015699eacfa
+      - switch.hmespmsw1pldnr5_meq1478516
+      - vacuum.gollum
 
 device_tracker:
   - platform: unifi_direct
