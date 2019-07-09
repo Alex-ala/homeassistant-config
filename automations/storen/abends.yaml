@@ -25,8 +25,9 @@
     - delay:
         minutes: "{{ range(0,9) | random | int }}"
         seconds: "{{ range(0,59) | random | int }}"
-    - service: cover.close_cover_tilt
+    - service: cover.set_cover_tilt_position
       entity_id: cover.schlafzimmer, cover.wohnzimmer
+      tilt_position: 5
     - delay:
         seconds: 50
     - service: cover.close_cover
