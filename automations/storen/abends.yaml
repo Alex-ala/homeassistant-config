@@ -27,10 +27,14 @@
         seconds: "{{ range(0,59) | random | int }}"
     - service: cover.set_cover_tilt_position
       data:
-        entity_id: cover.schlafzimmer, cover.wohnzimmer
-        position: 5
+        entity_id: cover.schlafzimmer
+        tilt_position: 9
+    - service: cover.set_cover_tilt_position
+      data:
+        entity_id: cover.wohnzimmer
+        tilt_position: 9
     - delay:
-        seconds: 50
+        seconds: 5
     - service: cover.close_cover
       entity_id: cover.schlafzimmer, cover.wohnzimmer
     - service: automation.turn_off
