@@ -3,24 +3,32 @@
   trigger:
     platform: numeric_state
     entity_id: sensor.0017d709ae2f48_illumination
-    above: 80000
+    above: 10000
     for:
       minutes: 5
   action:
-    - condition: or
+    - condition: and
       conditions:
-      - condition: template
-        value_template: '{{ states.cover.storen_terrasse_links.attributes.current_position > 75 }}'
-      - condition: template
-        value_template: '{{ states.cover.storen_terrasse_rechts.attributes.current_position > 75 }}'
-      - condition: template
-        value_template: '{{ states.cover.storen_wohnzimmer_rechts.attributes.current_position > 75 }}'
-      - condition: template
-        value_template: '{{ states.cover.storen_wohnzimmer_links.attributes.current_position > 75 }}'
-      - condition: template
-        value_template: '{{ states.cover.storen_kueche_rechts.attributes.current_position > 75 }}'
-      - condition: template
-        value_template: '{{ states.cover.storen_kueche_links.attributes.current_position > 75 }}'
+        - condition: or
+          conditions:
+            - condition: template
+              value_template: '{{ states.sensor.000ed8a9909c6d_actual_temperature > 25 }}'
+            - condition: template
+              value_template: '{{ states.sensor.0017d709ae2f48_illumination > 80000 }}'
+        - condition: or
+          conditions:
+            - condition: template
+              value_template: '{{ states.cover.storen_terrasse_links.attributes.current_position > 75 }}'
+            - condition: template
+              value_template: '{{ states.cover.storen_terrasse_rechts.attributes.current_position > 75 }}'
+            - condition: template
+              value_template: '{{ states.cover.storen_wohnzimmer_rechts.attributes.current_position > 75 }}'
+            - condition: template
+              value_template: '{{ states.cover.storen_wohnzimmer_links.attributes.current_position > 75 }}'
+            - condition: template
+              value_template: '{{ states.cover.storen_kueche_rechts.attributes.current_position > 75 }}'
+            - condition: template
+              value_template: '{{ states.cover.storen_kueche_links.attributes.current_position > 75 }}'
     - service: cover.set_cover_position
       data:
         entity_id: cover.storen_terrasse_links
