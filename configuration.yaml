@@ -167,7 +167,7 @@ camera:
     name: Roomba
 
 ########## Global Sensors ########
-sensor: !include_dir_list sensors
+sensor: !include_dir_merge_list sensors
 
 ########## Covers ########
 cover:

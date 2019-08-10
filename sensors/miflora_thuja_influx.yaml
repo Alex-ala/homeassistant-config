@@ -2,38 +2,23 @@
   host: menegroth.ahome
   port: 3000
   queries:
-    name: Thuja Feuchtigkeit
-    unit_of_measurement: '%'
-    measurement: "C4:7C:8D:6A:C8:6F"
-    database: plants
-    field: moisture
-
-- platform: influxdb
-  host: menegroth.ahome
-  port: 3000
-  queries:
-    name: Thuja Helligkeit
-    unit_of_measurement: 'lx'
-    measurement: "C4:7C:8D:6A:C8:6F"
-    database: plants
-    field: light
-
-- platform: influxdb
-  host: menegroth.ahome
-  port: 3000
-  queries:
-    name: Thuja Leitfähigkeit
-    unit_of_measurement: 'µS/cm'
-    measurement: "C4:7C:8D:6A:C8:6F"
-    database: plants
-    field: conductivity
-
-- platform: influxdb
-  host: menegroth.ahome
-  port: 3000
-  queries:
-    name: Thuja Temperatur
-    unit_of_measurement: '°C'
-    measurement: "C4:7C:8D:6A:C8:6F"
-    database: plants
-    field: temperature
+    - name: Thuja Feuchtigkeit
+      unit_of_measurement: '%'
+      measurement: "C4:7C:8D:6A:C8:6F"
+      database: plants
+      field: moisture
+    - name: Thuja Helligkeit
+      unit_of_measurement: 'lx'
+      measurement: "C4:7C:8D:6A:C8:6F"
+      database: plants
+      field: light
+    - name: Thuja Leitfähigkeit
+      unit_of_measurement: 'µS/cm'
+      measurement: "C4:7C:8D:6A:C8:6F"
+      database: plants
+      field: conductivity
+    - name: Thuja Temperatur
+      unit_of_measurement: '°C'
+      measurement: "C4:7C:8D:6A:C8:6F"
+      database: plants
+      field: temperature
