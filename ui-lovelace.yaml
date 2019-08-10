@@ -329,7 +329,7 @@ views:
         entity: sensor.0017d709ae2f48_humidity
         name: Luftfeuchtigkeit Garten
         graph: line
-        unit: %
+        unit: '%'
         detail: 6
       - type: sensor
         entity: sensor.0017d709ae2f48_wind_speed
