@@ -30,3 +30,31 @@
       group_function: last
       database: plants
       field: temperature
+    - name: Thuja2 Feuchtigkeit
+      unit_of_measurement: '%'
+      measurement: '"c4:7c:8d:6a:ab:4b"'
+      where: 'time > now() - 6h'
+      group_function: last
+      database: plants
+      field: moisture
+    - name: Thuja2 Helligkeit
+      unit_of_measurement: 'lx'
+      measurement: '"c4:7c:8d:6a:ab:4b"'
+      where: 'time > now() - 6h'
+      group_function: last
+      database: plants
+      field: light
+    - name: Thuja2 Leitfähigkeit
+      unit_of_measurement: 'µS/cm'
+      measurement: '"c4:7c:8d:6a:ab:4b"'
+      where: 'time > now() - 6h'
+      group_function: last
+      database: plants
+      field: conductivity
+    - name: Thuja2 Temperatur
+      unit_of_measurement: '°C'
+      measurement: '"c4:7c:8d:6a:ab:4b"'
+      where: 'time > now() - 6h'
+      group_function: last
+      database: plants
+      field: temperature
