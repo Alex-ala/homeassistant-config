@@ -5,20 +5,24 @@
     - name: Thuja Feuchtigkeit
       unit_of_measurement: '%'
       measurement: "C4:7C:8D:6A:C8:6F"
+      where: ''
       database: plants
       field: moisture
     - name: Thuja Helligkeit
       unit_of_measurement: 'lx'
       measurement: "C4:7C:8D:6A:C8:6F"
+      where: ''
       database: plants
       field: light
     - name: Thuja Leitfähigkeit
       unit_of_measurement: 'µS/cm'
       measurement: "C4:7C:8D:6A:C8:6F"
+      where: ''
       database: plants
       field: conductivity
     - name: Thuja Temperatur
       unit_of_measurement: '°C'
       measurement: "C4:7C:8D:6A:C8:6F"
+      where: ''
       database: plants
       field: temperature
