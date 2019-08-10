@@ -1,0 +1,7 @@
+- alias: 'Update plant sensors'
+  id: pants_update_sensors
+  trigger: 
+    platform: time_pattern
+    hours: '/3'
+  action:
+    service: shell_command.update_plants
