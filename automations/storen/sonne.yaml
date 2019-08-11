@@ -11,10 +11,12 @@
       conditions:
         - condition: or
           conditions:
-            - condition: template
-              value_template: '{{ states("sensor.000ed8a9909c6d_actual_temperature") > 25 }}'
-            - condition: template
-              value_template: '{{ states("sensor.0017d709ae2f48_illumination") > 80000 }}'
+            - condition: state
+              entity_id: 'sensor.000ed8a9909c6d_actual_temperature'
+              above: 25
+            - condition: state
+              entity_id: 'sensor.0017d709ae2f48_illumination'
+              above: 8000
         - condition: or
           conditions:
             - condition: template
