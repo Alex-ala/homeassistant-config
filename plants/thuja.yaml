@@ -1,9 +1,9 @@
 thuja:
   sensors:
-    moisture: sensor.thuja_feuchtigkeit
-    temperature: sensor.thuja_temperatur
-    conductivity: sensor.thuja_leitfahigkeit
-    brightness: sensor.thuja_helligkeit
+    moisture: sensor.thuja2_feuchtigkeit
+    temperature: sensor.thuja2_temperatur
+    conductivity: sensor.thuja2_leitfahigkeit
+    brightness: sensor.thuja2_helligkeit
   min_moisture: 15
   max_moisture: 60
   min_battery: 17
