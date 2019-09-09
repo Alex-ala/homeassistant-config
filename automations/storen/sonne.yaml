@@ -9,11 +9,11 @@
   action:
     - condition: and
       conditions:
-        - condition: or
+        - condition: and
           conditions:
             - condition: numeric_state
               entity_id: 'sensor.000ed8a9909c6d_actual_temperature'
-              above: 25
+              above: 20
             - condition: numeric_state
               entity_id: 'sensor.0017d709ae2f48_illumination'
               above: 8000
