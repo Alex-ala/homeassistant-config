@@ -3,7 +3,7 @@
   trigger:
     platform: numeric_state
     entity_id: sensor.0017d709ae2f48_illumination
-    above: 8000
+    above: 9000
     for:
       minutes: 5
   action:
