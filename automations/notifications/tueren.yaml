@@ -1,4 +1,4 @@
-- alias: 'Meldung Türen offen'
+- alias: 'Meldung: Türen offen'
   id: meldung_türen_offen
   trigger: 
     platform: state

@@ -1,4 +1,4 @@
-- alias: 'Meldung Post'
+- alias: 'Meldung: Post'
   id: meldung_post
   trigger:
     platform: state

@@ -1,4 +1,4 @@
-- alias: 'Storen morgens halb öffnen'
+- alias: 'Storen: Morgens halb öffnen'
   id: storen_halb_oeffnen
   trigger:
     platform: template
@@ -10,7 +10,7 @@
     - service: cover.open_cover_tilt
       entity_id: cover.schlafzimmer, cover.wohnzimmer
 
-- alias: 'Storen morgens ganz öffnen'
+- alias: 'Storen: Morgens ganz öffnen'
   id: storen_ganz_oeffnen
   trigger:
     platform: template

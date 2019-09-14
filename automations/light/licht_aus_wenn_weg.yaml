@@ -1,4 +1,4 @@
-- alias: 'Licht aus wenn raus'
+- alias: 'Licht: Aus wenn raus'
   id: licht_aus_wenn_raus
   trigger: 
     platform: state

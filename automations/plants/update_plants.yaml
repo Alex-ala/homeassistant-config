@@ -1,4 +1,4 @@
-- alias: 'Update plant sensors'
+- alias: 'Pflanzen: Update Sensoren'
   id: pants_update_sensors
   trigger: 
     platform: time_pattern

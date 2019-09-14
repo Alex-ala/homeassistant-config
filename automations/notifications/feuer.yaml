@@ -1,4 +1,4 @@
-- alias: 'Meldung Feuer'
+- alias: 'Subject fire!!'
   id: meldung_feuer
   trigger:
     platform: state

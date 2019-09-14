@@ -1,4 +1,4 @@
-- alias: 'Meldung Bewegung'
+- alias: 'Meldung: Bewegung'
   id: meldung_bewegung
   trigger:
     platform: state

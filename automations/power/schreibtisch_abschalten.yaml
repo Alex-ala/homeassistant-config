@@ -1,4 +1,4 @@
-- alias: 'Strom Schreibtisch aus nach 5min >10W'
+- alias: 'Strom: Schreibtisch aus nach 5min >10W'
   id: strom_schreibtisch_auto_off_5min
   trigger: 
     platform: numeric_state

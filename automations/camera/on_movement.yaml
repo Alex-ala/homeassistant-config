@@ -1,5 +1,5 @@
 #Trigger and make a picture when movement is detected
-- alias: 'Sauron bei Bewegung'
+- alias: 'Sauron: Bei Bewegung'
   id: sauron_on_movement
   trigger:
     platform: state
@@ -13,7 +13,7 @@
     service: shell_command.sauron_image
 
 
-- alias: 'Sauron nach Bewegung'
+- alias: 'Sauron: Nach Bewegung'
   id: camera_sauron_timed
   trigger:
     platform: time_pattern
@@ -30,7 +30,7 @@
   action:
     service: shell_command.sauron_image
 
-- alias: 'amonsul bei Bewegung'
+- alias: 'Amonsul: Bei Bewegung'
   id: amonsul_on_movement
   trigger:
     platform: state
@@ -44,7 +44,7 @@
     service: shell_command.amonsul_image
 
 
-- alias: 'amonsul nach Bewegung'
+- alias: 'Amonsul: Nach Bewegung'
   id: camera_amonsul_timed
   trigger:
     platform: time_pattern

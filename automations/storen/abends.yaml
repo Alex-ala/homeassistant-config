@@ -1,4 +1,4 @@
-- alias: 'Storen abends schliessen'
+- alias: 'Storen: Abends schliessen'
   id: storen_abends
   trigger:
     platform: time_pattern

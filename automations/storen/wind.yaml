@@ -1,4 +1,4 @@
-- alias: 'Storen bei Wind öffnen'
+- alias: 'Storen: Bei Wind öffnen'
   id: storen_bei_wind_oeffnen
   trigger:
     platform: numeric_state

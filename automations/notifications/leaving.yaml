@@ -1,4 +1,4 @@
-- alias: 'Meldung Fenster/Tür offen gelassen'
+- alias: 'Meldung: Fenster/Tür offen gelassen'
   id: meldung_offen_gelassen
   trigger:
     platform: state

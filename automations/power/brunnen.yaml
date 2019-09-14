@@ -1,4 +1,4 @@
-- alias: 'Brunnen bei trockener Luft'
+- alias: 'Brunnen: Bei trockener Luft einschalten'
   id: brunnen_auto_on
   trigger: 
     platform: numeric_state
@@ -16,7 +16,7 @@
         title: Brunnen
         message: Wohnzimmer zu trocken, Brunnen wird eingeschaltet.
 
-- alias: 'Brunnen bei feuchter Luft'
+- alias: 'Brunnen: Bei feuchter Luft ausschalten'
   id: brunnen_auto_off
   trigger:
     platform: numeric_state

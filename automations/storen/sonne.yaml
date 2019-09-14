@@ -1,4 +1,4 @@
-- alias: 'Storen Wohnzimmer bei Sonne halb schliessen'
+- alias: 'Storen: Wohnzimmer bei Sonne halb schliessen'
   id: storen_bei_sonne_zu
   trigger:
     platform: numeric_state
@@ -83,7 +83,7 @@
         position: 75
 
 
-- alias: 'Storen Wohnzimmer nach Sonne wieder öffnen'
+- alias: 'Storen: Wohnzimmer nach Sonne wieder öffnen'
   id: storen_bei_sonne_auf
   trigger:
     platform: numeric_state

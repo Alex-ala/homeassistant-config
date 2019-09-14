@@ -1,4 +1,4 @@
-- alias: 'Meldung Wind'
+- alias: 'Meldung: Wind'
   id: meldung_wind
   trigger:
     platform: numeric_state

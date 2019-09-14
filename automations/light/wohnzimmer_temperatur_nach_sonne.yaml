@@ -1,4 +1,4 @@
-- alias: 'Wohnzimmerlicht Temperatur nach Sonnenstand'
+- alias: 'Licht: Wohnzimmer Farbtemperatur nach Sonnenstand'
   id: licht_wohnzimmer_temperatur_sonnenstand
   trigger: 
     platform: time_pattern

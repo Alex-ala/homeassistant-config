@@ -1,5 +1,5 @@
 #trigger every 10 min or every 30s when movement
-- alias: 'Sauron is watching'
+- alias: 'Sauron: Is watching'
   id: camera_sauron_timed
   trigger:
     platform: time_pattern
@@ -12,7 +12,7 @@
     service: shell_command.sauron_image
 
 #trigger every 10 min or every 30s when movement
-- alias: 'Amon Sul is watching'
+- alias: 'Amonsul: Is watching'
   id: camera_amonsul_timed
   trigger:
     platform: time_pattern

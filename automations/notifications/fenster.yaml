@@ -1,4 +1,4 @@
-- alias: 'Meldung Küchenfenster offen'
+- alias: 'Meldung: Küchenfenster offen'
   id: meldung_küchenfensterfenster_offen
   trigger: 
     platform: state
@@ -16,7 +16,7 @@
 
           Küchenfenster : {{ states['binary_sensor']['0000d8a991d301_state'].state }}
 
-- alias: 'Meldung Schlafzimmerfenster offen'
+- alias: 'Meldung: Schlafzimmerfenster offen'
   id: meldung_schlafzimmefenster_offen
   trigger:
     platform: state
