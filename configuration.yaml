@@ -133,7 +133,7 @@ vacuum:
     map: /home/homeassistant/.homeassistant/www/map/map.png
     floorplan: /home/homeassistant/.homeassistant/www/map/floorplan.png
     offset:
-      x: 54
+      x: 74
       y: 1035
 
 notify: !include_dir_list notifications
