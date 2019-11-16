@@ -352,6 +352,7 @@ views:
           - switch.hmespmsw1pldnr5_meq1478516
           - switch.001015699eacfa
           - switch.000898a9951a7c
+          - swtich.001015699eaa6b
       - type: horizontal-stack
         cards:
           - type: thermostat
