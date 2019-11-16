@@ -4,12 +4,16 @@
     platform: time_pattern
     minutes: '/10'
   condition:
-    - condition: or
+    - condition: and
       conditions:
-        - condition: sun
-          after: sunset
         - condition: time
-          after: '19:00:00'
+          after: '15:00:00'
+        - condition: or
+          conditions:
+            - condition: sun
+              after: sunset
+            - condition: time
+              after: '19:00:00'
   action:
     - service: switch.turn_on
       data:
@@ -21,12 +25,16 @@
     platform: time_pattern
     minutes: '/10'
   condition:
-    - condition: or
+    - contidion: and
       conditions:
-        - condition: sun
-          after: sunrise
         - condition: time
-          after: '08:00:00'
+          before: '15:00:00'
+        - condition: or
+          conditions:
+            - condition: sun
+              after: sunrise
+            - condition: time
+              after: '08:00:00'
   action:
     - service: switch.turn_off
       data:
