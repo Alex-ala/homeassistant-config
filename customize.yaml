@@ -216,6 +216,9 @@ switch.001015699eacfa:
 switch.000898a9951a7c:
   friendly_name: Wohnzimmer Sofa
   icon: mdi:airplay
+switch.001015699eaa6b:
+  friendly_name: Terrasse
+  icon: mdi:led-on
 ##########   Licht-Schalter   ##########
 light.w1:
   hidden: true
