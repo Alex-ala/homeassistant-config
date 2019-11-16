@@ -18,7 +18,7 @@
         conditions:
           - condition: sun
             after: sunset
-            after_offset: '+00:15:00'
+            after_offset: '+00:45:00'
           - condition: time
             after: '21:30:00'
   action:

@@ -141,6 +141,22 @@ sensor.001015699eacfa_power:
 sensor.001015699eacfa_voltage:
   friendly_name: Schreibtisch Spannung
   unit_of_measurement: V
+# Terrasse
+sensor.001015699eaa6b_current:
+  friendly_name: Terrasse Stromstärke
+  unit_of_measurement: mA
+sensor.001015699eaa6b_energy_counter:
+  friendly_name: Terrasse Gesamtverbrauch
+  unit_of_measurement: Wh
+sensor.001015699eaa6b_frequency:
+  friendly_name: Terrasse Frequenz
+  unit_of_measurement: Hz
+sensor.001015699eaa6b_power:
+  friendly_name: Terrasse Verbrauch
+  unit_of_measurement: W
+sensor.001015699eaa6b_voltage:
+  friendly_name: Terrasse Spannung
+  unit_of_measurement: V
 #Flur
 sensor.000898a9951e58_power:
   friendly_name: Flur Verbrauch
