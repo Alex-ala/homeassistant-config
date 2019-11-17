@@ -7,7 +7,7 @@
     - condition: and
       conditions:
         - condition: time
-          after: '15:00:00'
+          before: '21:30:00'
         - condition: or
           conditions:
             - condition: sun
@@ -19,7 +19,7 @@
       data:
         entity_id: switch.001015699eaa6b
 
-- alias: 'Licht: Lichterkette morgens aus'
+- alias: 'Licht: Lichterkette nachts aus'
   id: lichterkette_morgens
   trigger:
     platform: time_pattern
@@ -28,13 +28,10 @@
     - condition: and
       conditions:
         - condition: time
-          before: '15:00:00'
-        - condition: or
-          conditions:
-            - condition: sun
-              after: sunrise
-            - condition: time
-              after: '08:00:00'
+          after: '22:00:00'
+        - condition: 'state'
+          entity_id: switch.001015699eaa6b
+          state: 'on'
   action:
     - service: switch.turn_off
       data:
