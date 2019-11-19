@@ -1,19 +1,8 @@
 - alias: 'Licht: Lichterkette abends an'
   id: lichterkette_abends
   trigger:
-    platform: time_pattern
-    minutes: '/10'
-  condition:
-    - condition: and
-      conditions:
-        - condition: time
-          before: '21:30:00'
-        - condition: or
-          conditions:
-            - condition: sun
-              after: sunset
-            - condition: time
-              after: '19:00:00'
+    platform: sun
+    event: sunset
   action:
     - service: switch.turn_on
       data:
@@ -22,17 +11,37 @@
 - alias: 'Licht: Lichterkette nachts aus'
   id: lichterkette_morgens
   trigger:
-    platform: time_pattern
-    minutes: '/10'
+    platform: time
+    at: "23:00:00"
   condition:
-    - condition: and
-      conditions:
-        - condition: time
-          after: '22:00:00'
-        - condition: 'state'
-          entity_id: switch.001015699eaa6b
-          state: 'on'
+    - condition: 'state'
+      entity_id: switch.001015699eaa6b
+      state: 'on'
   action:
     - service: switch.turn_off
+      data:
+        entity_id: switch.001015699eaa6b
+
+- alias: 'Licht: Lichterkette morgens aus'
+  id: lichterkette_abends
+  trigger:
+    platform: sun
+    event: sunrise
+  action:
+    - service: switch.turn_off
+      data:
+        entity_id: switch.001015699eaa6b
+
+- alias: 'Licht: Lichterkette morgens an'
+  id: lichterkette_morgens
+  trigger:
+    platform: time
+    at: "05:00:00"
+  condition:
+    - condition: 'state'
+      entity_id: switch.001015699eaa6b
+      state: 'on'
+  action:
+    - service: switch.turn_on
       data:
         entity_id: switch.001015699eaa6b
