@@ -190,6 +190,7 @@ cover:
 shell_command:
   sauron_image: /home/homeassistant/.homeassistant/shell-scripts/sauron-image.sh
   amonsul_image: /home/homeassistant/.homeassistant/shell-scripts/amonsul-image.sh
+  radagast_image: /home/homeassistant/.homeassistant/shell-scripts/radagast-image.sh
   update_plants: /home/homeassistant/.homeassistant/shell-scripts/update_plants.sh
 
 ##########   Meta-Schalter     ###########
