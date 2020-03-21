@@ -23,3 +23,12 @@
     state: 'not_home'
   action:
     service: shell_command.amonsul_image
+
+#trigger every 60 min
+- alias: 'Radagast: Is watching'
+  id: camera_radagast_timed
+  trigger:
+    platform: time_pattern
+    minutes: '0'
+  action:
+    service: shell_command.radagast_image

@@ -1,0 +1,10 @@
+lavendel:
+  sensors:
+    moisture: sensor.lavendel_feuchtigkeit
+    temperature: sensor.lavendel_temperatur
+    conductivity: sensor.lavendel_leitfahigkeit
+    brightness: sensor.lavendel_helligkeit
+  min_moisture: 15
+  max_moisture: 60
+  min_conductivity: 350
+  min_temperature: 5

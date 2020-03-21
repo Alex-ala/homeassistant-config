@@ -444,3 +444,8 @@ views:
     cards:
       - type: plant-status
         entity: plant.thuja
+      - type: plant-status
+        entity: plant.lavendel
+      - type: picture-glance
+          title: Radagast
+          camera_image: camera.radagast
