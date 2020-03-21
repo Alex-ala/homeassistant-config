@@ -63,8 +63,8 @@ hue:
     - host: 10.5.0.4
 
 influxdb:
-  host: menegroth.ahome
-  port: 3000
+  host: influxdb.ahome
+  port: 80
   database: smarthome
   exclude:
     entities:

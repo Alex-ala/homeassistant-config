@@ -1,35 +1,7 @@
 - platform: influxdb
-  host: menegroth.ahome
-  port: 3000
+  host: influxdb.ahome
+  port: 80
   queries:
-    - name: Thuja Feuchtigkeit
-      unit_of_measurement: '%'
-      measurement: '"c4:7c:8d:6a:c8:6f"'
-      where: 'time > now() - 6h'
-      group_function: last
-      database: plants
-      field: moisture
-    - name: Thuja Helligkeit
-      unit_of_measurement: 'lx'
-      measurement: '"c4:7c:8d:6a:c8:6f"'
-      where: 'time > now() - 6h'
-      group_function: last
-      database: plants
-      field: light
-    - name: Thuja Leitfähigkeit
-      unit_of_measurement: 'µS/cm'
-      measurement: '"c4:7c:8d:6a:c8:6f"'
-      where: 'time > now() - 6h'
-      group_function: last
-      database: plants
-      field: conductivity
-    - name: Thuja Temperatur
-      unit_of_measurement: '°C'
-      measurement: '"c4:7c:8d:6a:c8:6f"'
-      where: 'time > now() - 6h'
-      group_function: last
-      database: plants
-      field: temperature
     - name: Thuja2 Feuchtigkeit
       unit_of_measurement: '%'
       measurement: '"c4:7c:8d:6a:ab:4b"'
