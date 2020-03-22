@@ -10,3 +10,4 @@ TODO:
 3. Roomba geht nicht
 4. Heizung State funktioniert nicht
 5. Plant scripts
+6. Camera feed is pulled from wrong server, add nginx to nogrod
