@@ -277,6 +277,11 @@ cover.schlafzimmer_rechts:
   assumed_state: true
   device_class: window
 
+##########  Device Tracker ##########
+
+device_tracker.74_b5_87_65_1e_ff:
+  friendly_name: iPhoneXR
+
 
 ##########   Heizung   ##########
 
