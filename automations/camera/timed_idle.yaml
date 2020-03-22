@@ -6,7 +6,7 @@
     minutes: '/10'
   condition:
     condition: state
-    entity_id: device_tracker.iphonexr
+    entity_id: device_tracker.74_b5_87_65_1e_ff
     state: 'not_home'
   action:
     service: shell_command.sauron_image
@@ -19,7 +19,7 @@
     minutes: '/10'
   condition:
     condition: state
-    entity_id: device_tracker.iphonexr
+    entity_id: device_tracker.74_b5_87_65_1e_ff
     state: 'not_home'
   action:
     service: shell_command.amonsul_image
