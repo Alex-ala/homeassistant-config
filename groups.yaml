@@ -63,11 +63,11 @@ strom_schreibtisch:
 strom_brunnen:
   name: Strom Brunnen
   entities:
-    - sensor.hmespmsw1pldnr5_meq1478516_power
-    - sensor.hmespmsw1pldnr5_meq1478516_energy_counter
-    - sensor.hmespmsw1pldnr5_meq1478516_current
-    - sensor.hmespmsw1pldnr5_meq1478516_voltage
-    - sensor.hmespmsw1pldnr5_meq1478516_frequency
+    - sensor.meq1478516_power
+    - sensor.meq1478516_energy_counter
+    - sensor.meq1478516_current
+    - sensor.meq1478516_voltage
+    - sensor.meq1478516_frequency
 
 strom_flur:
   name: Strom Flurlicht
@@ -99,7 +99,7 @@ strom_kueche:
 schalter_brunnen:
   name: Schalter Brunnen
   entities:
-    - switch.hmespmsw1pldnr5_meq1478516
+    - switch.meq1478516
 
 schalter_schreibtisch:
   name: Schalter Schreibtisch

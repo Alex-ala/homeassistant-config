@@ -110,19 +110,19 @@ sensor.000a58a9ac3c02_smoke_detector_alarm_status:
 
 ##########    Strom-Messgeräte   ##########
 # Brunnen Wohnzimmer
-sensor.hmespmsw1pldnr5_meq1478516_current:
+sensor.meq1478516_current:
   friendly_name: Brunnen Stromstärke
   unit_of_measurement: mA
-sensor.hmespmsw1pldnr5_meq1478516_energy_counter:
+sensor.meq1478516_energy_counter:
   friendly_name: Brunnen Gesamtverbrauch
   unit_of_measurement: Wh
-sensor.hmespmsw1pldnr5_meq1478516_frequency:
+sensor.meq1478516_frequency:
   friendly_name: Brunnen Frequenz
   unit_of_measurement: Hz
-sensor.hmespmsw1pldnr5_meq1478516_power:
+sensor.meq1478516_power:
   friendly_name: Brunnen Verbrauch
   unit_of_measurement: W
-sensor.hmespmsw1pldnr5_meq1478516_voltage:
+sensor.meq1478516_voltage:
   friendly_name: Brunnen Spannung
   unit_of_measurement: V
 # Schreibtisch
@@ -207,7 +207,7 @@ sensor.000898a9932fdf_frequency:
   unit_of_measurement: Hz
 
 ##########   Strom-Schalter   ##########
-switch.hmespmsw1pldnr5_meq1478516:
+switch.MEQ1478516:
   friendly_name: Brunnen
   icon: mdi:water
 switch.001015699eacfa:

@@ -6,11 +6,11 @@
     below: 45
   condition:
     condition: 'state'
-    entity_id: switch.hmespmsw1pldnr5_meq1478516
+    entity_id: switch.meq1478516
     state: 'off'
   action:
     - service: switch.turn_on
-      entity_id: switch.hmespmsw1pldnr5_meq1478516
+      entity_id: switch.meq1478516
     - service: script.notify_rp
       data: 
         title: Brunnen
@@ -24,11 +24,11 @@
     above: 48
   condition:
     condition: 'state'
-    entity_id: switch.hmespmsw1pldnr5_meq1478516
+    entity_id: switch.meq1478516
     state: 'on'
   action:
     - service: switch.turn_off
-      entity_id: switch.hmespmsw1pldnr5_meq1478516
+      entity_id: switch.meq1478516
     - service: script.notify_rp
       data:
         title: Brunnen

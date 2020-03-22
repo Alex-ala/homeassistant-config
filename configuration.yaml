@@ -124,7 +124,7 @@ homekit:
       - switch.000898a9951a7c
       - switch.000898a9951e58
       - switch.001015699eacfa
-      - switch.hmespmsw1pldnr5_meq1478516
+      - switch.meq1478516
       - vacuum.gollum
 
 device_tracker:

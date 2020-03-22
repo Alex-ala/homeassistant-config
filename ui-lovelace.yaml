@@ -349,7 +349,7 @@ views:
       - type: entities
         title: Schalter
         entities:
-          - switch.hmespmsw1pldnr5_meq1478516
+          - switch.meq1478516
           - switch.001015699eacfa
           - switch.000898a9951a7c
           - switch.001015699eaa6b
@@ -376,7 +376,7 @@ views:
         title: Wohnzimmer
         camera_image: camera.sauron
         entities:
-          - switch.hmespmsw1pldnr5_meq1478516
+          - switch.meq1478516
           - switch.001015699eacfa
           - binary_sensor.000915699a427d_motion
           - binary_sensor.0000d8a9aaa854_state
