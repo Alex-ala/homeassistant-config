@@ -409,7 +409,7 @@ views:
           type: entities
         filter:
           include:
-            - domain: auotmation
+            - domain: automation
   - icon: mdi:robot-vacuum
     id: vacuum
     title: Staubsauger
