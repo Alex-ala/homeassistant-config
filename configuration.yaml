@@ -140,8 +140,8 @@ vacuum:
     name: Gollum
     username: !secret roomba_user
     password: !secret roomba_password
-    map: /home/homeassistant/venv/www/map/map.png
-    floorplan: /home/homeassistant/venv/www/map/floorplan.png
+    map: /home/homeassistant/homeassistant_config/www/map/map.png
+    floorplan: /home/homeassistant/homeassistant_config/www/map/floorplan.png
     offset:
       x: 74
       y: 1035
@@ -201,10 +201,10 @@ cover:
 
 ##########   Shell-Commands  ########
 shell_command:
-  sauron_image: /home/homeassistant/venv/shell-scripts/sauron-image.sh
-  amonsul_image: /home/homeassistant/venv/shell-scripts/amonsul-image.sh
-  radagast_image: /home/homeassistant/venv/shell-scripts/radagast-image.sh
-  update_plants: /home/homeassistant/venv/shell-scripts/update_plants.sh
+  sauron_image: /home/homeassistant/homeassistant_config/shell-scripts/sauron-image.sh
+  amonsul_image: /home/homeassistant/homeassistant_config/shell-scripts/amonsul-image.sh
+  radagast_image: /home/homeassistant/homeassistant_config/shell-scripts/radagast-image.sh
+  update_plants: /home/homeassistant/homeassistant_config/shell-scripts/update_plants.sh
 
 ##########   Meta-Schalter     ###########
 input_boolean:
