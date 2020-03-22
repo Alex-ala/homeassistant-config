@@ -20,17 +20,17 @@
         - condition: or
           conditions:
             - condition: template
-              value_template: '{{ states.cover.001397099C502F.attributes.current_position > 75 }}'
+              value_template: '{{ state_attr("cover.001397099C502F", "current_position") > 75 }}'
             - condition: template
-              value_template: '{{ states.cover.001397099C5042.attributes.current_position > 75 }}'
+              value_template: '{{ state_attr("cover.001397099C5042", "current_position") > 75 }}'
             - condition: template
-              value_template: '{{ states.cover.001397099C503B.attributes.current_position > 75 }}'
+              value_template: '{{ state_attr("cover.001397099C503B", "current_position") > 75 }}'
             - condition: template
-              value_template: '{{ states.cover.001397099C5046.attributes.current_position > 75 }}'
+              value_template: '{{ state_attr("cover.001397099C5046", "current_position") > 75 }}'
             - condition: template
-              value_template: '{{ states.cover.001397099C5077.attributes.current_position > 75 }}'
+              value_template: '{{ state_attr("cover.001397099C5077", "current_position") > 75 }}'
             - condition: template
-              value_template: '{{ states.cover.001397099C503E.attributes.current_position > 75 }}'
+              value_template: '{{ state_attr("cover.001397099C503E", "current_position") > 75 }}'
     - service: cover.set_cover_position
       data:
         entity_id: cover.001397099C502F
@@ -99,17 +99,17 @@
         - condition: or
           conditions:
             - condition: template
-              value_template: '{{ states.cover.001397099C502F.attributes.current_position < 65 }}'
+              value_template: '{{ state_attr("cover.001397099C502F", "current_position") < 65 }}'
             - condition: template
-              value_template: '{{ states.cover.001397099C5042.attributes.current_position < 65 }}'
+              value_template: '{{ state_attr("cover.001397099C5042", "current_position") < 65 }}'
             - condition: template
-              value_template: '{{ states.cover.001397099C503B.attributes.current_position < 65 }}'
+              value_template: '{{ state_attr("cover.001397099C503B", "current_position") < 65 }}'
             - condition: template
-              value_template: '{{ states.cover.001397099C5046.attributes.current_position < 65 }}'
+              value_template: '{{ state_attr("cover.001397099C5046", "current_position") < 65 }}'
             - condition: template
-              value_template: '{{ states.cover.001397099C5077.attributes.current_position < 65 }}'
+              value_template: '{{ state_attr("cover.001397099C5077", "current_position") < 65 }}'
             - condition: template
-              value_template: '{{ states.cover.001397099C503E.attributes.current_position < 65 }}'
+              value_template: '{{ state_attr("cover.001397099C503E", "current_position") < 65 }}'
     - service: cover.open_cover_tilt
       entity_id: cover.001397099C502F
     - service: cover.open_cover_tilt
