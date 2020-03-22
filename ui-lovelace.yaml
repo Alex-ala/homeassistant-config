@@ -257,50 +257,50 @@ views:
               left: 15%
               top: 23%
           ####### Storen #######
-          - type: icon
-            entity: cover.001397099C4D22
+          - type: state-icon
+            entity: cover.001397099c4d22
             icon: mdi:window-closed
             style:
               left: 91%
               top: 11%
-          - type: icon
-            entity: cover.001397099C5053
+          - type: state-icon
+            entity: cover.001397099c5053
             icon: mdi:window-closed
             style:
               left: 96%
               top: 20%
-          - type: icon
-            entity: cover.001397099C503E
+          - type: state-icon
+            entity: cover.001397099c503e
             icon: mdi:window-closed
             style:
               left: 95%
               top: 48%
           - type: icon
-            entity: cover.001397099C5077
+            entity: cover.001397099c5077
             icon: mdi:window-closed
             style:
               left: 95%
               top: 67%
           - type: icon
-            entity: cover.001397099C5046
+            entity: cover.001397099c5046
             icon: mdi:window-closed
             style:
               left: 95%
               top: 83%
           - type: icon
-            entity: cover.001397099C503B
+            entity: cover.001397099c503b
             icon: mdi:window-closed
             style:
               left: 86%
               top: 93%
           - type: icon
-            entity: cover.001397099C502F
+            entity: cover.001397099c502f
             icon: mdi:window-closed
             style:
               left: 58%
               top: 98%
           - type: icon
-            entity: cover.001397099C5042
+            entity: cover.001397099c5042
             icon: mdi:window-closed
             style:
               left: 20%

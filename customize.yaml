@@ -244,35 +244,35 @@ switch.000898a9932fdf:
 
 ##########   Storen   ##########
 
-cover.001397099C502F:
+cover.001397099c502f:
   friendly_name: Storen Terrasse links
   assumed_state: true
   device_class: window
-cover.001397099C5042:
+cover.001397099c5042:
   friendly_name: Storen Terrasse rechts
   assumed_state: true
   device_class: window
-cover.001397099C5046:
+cover.001397099c5046:
   friendly_name: Storen Wohnzimmer links
   assumed_state: true
   device_class: window
-cover.001397099C503B:
+cover.001397099c503b:
   friendly_name: Storen Wohnzimmer rechts
   assumed_state: true
   device_class: window
-cover.001397099C503E:
+cover.001397099c503e:
   friendly_name: Storen Küche links
   assumed_state: true
   device_class: window
-cover.001397099C5077:
+cover.001397099c5077:
   friendly_name: Storen Küche rechts
   assumed_state: true
   device_class: window
-cover.001397099C4D22:
+cover.001397099c4d22:
   friendly_name: Storen Schlafzimmer links
   assumed_state: true
   device_class: window
-cover.001397099C5053:
+cover.001397099c5053:
   friendly_name: Storen Schlafzimmer rechts
   assumed_state: true
   device_class: window

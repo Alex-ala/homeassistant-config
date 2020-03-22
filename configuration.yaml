@@ -187,17 +187,17 @@ cover:
   - platform: group
     name: Wohnzimmer
     entities:
-      - cover.001397099C502F
-      - cover.001397099C5042
-      - cover.001397099C5046
-      - cover.001397099C503B
-      - cover.001397099C503E
-      - cover.001397099C5077
+      - cover.001397099c502f
+      - cover.001397099c5042
+      - cover.001397099c5046
+      - cover.001397099c503b
+      - cover.001397099c503e
+      - cover.001397099c5077
   - platform: group
     name: Schlafzimmer
     entities:
-      - cover.001397099C4D22
-      - cover.001397099C5053
+      - cover.001397099c4d22
+      - cover.001397099c5053
 
 ##########   Shell-Commands  ########
 shell_command:

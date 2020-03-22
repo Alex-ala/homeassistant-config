@@ -20,66 +20,66 @@
         - condition: or
           conditions:
             - condition: template
-              value_template: '{{ state_attr("cover.001397099C502F", "current_position") > 75 }}'
+              value_template: '{{ state_attr("cover.001397099c502f", "current_position") > 75 }}'
             - condition: template
-              value_template: '{{ state_attr("cover.001397099C5042", "current_position") > 75 }}'
+              value_template: '{{ state_attr("cover.001397099c5042", "current_position") > 75 }}'
             - condition: template
-              value_template: '{{ state_attr("cover.001397099C503B", "current_position") > 75 }}'
+              value_template: '{{ state_attr("cover.001397099c503b", "current_position") > 75 }}'
             - condition: template
-              value_template: '{{ state_attr("cover.001397099C5046", "current_position") > 75 }}'
+              value_template: '{{ state_attr("cover.001397099c5046", "current_position") > 75 }}'
             - condition: template
-              value_template: '{{ state_attr("cover.001397099C5077", "current_position") > 75 }}'
+              value_template: '{{ state_attr("cover.001397099c5077", "current_position") > 75 }}'
             - condition: template
-              value_template: '{{ state_attr("cover.001397099C503E", "current_position") > 75 }}'
+              value_template: '{{ state_attr("cover.001397099c503e", "current_position") > 75 }}'
     - service: cover.set_cover_position
       data:
-        entity_id: cover.001397099C502F
+        entity_id: cover.001397099c502f
         position: 60
     - service: cover.set_cover_position
       data:
-        entity_id: cover.001397099C5042
+        entity_id: cover.001397099c5042
         position: 60
     - service: cover.set_cover_position
       data:
-        entity_id: cover.001397099C503B
+        entity_id: cover.001397099c503b
         position: 40
     - service: cover.set_cover_position
       data:
-        entity_id: cover.001397099C5046
+        entity_id: cover.001397099c5046
         position: 40
     - service: cover.set_cover_position
       data:
-        entity_id: cover.001397099C5077
+        entity_id: cover.001397099c5077
         position: 40
     - service: cover.set_cover_position
       data:
-        entity_id: cover.001397099C503E
+        entity_id: cover.001397099c503e
         position: 40
     - delay:
         seconds: 40
     - service: cover.set_cover_tilt_position
       data:
-        entity_id: cover.001397099C5042
+        entity_id: cover.001397099c5042
         position: 75
     - service: cover.set_cover_tilt_position
       data:
-        entity_id: cover.001397099C502F
+        entity_id: cover.001397099c502f
         position: 75
     - service: cover.set_cover_tilt_position
       data:
-        entity_id: cover.001397099C503B
+        entity_id: cover.001397099c503b
         position: 75
     - service: cover.set_cover_tilt_position
       data:
-        entity_id: cover.001397099C5046
+        entity_id: cover.001397099c5046
         position: 75
     - service: cover.set_cover_tilt_position
       data:
-        entity_id: cover.001397099C5077
+        entity_id: cover.001397099c5077
         position: 75
     - service: cover.set_cover_tilt_position
       data:
-        entity_id: cover.001397099C503E
+        entity_id: cover.001397099c503e
         position: 75
 
 
@@ -95,44 +95,44 @@
     - condition: and
       conditions:
         - condition: template
-          value_template: "{{ states.sensor.time.state >  (states.input_datetime.storen_ganz_oeffnen.attributes.timestamp | int | timestamp_custom('%H:%M', False)) }}"
+          value_template: "{{ states.sensor.time.state >  (states.input_datetime.storen_ganz_oeffnen.attributes.timestamp | int | timestamp_custom('%h:%m', false)) }}"
         - condition: or
           conditions:
             - condition: template
-              value_template: '{{ state_attr("cover.001397099C502F", "current_position") < 65 }}'
+              value_template: '{{ state_attr("cover.001397099c502f", "current_position") < 65 }}'
             - condition: template
-              value_template: '{{ state_attr("cover.001397099C5042", "current_position") < 65 }}'
+              value_template: '{{ state_attr("cover.001397099c5042", "current_position") < 65 }}'
             - condition: template
-              value_template: '{{ state_attr("cover.001397099C503B", "current_position") < 65 }}'
+              value_template: '{{ state_attr("cover.001397099c503b", "current_position") < 65 }}'
             - condition: template
-              value_template: '{{ state_attr("cover.001397099C5046", "current_position") < 65 }}'
+              value_template: '{{ state_attr("cover.001397099c5046", "current_position") < 65 }}'
             - condition: template
-              value_template: '{{ state_attr("cover.001397099C5077", "current_position") < 65 }}'
+              value_template: '{{ state_attr("cover.001397099c5077", "current_position") < 65 }}'
             - condition: template
-              value_template: '{{ state_attr("cover.001397099C503E", "current_position") < 65 }}'
+              value_template: '{{ state_attr("cover.001397099c503e", "current_position") < 65 }}'
     - service: cover.open_cover_tilt
-      entity_id: cover.001397099C502F
+      entity_id: cover.001397099c502f
     - service: cover.open_cover_tilt
-      entity_id: cover.001397099C5042
+      entity_id: cover.001397099c5042
     - service: cover.open_cover_tilt
-      entity_id: cover.001397099C503B
+      entity_id: cover.001397099c503b
     - service: cover.open_cover_tilt
-      entity_id: cover.001397099C5046
+      entity_id: cover.001397099c5046
     - service: cover.open_cover_tilt
-      entity_id: cover.001397099C5077
+      entity_id: cover.001397099c5077
     - service: cover.open_cover_tilt
-      entity_id: cover.001397099C503E
+      entity_id: cover.001397099c503e
     - delay:
         seconds: 10
     - service: cover.open_cover
-      entity_id: cover.001397099C502F
+      entity_id: cover.001397099c502f
     - service: cover.open_cover
-      entity_id: cover.001397099C5042
+      entity_id: cover.001397099c5042
     - service: cover.open_cover
-      entity_id: cover.001397099C503B
+      entity_id: cover.001397099c503b
     - service: cover.open_cover
-      entity_id: cover.001397099C5046
+      entity_id: cover.001397099c5046
     - service: cover.open_cover
-      entity_id: cover.001397099C5077
+      entity_id: cover.001397099c5077
     - service: cover.open_cover
-      entity_id: cover.001397099C503E
+      entity_id: cover.001397099c503e

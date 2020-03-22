@@ -2,7 +2,7 @@
   id: storen_halb_oeffnen
   trigger:
     platform: template
-    value_template: "{{ states.sensor.time.state ==  (states.input_datetime.storen_halb_oeffnen.attributes.timestamp | int | timestamp_custom('%H:%M', False))}}"
+    value_template: "{{ states.sensor.time.state ==  (states.input_datetime.storen_halb_oeffnen.attributes.timestamp | int | timestamp_custom('%h:%m', false))}}"
   action:
     - delay:
         minutes: "{{ range(0,10) | random | int }}"
@@ -14,7 +14,7 @@
   id: storen_ganz_oeffnen
   trigger:
     platform: template
-    value_template:  "{{ states.sensor.time.state == (states.input_datetime.storen_ganz_oeffnen.attributes.timestamp | int | timestamp_custom('%H:%M', False))}}"
+    value_template:  "{{ states.sensor.time.state == (states.input_datetime.storen_ganz_oeffnen.attributes.timestamp | int | timestamp_custom('%h:%m', false))}}"
   action:
     - delay:
         minutes: "{{ range(0,10) | random | int }}"
