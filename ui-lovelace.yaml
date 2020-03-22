@@ -258,49 +258,49 @@ views:
               top: 23%
           ####### Storen #######
           - type: icon
-            entity: cover.schlafzimmer_links
+            entity: cover.001397099C4D22
             icon: mdi:window-closed
             style:
               left: 91%
               top: 11%
           - type: icon
-            entity: cover.schlafzimmer_rechts
+            entity: cover.001397099C5053
             icon: mdi:window-closed
             style:
               left: 96%
               top: 20%
           - type: icon
-            entity: cover.storen_kueche_links
+            entity: cover.001397099C503E
             icon: mdi:window-closed
             style:
               left: 95%
               top: 48%
           - type: icon
-            entity: cover.storen_kueche_rechts
+            entity: cover.001397099C5077
             icon: mdi:window-closed
             style:
               left: 95%
               top: 67%
           - type: icon
-            entity: cover.storen_wohnzimmer_links
+            entity: cover.001397099C5046
             icon: mdi:window-closed
             style:
               left: 95%
               top: 83%
           - type: icon
-            entity: cover.storen_wohnzimmer_rechts
+            entity: cover.001397099C503B
             icon: mdi:window-closed
             style:
               left: 86%
               top: 93%
           - type: icon
-            entity: cover.storen_terrasse_links
+            entity: cover.001397099C502F
             icon: mdi:window-closed
             style:
               left: 58%
               top: 98%
           - type: icon
-            entity: cover.storen_terrasse_rechts
+            entity: cover.001397099C5042
             icon: mdi:window-closed
             style:
               left: 20%
