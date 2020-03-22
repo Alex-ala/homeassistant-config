@@ -7,6 +7,8 @@ resources:
     type: js
   - url: /local/thermostat-card.js
     type: module
+  - url: /local/auto-entities.js
+    type: module
 
 title: Seehaus
 views:
@@ -402,9 +404,12 @@ views:
     title: Automatisierungen
     cards:
       - id: 2d6c5bcc4c2a47fc8642ed0907e9391f  # Automatically created id
-        type: "custom:group-card"
-        title: Automatisierungen
-        group: group.automation
+        type: "custom:aut_entities"
+        card:
+          type: entities
+        filter:
+          include:
+            - domain: auotmation
   - icon: mdi:robot-vacuum
     id: vacuum
     title: Staubsauger
