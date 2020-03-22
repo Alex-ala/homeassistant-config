@@ -404,7 +404,7 @@ views:
     title: Automatisierungen
     cards:
       - id: 2d6c5bcc4c2a47fc8642ed0907e9391f  # Automatically created id
-        type: "custom:auto_entities"
+        type: "custom:auto-entities"
         card:
           type: entities
         filter:
