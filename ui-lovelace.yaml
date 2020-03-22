@@ -260,8 +260,6 @@ views:
           - type: icon
             entity: cover.001397099C4D22
             icon: mdi:window-closed
-            tap_action:
-              action: more-info
             style:
               left: 91%
               top: 11%
