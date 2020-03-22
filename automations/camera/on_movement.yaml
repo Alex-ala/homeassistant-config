@@ -14,7 +14,7 @@
 
 
 - alias: 'Sauron: Nach Bewegung'
-  id: camera_sauron_timed
+  id: camera_sauron_timed_after_movement
   trigger:
     platform: time_pattern
     minutes: '/1'
@@ -45,7 +45,7 @@
 
 
 - alias: 'Amonsul: Nach Bewegung'
-  id: camera_amonsul_timed
+  id: camera_amonsul_timed_after_movement
   trigger:
     platform: time_pattern
     minutes: '/1'

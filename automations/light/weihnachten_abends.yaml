@@ -1,5 +1,5 @@
 - alias: 'Licht: Lichterkette abends an'
-  id: lichterkette_abends
+  id: lichterkette_abends_an
   trigger:
     platform: sun
     event: sunset
@@ -9,7 +9,7 @@
         entity_id: switch.001015699eaa6b
 
 - alias: 'Licht: Lichterkette nachts aus'
-  id: lichterkette_morgens
+  id: lichterkette_morgens_aus
   trigger:
     platform: time
     at: "23:00:00"
@@ -23,7 +23,7 @@
         entity_id: switch.001015699eaa6b
 
 - alias: 'Licht: Lichterkette morgens aus'
-  id: lichterkette_abends
+  id: lichterkette_abends_aus
   trigger:
     platform: sun
     event: sunrise
@@ -33,7 +33,7 @@
         entity_id: switch.001015699eaa6b
 
 - alias: 'Licht: Lichterkette morgens an'
-  id: lichterkette_morgens
+  id: lichterkette_morgens_an
   trigger:
     platform: time
     at: "05:00:00"
