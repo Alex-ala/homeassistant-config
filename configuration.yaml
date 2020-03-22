@@ -33,6 +33,16 @@ logger:
     bluepy: debug
 
 history:
+  exclude:
+    entities:
+      - sun.sun
+      - sensor.time
+      - sensor.date
+      - sensor.random_sensor
+    domains:
+      - camera
+      - script
+      - group
 
 logbook:
 
@@ -125,7 +135,7 @@ device_tracker:
     consider_home: 300
 
 vacuum:
-  - platform: roomba
+  - platform: roombai7
     host: 10.4.0.17
     name: Gollum
     username: !secret roomba_user
