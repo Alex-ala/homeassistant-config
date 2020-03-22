@@ -165,14 +165,14 @@ notifications:
 #default_view:
 home:
   name: Home
-  view: true
+#  view: true
   entities:
     - group.licht
     - group.schalter
 
 klima:
   name: Klima
-  view: true
+#  view: true
   entities:
     - group.temperatur_terrasse
     - group.temperatur_fluegel
@@ -185,7 +185,7 @@ klima:
 
 sicherheit:
   name: Sicherheit
-  view: true
+#  view: true
   entities:
     - group.tueren
     - group.fenster
@@ -193,14 +193,14 @@ sicherheit:
 
 Verbrauch:
   name: Verbrauch
-  view: true
+#  view: true
   entities:
     - group.strom_brunnen
     - group.strom_schreibtisch
 
 automation:
   name: Automation
-  view: true
+#  view: true
   entities:
     - group.all_automations
 
