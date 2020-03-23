@@ -1,8 +1,14 @@
 - alias: 'Meldung: Küchenfenster offen'
   id: meldung_küchenfensterfenster_offen
   trigger: 
-    platform: state
-    entity_id: binary_sensor.0000d8a991d301_state
+    - platform: state
+      entity_id: binary_sensor.0000d8a991d301_state
+      from: "off"
+      to: "on"
+    - platform: state
+      entity_id: binary_sensor.0000d8a991d301_state
+      from: "on"
+      to: "off"
   condition:
     condition: state
     entity_id: device_tracker.74_b5_87_65_1e_ff
@@ -19,8 +25,14 @@
 - alias: 'Meldung: Schlafzimmerfenster offen'
   id: meldung_schlafzimmefenster_offen
   trigger:
-    platform: state
-    entity_id: binary_sensor.0000D8A991D331_state
+    - platform: state
+      entity_id: binary_sensor.0000D8A991D331_state
+      from: "off"
+      to: "on"
+    - platform: state
+      entity_id: binary_sensor.0000D8A991D331_state
+      from: "on"
+      to: "off"
   condition:
     condition: state
     entity_id: device_tracker.74_b5_87_65_1e_ff

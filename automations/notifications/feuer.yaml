@@ -1,8 +1,14 @@
 - alias: 'Subject fire!!'
   id: meldung_feuer
   trigger:
-    platform: state
-    entity_id: sensor.000a58a9ac3c02_smoke_detector_alarm_status
+    - platform: state
+      entity_id: sensor.000a58a9ac3c02_smoke_detector_alarm_status
+      from: "on"
+      to: "off"
+    - platform: state
+      entity_id: sensor.000a58a9ac3c02_smoke_detector_alarm_status
+      from: "off"
+      to: "on"
   action:
     - service: script.notify_rp
       data:

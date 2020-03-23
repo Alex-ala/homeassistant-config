@@ -1,8 +1,14 @@
 - alias: 'Meldung: Post'
   id: meldung_post
   trigger:
-    platform: state
-    entity_id: binary_sensor.0000d8a9aaa854_state
+    - platform: state
+      entity_id: binary_sensor.0000d8a9aaa854_state
+      from: "off"
+      to: "on"
+    - platform: state
+      entity_id: binary_sensor.0000d8a9aaa854_state
+      from: "on"
+      to: "off"
   action:
     - service: script.notify_rp
       data:

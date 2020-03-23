@@ -3,6 +3,8 @@
   trigger:
     platform: state
     entity_id: binary_sensor.0000d8a991d35c_state
+    from: "off"
+    to: "on"
   condition:
     condition: and
     conditions:
