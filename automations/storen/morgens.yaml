@@ -14,7 +14,7 @@
   id: storen_ganz_oeffnen
   trigger:
     platform: template
-    value_template:  "{{ states.sensor.time.state == (states.input_datetime.storen_ganz_oeffnen.attributes.timestamp | int | timestamp_custom('%H:%M, false))}}"
+    value_template:  "{{ states.sensor.time.state == (states.input_datetime.storen_ganz_oeffnen.attributes.timestamp | int | timestamp_custom('%H:%M', false))}}"
   action:
     - delay:
         minutes: "{{ range(0,10) | random | int }}"
