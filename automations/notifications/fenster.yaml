@@ -5,7 +5,7 @@
     entity_id: binary_sensor.0000d8a991d301_state
   condition:
     condition: state
-    entity_id: device_tracker.74_b5_87_65_1e_ff
+    entity_id: person.alex
     state: 'not_home'
   action:
     - service: script.notify_rp
@@ -23,7 +23,7 @@
     entity_id: binary_sensor.0000D8A991D331_state
   condition:
     condition: state
-    entity_id: device_tracker.74_b5_87_65_1e_ff
+    entity_id: person.alex
     state: 'not_home'
   action:
     - service: script.notify_rp
