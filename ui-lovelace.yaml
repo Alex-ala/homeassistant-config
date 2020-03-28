@@ -192,6 +192,7 @@ views:
             suffix: "°C"
             tap_action:
               action: none
+            show_empty: false
             style:
               text-align: center
               font-size: 18px
@@ -205,6 +206,7 @@ views:
             suffix: "%"
             tap_action:
               action: none
+            show_empty: false
             style:
               text-align: center
               font-size: 18px
