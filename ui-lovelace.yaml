@@ -156,60 +156,60 @@ views:
               font-family: Helvetica
               left: 45%
               top: 93%
-#          # Wohnzimmer Thermostat
-#          - type: custom:state-attribute-element
-#            entity: climate.000c98a99501c4
-#            attribute: current_temperature
-#            suffix: "°C"
-#            tap_action:
-#              action: none
-#            style:
-#              text-align: center
-#              font-size: 18px
-#              color: red
-#              font-family: Helvetica
-#              left: 39%
-#              top: 40%
-#          - type: custom:state-attribute-element
-#            entity: climate.000c98a99501c4
-#            attribute: current_humidity
-#            suffix: "%"
-#            tap_action:
-#              action: none
-#            style:
-#              text-align: center
-#              font-size: 18px
-#              color: red
-#              font-family: Helvetica
-#              left: 40%
-#              top: 43%
-#          # Schlafzimmer Thermostat
-#          - type: custom:state-attribute-element
-#            entity: climate.000c98a99501f3
-#            attribute: current_temperature
-#            suffix: "°C"
-#            tap_action:
-#              action: none
-#            style:
-#              text-align: center
-#              font-size: 18px
-#              color: red
-#              font-family: Helvetica
-#              left: 55%
-#              top: 22%
-#          - type: custom:state-attribute-element
-#            entity: climate.000c98a99501f3
-#            attribute: current_humidity
-#            suffix: "%"
-#            tap_action:
-#              action: none
-#            style:
-#              text-align: center
-#              font-size: 18px
-#              color: red
-#              font-family: Helvetica
-#              left: 55%
-#              top: 25%
+          # Wohnzimmer Thermostat
+          - type: custom:state-attribute-element
+            entity: climate.000c98a99501c4
+            attribute: current_temperature
+            suffix: "°C"
+            tap_action:
+              action: none
+            style:
+              text-align: center
+              font-size: 18px
+              color: red
+              font-family: Helvetica
+              left: 39%
+              top: 40%
+          - type: custom:state-attribute-element
+            entity: climate.000c98a99501c4
+            attribute: current_humidity
+            suffix: "%"
+            tap_action:
+              action: none
+            style:
+              text-align: center
+              font-size: 18px
+              color: red
+              font-family: Helvetica
+              left: 40%
+              top: 43%
+          # Schlafzimmer Thermostat
+          - type: custom:state-attribute-element
+            entity: climate.000c98a99501f3
+            attribute: current_temperature
+            suffix: "°C"
+            tap_action:
+              action: none
+            style:
+              text-align: center
+              font-size: 18px
+              color: red
+              font-family: Helvetica
+              left: 55%
+              top: 22%
+          - type: custom:state-attribute-element
+            entity: climate.000c98a99501f3
+            attribute: current_humidity
+            suffix: "%"
+            tap_action:
+              action: none
+            style:
+              text-align: center
+              font-size: 18px
+              color: red
+              font-family: Helvetica
+              left: 55%
+              top: 25%
           # Reduit
           - type: state-label
             entity: sensor.000ed8a9909e0e_actual_temperature
