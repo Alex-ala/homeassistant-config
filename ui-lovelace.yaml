@@ -161,8 +161,9 @@ views:
             entity: climate.000c98a99501c4
             attribute: current_temperature
             suffix: "°C"
-#            tap_action:
-#              action: none
+            tap_action:
+              action: none
+            show_empty: false
             style:
               text-align: center
               font-size: 18px
@@ -174,8 +175,9 @@ views:
             entity: climate.000c98a99501c4
             attribute: current_humidity
             suffix: "%"
-#            tap_action:
-#              action: none
+            tap_action:
+              action: none
+            show_empty: false
             style:
               text-align: center
               font-size: 18px
