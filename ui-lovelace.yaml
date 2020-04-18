@@ -460,9 +460,10 @@ views:
         show_header_toggle: false
         entities:
           - switch.bewasserung_ventil
+          - switch.bewasserung_real
           - switch.relais_2
       - type: picture-glance
         title: Radagast
         camera_image: camera.radagast
         entities:
-          - switch.bewasserung_ventil
+          - switch.bewasserung_real
