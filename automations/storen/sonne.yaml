@@ -34,27 +34,27 @@
     - service: cover.set_cover_position
       data:
         entity_id: cover.001397099c502f
-        position: 60
+        position: 20
     - service: cover.set_cover_position
       data:
         entity_id: cover.001397099c5042
-        position: 60
+        position: 20
     - service: cover.set_cover_position
       data:
         entity_id: cover.001397099c503b
-        position: 40
+        position: 60
     - service: cover.set_cover_position
       data:
         entity_id: cover.001397099c5046
-        position: 40
+        position: 60
     - service: cover.set_cover_position
       data:
         entity_id: cover.001397099c5077
-        position: 40
+        position: 60
     - service: cover.set_cover_position
       data:
         entity_id: cover.001397099c503e
-        position: 40
+        position: 60
     - delay:
         seconds: 40
     - service: cover.set_cover_tilt_position

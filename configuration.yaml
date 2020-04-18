@@ -213,6 +213,13 @@ input_boolean:
     initial: off
     icon: mdi:sign-in
 
+switch:
+  - platform: remote_rpi_gpio
+    host: 10.6.0.2
+    ports:
+      17: Bewässerung Ventil
+      12: Relais 2
+
 input_datetime:
   storen_halb_oeffnen:
     name: Storen halb öffnen
