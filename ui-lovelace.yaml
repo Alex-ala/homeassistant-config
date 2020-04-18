@@ -455,8 +455,14 @@ views:
         entity: plant.thuja
       - type: plant-status
         entity: plant.lavendel
+      - type: entities
+        title: Relais
+        show_header_toggle: false
+        entities:
+          - switch.bewasserung_ventil
+          - switch.relais_2
       - type: picture-glance
         title: Radagast
         camera_image: camera.radagast
         entities:
-          - binary_sensor.000915699a427d_motion
+          - switch.bewasserung_ventil
