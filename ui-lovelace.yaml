@@ -452,18 +452,63 @@ views:
     title: Garten
     cards:
       - type: plant-status
-        entity: plant.thuja
+        entity: plant.erdbeere
       - type: plant-status
-        entity: plant.lavendel
-      - type: entities
-        title: Relais
-        show_header_toggle: false
-        entities:
-          - switch.bewasserung_ventil
-          - switch.bewasserung_real
-          - switch.relais_2
-      - type: picture-glance
+        entity: plant.ruebli
+      - type: plant-status
+        entity: plant.salbei
+      - type: plant-status
+        entity: plant.tomate
+      - type: picture-elements
         title: Radagast
         camera_image: camera.radagast
-        entities:
-          - switch.bewasserung_real
+        elements:
+          - type: state-icon
+            entity: switch.bewasserung_real
+            style:
+              left: 13%
+              top: 5%
+          - type: state-label
+            entity: sensor.salbei_feuchtigkeit
+            tap_action:
+              action: none
+            style:
+              text-align: center
+              font-size: 14px
+              color: red
+              font-family: Helvetica
+              left: 40%
+              top: 20%
+          - type: state-label
+            entity: sensor.ruebli_feuchtigkeit
+            tap_action:
+              action: none
+            style:
+              text-align: center
+              font-size: 14px
+              color: red
+              font-family: Helvetica
+              left: 60%
+              top: 20%
+          - type: state-label
+            entity: sensor.tomate_feuchtigkeit
+            tap_action:
+              action: none
+            style:
+              text-align: center
+              font-size: 14px
+              color: red
+              font-family: Helvetica
+              left: 20%
+              top: 20%
+          - type: state-label
+            entity: sensor.erdbeere_feuchtigkeit
+            tap_action:
+              action: none
+            style:
+              text-align: center
+              font-size: 14px
+              color: red
+              font-family: Helvetica
+              left: 80%
+              top: 20%

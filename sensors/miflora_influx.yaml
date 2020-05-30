@@ -2,58 +2,117 @@
   host: influxdb.ahome
   port: 80
   queries:
-    - name: Lavendel Feuchtigkeit
+    - name: Erdbeere Feuchtigkeit
       unit_of_measurement: '%'
       measurement: '"c4:7c:8d:6a:ab:4b"'
       where: 'time > now() - 6h'
       group_function: last
       database: plants
       field: moisture
-    - name: Lavendel Helligkeit
+    - name: Erdbeere Helligkeit
       unit_of_measurement: 'lx'
       measurement: '"c4:7c:8d:6a:ab:4b"'
       where: 'time > now() - 6h'
       group_function: last
       database: plants
       field: light
-    - name: Lavendel Leitfähigkeit
+    - name: Erdbeere Leitfähigkeit
       unit_of_measurement: 'µS/cm'
       measurement: '"c4:7c:8d:6a:ab:4b"'
       where: 'time > now() - 6h'
       group_function: last
       database: plants
       field: conductivity
-    - name: Lavendel Temperatur
+    - name: Erdbeere Temperatur
       unit_of_measurement: '°C'
       measurement: '"c4:7c:8d:6a:ab:4b"'
       where: 'time > now() - 6h'
       group_function: last
       database: plants
       field: temperature
-    - name: Thuja Feuchtigkeit
+
+    - name: Salbei Feuchtigkeit
       unit_of_measurement: '%'
       measurement: '"c4:7c:8d:6a:b6:bf"'
       where: 'time > now() - 6h'
       group_function: last
       database: plants
       field: moisture
-    - name: Thuja Helligkeit
+    - name: Salbei Helligkeit
       unit_of_measurement: 'lx'
       measurement: '"c4:7c:8d:6a:b6:bf"'
       where: 'time > now() - 6h'
       group_function: last
       database: plants
       field: light
-    - name: Thuja Leitfähigkeit
+    - name: Salbei Leitfähigkeit
       unit_of_measurement: 'µS/cm'
       measurement: '"c4:7c:8d:6a:b6:bf"'
       where: 'time > now() - 6h'
       group_function: last
       database: plants
       field: conductivity
-    - name: Thuja Temperatur
+    - name: Salbei Temperatur
       unit_of_measurement: '°C'
       measurement: '"c4:7c:8d:6a:b6:bf"'
+      where: 'time > now() - 6h'
+      group_function: last
+      database: plants
+      field: temperature
+
+    - name: Tomate Feuchtigkeit
+      unit_of_measurement: '%'
+      measurement: '"c4:7c:8d:6a:c8:6f"'
+      where: 'time > now() - 6h'
+      group_function: last
+      database: plants
+      field: moisture
+    - name: Tomate Helligkeit
+      unit_of_measurement: 'lx'
+      measurement: '"c4:7c:8d:6a:c8:6f"'
+      where: 'time > now() - 6h'
+      group_function: last
+      database: plants
+      field: light
+    - name: Tomate Leitfähigkeit
+      unit_of_measurement: 'µS/cm'
+      measurement: '"c4:7c:8d:6a:c8:6f"'
+      where: 'time > now() - 6h'
+      group_function: last
+      database: plants
+      field: conductivity
+    - name: Tomate Temperatur
+      unit_of_measurement: '°C'
+      measurement: '"c4:7c:8d:6a:c8:6f"'
+      where: 'time > now() - 6h'
+      group_function: last
+      database: plants
+      field: temperature
+
+    - name: Ruebli Feuchtigkeit
+      unit_of_measurement: '%'
+      measurement: '"c4:7c:8d:6a:b9:d5"'
+      where: 'time > now() - 6h'
+      group_function: last
+      database: plants
+      field: moisture
+    - name: Ruebli Helligkeit
+      unit_of_measurement: 'lx'
+      measurement: '"c4:7c:8d:6a:b9:d5"'
+      where: 'time > now() - 6h'
+      group_function: last
+      database: plants
+      field: light
+    - name: Ruebli Leitfähigkeit
+      unit_of_measurement: 'µS/cm'
+      measurement: '"c4:7c:8d:6a:b9:d5"'
+      where: 'time > now() - 6h'
+      group_function: last
+      database: plants
+      field: conductivity
+    - name: Ruebli Temperatur
+      unit_of_measurement: '°C'
+      measurement: '"c4:7c:8d:6a:b9:d5"'
       where: 'time > now() - 6h'
       group_function: last
       database: plants

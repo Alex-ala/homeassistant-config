@@ -224,6 +224,7 @@ switch:
     switches:
       bewasserung_real:
         value_template: "{{ is_state('switch.bewasserung_ventil', 'off') }}"
+        friendly_name: Bewässerung
         turn_on:
           service: switch.turn_off
           entity_id: switch.bewasserung_ventil
