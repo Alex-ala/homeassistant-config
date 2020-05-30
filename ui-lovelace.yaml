@@ -451,64 +451,73 @@ views:
     id: garten
     title: Garten
     cards:
-      - type: picture-elements
-        title: Radagast
-        camera_image: camera.radagast
-        elements:
-          - type: state-icon
-            entity: switch.bewasserung_real
-            style:
-              left: 13%
-              top: 5%
-          - type: state-label
-            entity: sensor.salbei_feuchtigkeit
-            tap_action:
-              action: none
-            style:
-              text-align: center
-              font-size: 14px
-              color: red
-              font-family: Helvetica
-              left: 40%
-              top: 20%
-          - type: state-label
-            entity: sensor.ruebli_feuchtigkeit
-            tap_action:
-              action: none
-            style:
-              text-align: center
-              font-size: 14px
-              color: red
-              font-family: Helvetica
-              left: 60%
-              top: 20%
-          - type: state-label
-            entity: sensor.tomate_feuchtigkeit
-            tap_action:
-              action: none
-            style:
-              text-align: center
-              font-size: 14px
-              color: red
-              font-family: Helvetica
-              left: 20%
-              top: 20%
-          - type: state-label
-            entity: sensor.erdbeere_feuchtigkeit
-            tap_action:
-              action: none
-            style:
-              text-align: center
-              font-size: 14px
-              color: red
-              font-family: Helvetica
-              left: 80%
-              top: 20%
-      - type: plant-status
-        entity: plant.erdbeere
-      - type: plant-status
-        entity: plant.ruebli
-      - type: plant-status
-        entity: plant.salbei
-      - type: plant-status
-        entity: plant.tomate
+      - type: vertical-stack
+        title: Garten
+        cards:
+        - type: picture-elements
+          title: Radagast
+          camera_image: camera.radagast
+          elements:
+            - type: state-icon
+              entity: switch.bewasserung_real
+              style:
+                left: 13%
+                top: 5%
+            - type: state-label
+              entity: sensor.salbei_feuchtigkeit
+              tap_action:
+                action: none
+              style:
+                text-align: center
+                font-size: 14px
+                color: red
+                font-family: Helvetica
+                left: 40%
+                top: 20%
+            - type: state-label
+              entity: sensor.ruebli_feuchtigkeit
+              tap_action:
+                action: none
+              style:
+                text-align: center
+                font-size: 14px
+                color: red
+                font-family: Helvetica
+                left: 60%
+                top: 20%
+            - type: state-label
+              entity: sensor.tomate_feuchtigkeit
+              tap_action:
+                action: none
+              style:
+                text-align: center
+                font-size: 14px
+                color: red
+                font-family: Helvetica
+                left: 20%
+                top: 20%
+            - type: state-label
+              entity: sensor.erdbeere_feuchtigkeit
+              tap_action:
+                action: none
+              style:
+                text-align: center
+                font-size: 14px
+                color: red
+                font-family: Helvetica
+                left: 80%
+                top: 20%
+        - type: horizontal-stack
+          title: Blumen
+          cards:
+            - type: plant-status
+              entity: plant.erdbeere
+            - type: plant-status
+              entity: plant.ruebli
+        - type: horizontal-stack
+          title: Blumen
+          cards:
+            - type: plant-status
+              entity: plant.salbei
+            - type: plant-status
+              entity: plant.tomate
