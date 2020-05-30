@@ -451,14 +451,6 @@ views:
     id: garten
     title: Garten
     cards:
-      - type: plant-status
-        entity: plant.erdbeere
-      - type: plant-status
-        entity: plant.ruebli
-      - type: plant-status
-        entity: plant.salbei
-      - type: plant-status
-        entity: plant.tomate
       - type: picture-elements
         title: Radagast
         camera_image: camera.radagast
@@ -512,3 +504,11 @@ views:
               font-family: Helvetica
               left: 80%
               top: 20%
+      - type: plant-status
+        entity: plant.erdbeere
+      - type: plant-status
+        entity: plant.ruebli
+      - type: plant-status
+        entity: plant.salbei
+      - type: plant-status
+        entity: plant.tomate
