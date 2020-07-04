@@ -226,7 +226,7 @@ light.w2:
   hidden: true
 light.w3:
   hidden: true
-light.w4:
+light.color_temperature_light_1:
   hidden: true
 light.w5:
   hidden: true

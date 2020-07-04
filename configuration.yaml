@@ -161,7 +161,7 @@ light:
       - light.w1
       - light.w2
       - light.w3
-      - light.w4
+      - light.color_temperature_light_1
       - light.w5
 
 ##########   Kamera   #########
