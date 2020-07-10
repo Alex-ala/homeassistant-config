@@ -3,6 +3,8 @@
   trigger:
     platform: state
     entity_id: binary_sensor.000915699a427d_motion
+    from: "off"
+    to: "on"
   condition:
     condition: state
     entity_id: person.alex
