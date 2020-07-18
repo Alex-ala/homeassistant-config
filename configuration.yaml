@@ -134,17 +134,10 @@ device_tracker:
     password: !secret unify_password
     consider_home: 300
 
-vacuum:
-  - platform: roombai7
-    host: 10.4.0.17
-    name: Gollum
-    username: !secret roomba_user
+roomba:
+  - host: 10.4.0.17
+    blid: !secret roomba_user
     password: !secret roomba_password
-    map: /home/homeassistant/homeassistant_config/www/map/map.png
-    floorplan: /home/homeassistant/homeassistant_config/www/map/floorplan.png
-    offset:
-      x: 74
-      y: 1035
 
 notify: !include_dir_list notifications
 
