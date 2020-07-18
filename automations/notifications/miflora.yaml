@@ -1,7 +1,6 @@
 - alias: 'Meldung: Thuja hat zu wenig Wasser'
   id: thuja_water_low
   initial_state: true
-  hide_entity: true
   trigger:
     platform: numeric_state
     entity_id: sensor.thuja2_moisture
