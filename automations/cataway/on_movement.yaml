@@ -1,0 +1,30 @@
+#Trigger and make a picture when movement is detected
+- alias: 'Wasser marsch bei Bewegung'
+  id: wasser_on_movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.000915699a427d_motion
+    to: 'on'
+  condition:
+    condition: time
+    after: '23:00:00'
+    before: '06:00:00'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.bewasserung_real
+    - delay:
+        seconds: 2
+    - service: switch.turn_off
+      entity_id: switch.bewasserung_real
+
+- alias: 'Wasser safety turnoff'
+  id: wasser_safety
+  trigger:
+    platform: state
+    entity_id: switch.bewasserung_real
+    to: 'on'
+    for:
+      seconds: 5
+  action:
+    - service: switch.turn_off
+      entity_id: switch.bewasserung_real
