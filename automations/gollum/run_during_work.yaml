@@ -8,8 +8,7 @@
     conditions:
       - condition: time
         weekday:
-          - tue
-          - fri
+          - mon
   action:
     - service: vacuum.start
       entity_id: vacuum.gollum
