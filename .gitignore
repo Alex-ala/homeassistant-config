@@ -1,17 +1,7 @@
 .idea*
 .storage*
-icloud*
 
 secrets.yaml
+configuration.yaml
+www/**
 
-.HA_VERSION
-home-assistant.log
-home-assistant_v2.db
-home-assistant_v2.db-shm
-home-assistant_v2.db-wal
-.uuid
-.homekit.state
-known_devices.yaml
-
-www/map/map*
-www/map/room*
