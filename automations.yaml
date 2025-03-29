@@ -1,0 +1,991 @@
+- id: '1685106811253'
+  alias: Pflanzen automatisch bewässern
+  description: ''
+  trigger:
+  - platform: calendar
+    event: start
+    offset: 0:0:0
+    entity_id: calendar.bewassern
+  condition: []
+  action:
+  - service: shell_command.water_plants
+    data: {}
+  mode: single
+- id: '1694263738302'
+  alias: 'Kamera: Katzentür aufzeichnen'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.este_cell_motion_detection_2
+  condition: []
+  action:
+  - service: camera.record
+    data:
+      duration: 10
+      lookback: 0
+      filename: /data/imladris/homeassistant/images/{{ '{{ entity_id.entity_id }}'
+        }}/{{ now().strftime('%Y-%m-%d %H.%M.%S') }}.mp4
+    target:
+      entity_id:
+      - camera.este_mainstream
+  mode: single
+- id: '1696652803231'
+  alias: Storen - Nach Katzen zumachen new
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - person.minna
+    to: home
+  - platform: state
+    entity_id:
+    - person.durin
+    from: not_home
+    to: home
+  - platform: state
+    entity_id:
+    - person.nuri
+    from: not_home
+    to: home
+  condition:
+  - condition: and
+    conditions:
+    - condition: template
+      value_template: '{{ state_attr("cover.storen_wohnzimmer_links", "current_position")
+        < 50 }}'
+    - condition: state
+      state: home
+      entity_id: person.minna
+    - condition: state
+      state: home
+      entity_id: person.durin
+    - condition: state
+      state: home
+      entity_id: person.nuri
+    - condition: state
+      entity_id: sensor.cat_flap_durins_tor
+      state: locked_in
+  action:
+  - service: cover.set_cover_position
+    entity_id: cover.storen_wohnzimmer_links
+    data:
+      position: 0
+  mode: single
+- id: '1698597928700'
+  alias: 'Licht: Lichterkette ausschalten'
+  description: ''
+  triggers:
+  - event: sunrise
+    offset: 0
+    trigger: sun
+  - at: '23:00:00'
+    trigger: time
+  conditions: []
+  actions:
+  - action: switch.turn_off
+    target:
+      entity_id:
+      - switch.lichterkette_switch
+    data: {}
+  mode: single
+- id: '1698597999904'
+  alias: 'Licht: Lichterkette einschalten'
+  description: ''
+  triggers:
+  - at: 05:00:00
+    trigger: time
+  - event: sunset
+    offset: 0
+    trigger: sun
+  conditions: []
+  actions:
+  - action: switch.turn_on
+    target:
+      entity_id: switch.lichterkette_switch
+    data: {}
+  mode: single
+- id: '1698598627301'
+  alias: 'Licht: Nach Kalender einschalten'
+  description: ''
+  trigger:
+  - platform: calendar
+    event: start
+    offset: 0:0:0
+    entity_id: calendar.lichter
+  condition: []
+  action:
+  - service: light.turn_on
+    data: {}
+    target:
+      entity_id: light.{{ state_attr('calendar.lichter','message') | lower }}
+  mode: single
+- id: '1698598809421'
+  alias: 'Licht: Nach Kalender ausschalten'
+  description: ''
+  trigger:
+  - platform: calendar
+    event: end
+    offset: 0:0:0
+    entity_id: calendar.lichter
+  condition: []
+  action:
+  - service: light.turn_off
+    data: {}
+    target:
+      entity_id: light.{{ state_attr('calendar.lichter','message') | lower }}
+  mode: single
+- id: '1698929527004'
+  alias: 'Meldung: Trinkbrunnen'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.mmgg_wi11_c1ab_pump_block_flag
+    - binary_sensor.mmgg_wi11_128e_pump_block_flag
+    to: 'on'
+    for:
+      hours: 0
+      minutes: 10
+      seconds: 0
+  condition: []
+  action:
+  - service: script.notify_rp
+    data:
+      title: Trinkbrunnen putt
+      message: '{{ trigger.to_state.attributes.friendly_name }}: Ohne Wasser ist das
+        Leben ziemlich dröge.
+
+        '
+  mode: single
+- id: '1699707269056'
+  alias: Configure Lora Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_button.configure_lora_tracker
+  condition: []
+  action:
+  - metadata: {}
+    data:
+      fPort: 204
+      topic: '{% if states(''input_select.configure_lora_tracker'') == "tabs-auto"
+        %} ttn/tabs/devices/tabs-auto/down/replace {% else %} application/00000000-0000-0000-0000-000000000002/device/{{states(''input_select.configure_lora_tracker'')}}/command/down
+        {% endif %}'
+      command: "{% set commands = {\n    \"Intervall Bewegung\": \"moving_interval\",\n
+        \   \"Intervall Stationär\": \"stationary_interval\",\n    \"Timeout Bewegung\":
+        \"moving_timeout\"\n  }\n%} {{ commands[states('input_select.configure_lora_setting')]
+        }}"
+      value: '{{ states(''input_number.configure_lora_interval'') }}'
+    action: pyscript.lora_tabs_encode
+  mode: single
+- id: '1700295477918'
+  alias: 'Urlaub: Lichter an'
+  description: ''
+  trigger:
+  - platform: calendar
+    event: start
+    offset: 0:0:0
+    entity_id: calendar.urlaubsschaltung
+  condition:
+  - condition: state
+    entity_id: input_boolean.urlaubsschaltung_aktiv
+    state: 'on'
+  action:
+  - delay:
+      minutes: '{{ range(0,10) | random }}'
+  - service: light.turn_on
+    data: {}
+    target:
+      entity_id: light.{{ trigger.calendar_event.summary | lower }}
+  mode: single
+- id: '1700295524153'
+  alias: 'Urlaub: Lichter ausschalten'
+  description: ''
+  trigger:
+  - platform: calendar
+    event: end
+    offset: 0:0:0
+    entity_id: calendar.urlaubsschaltung
+  condition:
+  - condition: state
+    entity_id: input_boolean.urlaubsschaltung_aktiv
+    state: 'on'
+  action:
+  - delay:
+      seconds: '{{ range(0,600) | random }}'
+  - service: light.turn_off
+    data: {}
+    target:
+      entity_id: light.{{ trigger.calendar_event.summary | lower }}
+  mode: single
+- id: '1701461023162'
+  alias: Storen - Katzenklappe bedingungslos freihalten
+  description: ''
+  trigger:
+  - platform: template
+    value_template: '{{ state_attr("cover.storen_wohnzimmer_links", "current_position")
+      < 25 }}'
+  - platform: state
+    entity_id: person.minna
+    from: home
+    to: not_home
+  - platform: state
+    entity_id: person.durin
+    from: home
+    to: not_home
+  - platform: state
+    entity_id: person.nuri
+    from: home
+    to: not_home
+  - platform: time_pattern
+    minutes: /5
+  condition:
+  - condition: and
+    conditions:
+    - condition: template
+      value_template: '{{ state_attr("cover.storen_wohnzimmer_links", "current_position")
+        < 25 }}'
+  action:
+  - service: cover.set_cover_position
+    entity_id: cover.storen_wohnzimmer_links
+    data:
+      position: 25
+  mode: single
+- id: '1707161357911'
+  alias: Schalter - Katzenklappe auf
+  description: ''
+  trigger:
+  - platform: event
+    event_type: homematic.keypress
+    event_data:
+      name: schalter_wohnzimmer
+      subtype: 6
+      type: press_short
+  - platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: Öffne Durins Tor
+  condition: []
+  action:
+  - service: script.katzenklappe_oeffnen
+    data: {}
+  mode: single
+- id: '1707161370097'
+  alias: Schalter - Katzenklappe zu
+  description: ''
+  trigger:
+  - platform: event
+    event_type: homematic.keypress
+    event_data:
+      name: schalter_wohnzimmer
+      subtype: 5
+      type: press_short
+  - platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: Schliesse Durins Tor
+  condition: []
+  action:
+  - service: script.katzenklappe_schliessen
+    data: {}
+  mode: single
+- id: '1709744275123'
+  alias: 'Tracker-Laden: Ein'
+  description: ''
+  triggers:
+  - at: 04:00:00
+    trigger: time
+  conditions: []
+  actions:
+  - data: {}
+    action: switch.turn_on
+    target:
+      entity_id: switch.tracker_ladegerat_switch
+  mode: single
+- id: '1709744506401'
+  alias: 'Tracker-Laden: Aus'
+  description: ''
+  trigger:
+  - platform: time
+    at: 08:00:00
+  condition: []
+  action:
+  - data: {}
+    action: switch.turn_off
+    target:
+      entity_id: switch.tracker_ladegerat_switch
+  mode: single
+- id: '1712042539681'
+  alias: Info Warm
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id:
+    - sensor.klima_garten_actual_temperature
+    above: 15
+  condition: []
+  action:
+  - service: notify.pushover
+    data:
+      message: Es ist warm genug um draussen zu arbeiten
+      title: Geh raus!
+  mode: single
+- id: '1713242023136'
+  alias: 'Beorn: Füttern bei Knopfdruck'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_button.beorn_yummy
+  condition: []
+  action:
+  - service: xiaomi_miot.call_action
+    data:
+      entity_id: button.mmgg_fi1_7680_pet_food_out
+      siid: 2
+      aiid: 1
+      params:
+      - '{{ states.input_number.beorn_abgabemenge.state | int }}'
+  mode: single
+- id: '1713242107749'
+  alias: 'Beorn: füttern'
+  description: ''
+  trigger:
+  - platform: calendar
+    event: start
+    offset: 0:0:0
+    entity_id: calendar.futterautomat
+  condition: []
+  action:
+  - service: xiaomi_miot.call_action
+    data:
+      entity_id: button.mmgg_fi1_7680_pet_food_out
+      siid: 2
+      aiid: 1
+      params:
+      - '{{ states.input_number.beorn_abgabemenge.state | int }}'
+  mode: single
+- id: '1714160863433'
+  alias: Alpenluft aus wenn gut
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - fan.alpenluft
+    to: 'on'
+    for:
+      hours: 0
+      minutes: 30
+      seconds: 0
+  - platform: state
+    entity_id:
+    - fan.alpenluft
+    to: 'on'
+    for:
+      hours: 0
+      minutes: 25
+      seconds: 0
+  - platform: time_pattern
+    minutes: '35'
+  condition: []
+  action:
+  - service: fan.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id: fan.alpenluft
+  mode: single
+- id: '1715576933991'
+  alias: 'Storen: Morgens halb öffnen'
+  description: ''
+  trigger:
+  - platform: template
+    value_template: '{{ states.sensor.time.state ==  (states.input_datetime.storen_halb_oeffnen.attributes.timestamp
+      | int | timestamp_custom(''%H:%M'', false))}}'
+  condition: []
+  action:
+  - delay:
+      minutes: '{{ range(0,10) | random | int }}'
+      seconds: '{{ range(0,59) | random | int }}'
+  - service: cover.set_cover_tilt_position
+    metadata: {}
+    data:
+      tilt_position: 100
+    target:
+      entity_id: cover.storen
+  - service: automation.turn_on
+    entity_id: automation.storen_abends_schliessen
+  mode: single
+- id: '1716652128810'
+  alias: 'Storen: Wohnzimmer bei Sonne halb schliessen 2'
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id:
+    - sensor.klima_garten_illumination
+    above: 3000
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 0
+  condition:
+  - condition: and
+    conditions:
+    - condition: and
+      conditions:
+      - condition: numeric_state
+        entity_id: sensor.temp_terrasse_actual_temperature
+        above: 20
+      - condition: numeric_state
+        entity_id: sensor.temp_terrasse_actual_temperature
+        above: sensor.klima_flugel_actual_temperature
+    - condition: or
+      conditions:
+      - condition: template
+        value_template: '{{ state_attr("cover.storen_terrasse_links", "current_position")
+          > 75 }}'
+      - condition: template
+        value_template: '{{ state_attr("cover.storen_wohnzimmer_rechts", "current_position")
+          > 75 }}'
+      - condition: template
+        value_template: '{{ state_attr("cover.storen_wohnzimmer_links", "current_position")
+          > 75 }}'
+      - condition: template
+        value_template: '{{ state_attr("cover.storen_kueche_rechts", "current_position")
+          > 75 }}'
+      - condition: template
+        value_template: '{{ state_attr("cover.storen_kueche_links", "current_position")
+          > 75 }}'
+  action:
+  - service: cover.set_cover_position
+    data:
+      position: 50
+    target:
+      entity_id: cover.storen_terrasse_links
+  - service: cover.set_cover_position
+    data:
+      position: 20
+    target:
+      entity_id: cover.storen_terrasse_rechts
+  - service: cover.set_cover_position
+    data:
+      position: 20
+    target:
+      entity_id: cover.storen_wohnzimmer_rechts
+  - service: cover.set_cover_position
+    data:
+      position: 20
+    target:
+      entity_id: cover.storen_wohnzimmer_links
+  - service: cover.set_cover_position
+    data:
+      position: 20
+    target:
+      entity_id: cover.storen_kueche_rechts
+  - service: cover.set_cover_position
+    data:
+      position: 20
+    target:
+      entity_id: cover.storen_kueche_links
+  - delay:
+      seconds: 40
+  - service: cover.set_cover_tilt_position
+    data:
+      tilt_position: 50
+    target:
+      entity_id: cover.wohnzimmer
+  mode: single
+- id: '1717137595780'
+  alias: Tracker - Durin coming, disable GPS
+  description: ''
+  triggers:
+  - entity_id:
+    - device_tracker.pet_durin
+    to: home
+    trigger: state
+    enabled: false
+  - trigger: state
+    entity_id:
+    - input_button.durin_location_inside
+  conditions: []
+  actions:
+  - metadata: {}
+    data:
+      stop_actions: true
+    target:
+      entity_id: automation.update_{{states('input_select.durin_tracker')}}_device_tracker
+    action: automation.turn_off
+  - metadata: {}
+    data:
+      location_name: home
+      dev_id: '{{states(''input_select.durin_tracker'')}}'
+    action: device_tracker.see
+  - metadata: {}
+    data:
+      location_name: home
+      dev_id: durin
+    action: device_tracker.see
+  mode: single
+- id: '1717137835434'
+  alias: Tracker - Minna coming, disable GPS
+  description: ''
+  triggers:
+  - entity_id:
+    - device_tracker.pet_minna
+    to: home
+    trigger: state
+    enabled: false
+  - trigger: state
+    entity_id:
+    - input_button.minna_location_inside
+  conditions: []
+  actions:
+  - metadata: {}
+    data:
+      stop_actions: true
+    target:
+      entity_id: automation.update_{{states('input_select.minna_tracker')}}_device_tracker
+    action: automation.turn_off
+  - metadata: {}
+    data:
+      location_name: home
+      dev_id: '{{states(''input_select.minna_tracker'')}}'
+    action: device_tracker.see
+  - metadata: {}
+    data:
+      location_name: home
+      dev_id: minna
+    action: device_tracker.see
+  mode: single
+- id: '1717137872831'
+  alias: Tracker - Nuri coming, disable GPS
+  description: ''
+  triggers:
+  - entity_id:
+    - device_tracker.pet_nuri
+    to: home
+    trigger: state
+    enabled: false
+  - trigger: state
+    entity_id:
+    - input_button.nuri_location_inside
+  conditions: []
+  actions:
+  - metadata: {}
+    data:
+      stop_actions: true
+    target:
+      entity_id: automation.update_{{states('input_select.nuri_tracker')}}_device_tracker
+    action: automation.turn_off
+  - metadata: {}
+    data:
+      location_name: home
+      dev_id: '{{states(''input_select.nuri_tracker'')}}'
+    action: device_tracker.see
+  - metadata: {}
+    data:
+      location_name: home
+      dev_id: nuri
+    action: device_tracker.see
+  mode: single
+- id: '1717252906698'
+  alias: 'Tracker - Durin leaving, enable GPS '
+  description: ''
+  triggers:
+  - entity_id:
+    - device_tracker.pet_durin
+    to: not_home
+    trigger: state
+    enabled: false
+  - entity_id:
+    - device_tracker.pet_durin
+    to: unknown
+    trigger: state
+    enabled: false
+  - trigger: state
+    entity_id:
+    - input_button.durin_location_outside
+  conditions: []
+  actions:
+  - metadata: {}
+    data:
+      dev_id: durin
+      location_name: not_home
+    action: device_tracker.see
+  - metadata: {}
+    target:
+      entity_id: automation.update_{{states('input_select.durin_tracker')}}_device_tracker
+    action: automation.turn_on
+  mode: single
+- id: '1717252974942'
+  alias: Tracker - Nuri leaving, enable GPS
+  description: ''
+  triggers:
+  - entity_id:
+    - device_tracker.pet_nuri
+    to: not_home
+    trigger: state
+    enabled: false
+  - entity_id:
+    - device_tracker.pet_nuri
+    to: unknown
+    trigger: state
+    enabled: false
+  - trigger: state
+    entity_id:
+    - input_button.nuri_location_outside
+  conditions: []
+  actions:
+  - metadata: {}
+    data:
+      location_name: not_home
+      dev_id: nuri
+    action: device_tracker.see
+  - metadata: {}
+    target:
+      entity_id: automation.update_{{states('input_select.nuri_tracker')}}_device_tracker
+    action: automation.turn_on
+  mode: single
+- id: '1717305324106'
+  alias: Tracker - Minna leaving, enable GPS
+  description: ''
+  triggers:
+  - entity_id:
+    - device_tracker.pet_minna
+    to: not_home
+    trigger: state
+    enabled: false
+  - entity_id:
+    - device_tracker.pet_minna
+    to: unknown
+    trigger: state
+    enabled: false
+  - trigger: state
+    entity_id:
+    - input_button.minna_location_outside
+  conditions: []
+  actions:
+  - metadata: {}
+    data:
+      location_name: not_home
+      dev_id: minna
+    action: device_tracker.see
+  - metadata: {}
+    target:
+      entity_id: automation.update_{{states('input_select.minna_tracker')}}_device_tracker
+    action: automation.turn_on
+  mode: single
+- id: '1718735101584'
+  alias: Storen - Katzenklappe freihalten
+  description: ''
+  triggers:
+  - value_template: '{{ state_attr("cover.storen_wohnzimmer_links", "current_position")
+      < 25 }}'
+    trigger: template
+  - entity_id:
+    - person.minna
+    from: home
+    trigger: state
+  - entity_id:
+    - person.durin
+    from: home
+    trigger: state
+  - entity_id:
+    - person.nuri
+    from: home
+    trigger: state
+  - minutes: /5
+    trigger: time_pattern
+  conditions:
+  - condition: and
+    conditions:
+    - condition: not
+      conditions:
+      - condition: and
+        conditions:
+        - condition: state
+          entity_id: person.minna
+          state: home
+        - condition: state
+          entity_id: person.durin
+          state: home
+        - condition: state
+          entity_id: person.nuri
+          state: home
+    - condition: template
+      value_template: '{{ state_attr("cover.storen_wohnzimmer_links", "current_position")
+        < 25 }}'
+  actions:
+  - entity_id: cover.storen_wohnzimmer_links
+    data:
+      position: 25
+    action: cover.set_cover_position
+  mode: single
+- id: '1719503651792'
+  alias: 'Schalter: Schreibtisch - PC einschalten'
+  description: ''
+  trigger:
+  - platform: event
+    event_type: homematic.keypress
+    event_data:
+      name: schalter_schreibtisch
+      subtype: 2
+      type: press_short
+  - platform: state
+    entity_id:
+    - input_button.pc_einschalten
+  condition: []
+  action:
+  - action: pfsense.send_wol
+    metadata: {}
+    data:
+      entity_id: binary_sensor.pfsense_pending_notices_present
+      mac: 0c:9d:92:0f:56:76
+      interface: lan
+  mode: single
+- id: '1721055102127'
+  alias: Catucator
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.vaire_cell_motion_detection_2
+    - binary_sensor.bewegung_1_motion
+    to: 'on'
+    from: 'off'
+  condition:
+  - condition: state
+    entity_id: person.minna
+    state: home
+  - condition: state
+    entity_id: person.durin
+    state: home
+  - condition: state
+    entity_id: person.nuri
+    state: home
+  - condition: time
+    after: '22:00:00'
+    before: 05:00:00
+  action:
+  - parallel:
+    - metadata: {}
+      data:
+        duration: 30
+        lookback: 10
+        filename: /data/imladris/homeassistant/images/{{ '{{ entity_id.entity_id }}'
+          }}/{{ now().strftime('%Y-%m-%d %H.%M.%S') }}.mp4
+      target:
+        entity_id:
+        - camera.vana_mainstream
+        - camera.aule_mainstream
+        - camera.vaire_mainstream
+      action: camera.record
+    - metadata: {}
+      data: {}
+      action: shell_command.catucator
+  mode: single
+- id: '1721367324507'
+  alias: Kamera Terrasse bei bewegung
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.vana_cell_motion_detection
+    - binary_sensor.aule_cell_motion_detection
+    - binary_sensor.vaire_cell_motion_detection_2
+    - binary_sensor.presence_7
+    - binary_sensor.presence_9
+  condition: []
+  action:
+  - service: camera.record
+    metadata: {}
+    data:
+      duration: 30
+      lookback: 10
+      filename: /data/imladris/homeassistant/images/{{ '{{ entity_id.entity_id }}'
+        }}/{{ now().strftime('%Y-%m-%d %H.%M.%S') }}.mp4
+    target:
+      entity_id:
+      - camera.vana_mainstream
+      - camera.aule_mainstream
+      - camera.vaire_mainstream
+  mode: single
+- id: '1723306074826'
+  alias: 'Kamera: Wohnzimmer bei Bewegung '
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.orome_cell_motion_detection_2
+    - binary_sensor.nienna_cell_motion_detection
+    - binary_sensor.mymotiondetectorrule_cell_motion_detection_5
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: person.alex
+    state: not_home
+  action:
+  - service: camera.record
+    metadata: {}
+    data:
+      duration: 30
+      lookback: 10
+      filename: /data/imladris/homeassistant/images/{{ '{{ entity_id.entity_id }}'
+        }}/{{ now().strftime('%Y-%m-%d %H.%M.%S') }}.mp4
+    target:
+      entity_id:
+      - camera.nienna_hd_stream
+      - camera.orome_mainstream
+      - camera.yavanna_mainstream
+  mode: single
+- id: '1723383383989'
+  alias: 'Kamera: Katzenklappe aussen aufzeichnen'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.vaire_cell_motion_detection_2
+  condition: []
+  action:
+  - data:
+      duration: 10
+      lookback: 5
+      filename: /data/imladris/homeassistant/images/{{ '{{ entity_id.entity_id }}'
+        }}/{{ now().strftime('%Y-%m-%d %H.%M.%S') }}.mp4
+    target:
+      entity_id:
+      - camera.vaire_mainstream
+      - camera.vana_mainstream
+      - camera.aule_mainstream
+    action: camera.record
+  mode: single
+- id: '1726204330289'
+  alias: 'Brunnen: Bei trockener Luft einschalten'
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.klima_flugel_humidity
+    below: 45
+  condition:
+  - condition: state
+    entity_id: switch.brunnen_switch
+    state: 'off'
+  action:
+  - action: switch.turn_on
+    data: {}
+    target:
+      entity_id: switch.brunnen_switch
+  - data:
+      title: Brunnen
+      message: Wohnzimmer zu trocken, Brunnen wird eingeschaltet.
+    action: script.notify_rp
+  mode: single
+- id: '1726204366075'
+  alias: 'Brunnen: Bei feuchter Luft ausschalten'
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.klima_flugel_humidity
+    above: 48
+  condition:
+  - condition: state
+    entity_id: switch.brunnen_switch
+    state: 'on'
+  action:
+  - action: switch.turn_off
+    data: {}
+    target:
+      entity_id: switch.brunnen_switch
+  - data:
+      title: Brunnen
+      message: Wohnzimmer wieder feucht genug, Brunnen wird ausgeschaltet.
+    action: script.notify_rp
+  mode: single
+- id: '1726204623666'
+  alias: 'Licht: Bett bei Bewegung an'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.bewegung_bett_motion
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: sun.sun
+    state: below_horizon
+  action:
+  - data: {}
+    action: light.turn_on
+    target:
+      entity_id: light.bett_light
+  mode: single
+- id: '1726204658974'
+  alias: 'Licht: Bett bei Bewegung aus'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.bewegung_bett_motion
+    to: 'off'
+  condition: []
+  action:
+  - data: {}
+    action: light.turn_off
+    target:
+      entity_id:
+      - light.bett_light
+  mode: single
+- id: '1726643566948'
+  alias: 'Licht: Aus wenn raus'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: person.alex
+    from: home
+    to: not_home
+    for:
+      hours: 0
+      minutes: 10
+      seconds: 0
+  condition: []
+  action:
+  - data_template:
+      entity_id: light.aus_bei_raus
+    action: homeassistant.turn_off
+  mode: single
+- id: '1729514513712'
+  alias: 'Meldung: Katze im Dorf'
+  description: ''
+  trigger:
+  - platform: zone
+    entity_id:
+    - person.minna
+    - person.nuri
+    - person.durin
+    zone: zone.minnas_jagdgebiet
+    event: leave
+  condition: []
+  action:
+  - data:
+      title: '{{ trigger.to_state.attributes.friendly_name }} geht in Gefährliche
+        Regionen'
+      message: '{{ trigger.to_state.attributes.friendly_name }} pass auf dich auf!
+
+        '
+    action: script.notify_rp
+  mode: single
+- id: '1737492457457'
+  alias: Thorondor heizen
+  description: ''
+  triggers:
+  - event_data:
+      actionID: 5404559C-209E-40DF-AEEA-952F737043A7
+    event_type: ios.action_fired
+    trigger: event
+  conditions: []
+  actions:
+  - action: button.press
+    metadata: {}
+    data: {}
+    target:
+      entity_id: button.thorondor_start_climate
+  mode: single

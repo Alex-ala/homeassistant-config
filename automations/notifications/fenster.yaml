@@ -2,11 +2,11 @@
   id: meldung_küchenfensterfenster_offen
   trigger: 
     - platform: state
-      entity_id: binary_sensor.0000d8a991d301_state
+      entity_id: binary_sensor.fenster_kuche_state
       from: "off"
       to: "on"
     - platform: state
-      entity_id: binary_sensor.0000d8a991d301_state
+      entity_id: binary_sensor.fenster_kuche_state
       from: "on"
       to: "off"
   condition:
@@ -26,11 +26,11 @@
   id: meldung_schlafzimmefenster_offen
   trigger:
     - platform: state
-      entity_id: binary_sensor.0000D8A991D331_state
+      entity_id: binary_sensor.fenster_schlafzimmer_state
       from: "off"
       to: "on"
     - platform: state
-      entity_id: binary_sensor.0000D8A991D331_state
+      entity_id: binary_sensor.fenster_schlafzimmer_state
       from: "on"
       to: "off"
   condition:

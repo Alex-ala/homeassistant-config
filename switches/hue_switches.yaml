@@ -1,0 +1,35 @@
+- platform: template
+  switches:
+    ho:
+      friendly_name: HO-Setup
+      value_template: "{{ is_state('light.ho', 'on') }}"
+      turn_on:
+        service: light.turn_on
+        target:
+          entity_id: light.ho
+      turn_off:
+        service: light.turn_off
+        target:
+          entity_id: light.ho
+    hue2:
+      friendly_name: hue2
+      value_template: "{{ is_state('light.hue_smart_plug_2', 'on') }}"
+      turn_on:
+        service: light.turn_on
+        target:
+          entity_id: light.hue_smart_plug_2
+      turn_off:
+        service: light.turn_off
+        target:
+          entity_id: light.hue_smart_plug_2
+    brunnen:
+      friendly_name: brunnen
+      value_template: "{{ is_state('light.brunnen', 'on') }}"
+      turn_on:
+        service: light.turn_on
+        target:
+          entity_id: light.brunnen
+      turn_off:
+        service: light.turn_off
+        target:
+          entity_id: light.brunnen

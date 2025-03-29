@@ -1,0 +1,16 @@
+- platform: group
+  name: Fenster
+  entities:
+    - binary_sensor.fenster_kuche_state
+    - binary_sensor.fenster_schlafzimmer_state
+
+- platform: group
+  name: Türen
+  entities:
+    - binary_sensor.tur_haustur_state
+    - binary_sensor.tur_terrasse_state
+
+- platform: group
+  name: Bewegungsmelder
+  entities:
+    - binary_sensor.bewegung_wohnzimmer_motion

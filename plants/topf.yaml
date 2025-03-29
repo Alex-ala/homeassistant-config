@@ -1,0 +1,10 @@
+topf:
+  sensors:
+    moisture: sensor.topf_feuchtigkeit
+    temperature: sensor.topf_temperatur
+    conductivity: sensor.topf_leitfahigkeit
+    brightness: sensor.topf_helligkeit
+  min_moisture: 15
+  max_moisture: 60
+  min_conductivity: 350
+  min_temperature: 5

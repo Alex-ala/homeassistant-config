@@ -1,0 +1,96 @@
+- alias: 'Meldung: Katze geht'
+  id: cat_out
+  trigger:
+    - platform: state
+      entity_id: person.minna
+      from: 'home'
+      to: 'not_home'
+    - platform: state
+      entity_id: person.durin
+      from: 'home'
+      to: 'not_home'
+    - platform: state
+      entity_id: person.nuri
+      from: 'home'
+      to: 'not_home'
+  condition:
+    not:
+      - condition: state
+        entity_id: person.alex
+        state: 'home'
+  action:
+    - service: script.notify_rp
+      data:
+        title: '{{ trigger.to_state.attributes.friendly_name }} geht raus'
+        message: >
+          {{ trigger.to_state.attributes.friendly_name }} geht auf grosse Wanderschaft
+
+- alias: 'Meldung: Katze kommt'
+  id: cat_in
+  trigger:
+    - platform: state
+      entity_id: person.minna
+      to: 'home'
+    - platform: state
+      entity_id: person.durin
+      to: 'home'
+    - platform: state
+      entity_id: person.nuri
+      to: 'home'
+  condition:
+    not:
+      - condition: state
+        entity_id: person.alex
+        state: 'home'
+  action:
+    - service: script.notify_rp
+      data:
+        title: '{{ trigger.to_state.attributes.friendly_name }} kommt'
+        message: >
+          {{ trigger.to_state.attributes.friendly_name }} ist wieder sicher zuhause
+
+- alias: 'Meldung: Katze im Dorf'
+  id: cat_goes_wild
+  trigger:
+    - platform: zone
+      entity_id:
+        - person.minna
+        - person.nuri
+        - person.durin
+      zone: zone.minnas_jagdgebiet
+      event: leave # or "leave"
+  action:
+    - service: script.notify_rp
+      data:
+        title: '{{ trigger.to_state.attributes.friendly_name }} geht in Gefährliche Regionen'
+        message: >
+          {{ trigger.to_state.attributes.friendly_name }} pass auf dich auf!
+
+- alias: 'Meldung: Futterautomat leer'
+  id: beorn_empty
+  trigger:
+    - platform: state
+      entity_id: sensor.mmgg_fi1_7680_pet_feeder
+      attribute: pet_feeder.pet_food_left_level
+      not_to: 0
+      for:
+        minutes: 15
+    - platform: state
+      entity_id: sensor.mmgg_fi1_7680_pet_feeder
+      attribute: feedserve.outletstatus
+      not_to: 0
+      for:
+        minutes: 15
+    - platform: state
+      entity_id: sensor.mmgg_fi1_7680_pet_feeder
+      attribute: feedserve.doorstatus
+      not_to: 0
+      for:
+        minutes: 15
+  action:
+    - service: script.notify_rp
+      data:
+        title: 'Beorn ist fast leer.'
+        message: >
+          Futter auffüllen pwease!
+

@@ -2,13 +2,23 @@
   id: meldung_bewegung
   trigger:
     platform: state
-    entity_id: binary_sensor.000915699a427d_motion
+    entity_id: binary_sensor.bewegung_wohnzimmer_motion
     from: "off"
     to: "on"
   condition:
-    condition: state
-    entity_id: person.alex
-    state: 'not_home'
+    not:
+      - condition: state
+        entity_id: person.alex
+        state: 'home'
+      - condition: state
+        entity_id: person.minna
+        state: 'home'
+      - condition: state
+        entity_id: person.durin
+        state: 'home'
+      - condition: state
+        entity_id: person.nuri
+        state: 'home'
   action:
     - service: script.notify_rp
       data:

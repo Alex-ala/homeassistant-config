@@ -1,0 +1,13 @@
+- alias: Update Weiss2 device tracker
+  trigger:
+    - platform: state
+      entity_id: sensor.trackit_weiss2_location
+      attribute: timestamp
+  action:
+    - service: device_tracker.see
+      data:
+        dev_id: "Weiss2"
+        gps:
+          - "{{ state_attr('sensor.trackit_weiss2_location','latitude') }}"
+          - "{{ state_attr('sensor.trackit_weiss2_location','longitude') }}"
+        gps_accuracy: "{{ state_attr('sensor.trackit_weiss2_location','accuracy') }}"

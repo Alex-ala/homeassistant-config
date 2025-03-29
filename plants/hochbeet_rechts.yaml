@@ -1,0 +1,10 @@
+hochbeet_rechts:
+  sensors:
+    moisture: sensor.hochbeet_rechts_feuchtigkeit
+    temperature: sensor.hochbeet_rechts_temperatur
+    conductivity: sensor.hochbeet_rechts_leitfahigkeit
+    brightness: sensor.hochbeet_rechts_helligkeit
+  min_moisture: 15
+  max_moisture: 60
+  min_conductivity: 350
+  min_temperature: 5

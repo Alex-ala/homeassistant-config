@@ -1,13 +1,12 @@
-- alias: 'Strom: Schreibtisch aus nach 5min >10W'
+- alias: 'Strom: Schreibtisch aus nach 5min >40W'
   id: strom_schreibtisch_auto_off_5min
   trigger: 
     platform: numeric_state
-    entity_id: sensor.001015699eacfa_power
-    value_template: '{{ state.attributes.power }}'
-    below: 20
+    entity_id: sensor.strom_schreibtisch_power
+    below: 30
     for:
       minutes: 5
   action:
     service: switch.turn_off
     data:
-      entity_id: group.schalter_schreibtisch
+      entity_id: switch.strom_schreibtisch

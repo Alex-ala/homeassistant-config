@@ -1,0 +1,26 @@
+- alias: Update alex
+  trigger:
+    - platform: state
+      entity_id: sensor.alex_location
+      attribute: timestamp
+    - platform: state
+      entity_id: device_tracker.iphone14_unifi
+  action:
+    - service: device_tracker.see
+      data:
+        dev_id: "alex"
+        location_name: |-
+           {{ 'home' if is_state('device_tracker.iphone14_unifi', 'home') else 'not_home' }}
+    - condition: template
+      value_template: |-
+        {{ not is_state('device_tracker.iphone14_unifi','home') and
+          states('sensor.alex_location') != 0 }}
+    - service: device_tracker.see
+      data:
+        dev_id: "alex"
+        location_name: |-
+          {{ 'home' if is_state('device_tracker.iphone14_unifi', 'home') else 'not_home' }}
+        gps:
+          - "{{ state_attr('sensor.alex_location','latitude') }}"
+          - "{{ state_attr('sensor.alex_location','longitude') }}"
+        gps_accuracy: "{{ state_attr('sensor.alex_location','accuracy') }}"

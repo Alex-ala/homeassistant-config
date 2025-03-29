@@ -1,0 +1,9 @@
+- platform: group
+  name: Licht
+  unique_id: all_lights
+  entities:
+    - light.wohnzimmer_licht_2
+    - light.schlafzimmer
+    - light.bett
+    - light.flur
+    - light.kueche

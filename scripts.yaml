@@ -1,0 +1,9 @@
+thorondor_heizen:
+  alias: Thorondor heizen
+  sequence:
+  - action: button.press
+    metadata: {}
+    data: {}
+    target:
+      entity_id: button.thorondor_start_climate
+  description: ''

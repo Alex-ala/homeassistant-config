@@ -1,0 +1,13 @@
+- alias: 'Strom: Schreibtisch Util aus nach 30min >10W'
+  id: strom_schreibtisch_util_auto_off_30min
+  trigger: 
+    platform: numeric_state
+    entity_id: sensor.strom_schreibtisch_utility_power
+    value_template: '{{ state.attributes.power }}'
+    below: 10
+    for:
+      minutes: 30
+  action:
+    service: switch.turn_off
+    data:
+      entity_id: switch.strom_schreibtisch_utility

@@ -1,0 +1,16 @@
+katzenklappe_umschalten:
+  alias: 'Katzenklappe umschalten'
+  sequence:
+    choose:
+      - conditions:
+          - condition: state
+            entity_id: sensor.cat_flap_durins_tor
+            state: "unlocked"
+        sequence:
+          - service: script.katzenklappe_schliessen
+      - conditions:
+          - condition: state
+            entity_id: sensor.cat_flap_durins_tor
+            state: "locked_in"
+        sequence:
+          - service: script.katzenklappe_oeffnen

@@ -1,0 +1,35 @@
+- alias: 'Katzenklappe: Morgens öffnen (Retry)'
+  id: katzenklappe_oeffnen
+  trigger:
+    platform: time_pattern
+    minutes: "/30"
+  condition:
+    condition: and
+    conditions:
+      - alias: "Es ist morgens nach Öffnungszeit"
+        condition: template
+        value_template:  "{{ states.sensor.time.state >= (states.input_datetime.katzenklappe_oeffnen.attributes.timestamp | int | timestamp_custom('%H:%M', false)) and states.sensor.time.state <= '12:00' }}"
+      - alias: "Katzenklappe ist zu"
+        condition: state
+        entity_id: sensor.cat_flap_durins_tor
+        state: "locked_in"
+  action:
+     - service: script.katzenklappe_oeffnen
+
+- alias: 'Katzenklappe: Abends schliessen (Retry)'
+  id: katzenklappe_schliessen
+  trigger:
+      platform: time_pattern
+      minutes: "/30"
+  condition:
+    condition: and
+    conditions:
+      - alias: "Es ist morgens nach Öffnungszeit"
+        condition: template
+        value_template:  "{{ states.sensor.time.state >= (states.input_datetime.katzenklappe_schliessen.attributes.timestamp | int | timestamp_custom('%H:%M', false)) and states.sensor.time.state > '12:00' }}"
+      - alias: "Katzenklappe ist offen"
+        condition: state
+        entity_id: sensor.cat_flap_durins_tor
+        state: "unlocked"
+  action:
+    - service: script.katzenklappe_schliessen

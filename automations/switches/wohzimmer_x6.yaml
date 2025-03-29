@@ -3,31 +3,31 @@
     platform: event
     event_type: homematic.keypress
     event_data:
-      name: 000B58A9A4E598
-      channel: 1
-      param: PRESS_SHORT
+      name: schalter_wohnzimmer
+      subtype: 1
+      type: press_short
   action:
     service: switch.toggle
-    entity_id: switch.000898a9932fdf
+    entity_id: switch.licht_kueche
 - alias: "Schalter - Wohzimmerlicht"
   trigger:
     platform: event
     event_type: homematic.keypress
     event_data:
-      name: 000B58A9A4E598
-      channel: 2
-      param: PRESS_SHORT
+      name: schalter_wohnzimmer
+      subtype: 2
+      type: press_short
   action:
     service: light.toggle
-    entity_id: light.wohnzimmer_licht
+    entity_id: light.wohnzimmer_licht_2
 - alias: "Schalter - Storen runter Wohnzimmer"
   trigger:
     platform: event
     event_type: homematic.keypress
     event_data:
-      name: 000B58A9A4E598
-      channel: 3
-      param: PRESS_SHORT
+      name: schalter_wohnzimmer
+      subtype: 3
+      type: press_short
   action:
     service: cover.close_cover
     entity_id: cover.wohnzimmer
@@ -36,9 +36,9 @@
     platform: event
     event_type: homematic.keypress
     event_data:
-      name: 000B58A9A4E598
-      channel: 3
-      param: PRESS_LONG
+      name: schalter_wohnzimmer
+      subtype: 3
+      type: press_long
   action:
     service: cover.close_cover_tilt
     entity_id: cover.wohnzimmer
@@ -47,9 +47,9 @@
     platform: event
     event_type: homematic.keypress
     event_data:
-      name: 000B58A9A4E598
-      channel: 4
-      param: PRESS_SHORT
+      name: schalter_wohnzimmer
+      subtype: 4
+      type: press_short
   action:
     service: cover.open_cover
     entity_id: cover.wohnzimmer
@@ -58,9 +58,9 @@
     platform: event
     event_type: homematic.keypress
     event_data:
-      name: 000B58A9A4E598
-      channel: 4
-      param: PRESS_LONG
+      name: schalter_wohnzimmer
+      subtype: 4
+      type: press_long
   action:
     service: cover.open_cover_tilt
     entity_id: cover.wohnzimmer

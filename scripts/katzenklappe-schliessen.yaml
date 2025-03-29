@@ -1,0 +1,23 @@
+katzenklappe_schliessen:
+  alias: 'Schliesse Katzenklappe'
+  sequence:
+    - alias: "Schliesse Katzenklappe"
+      service: sureha.set_lock_state
+      data:
+        flap_id: 692469
+        lock_state: locked_in
+    - alias: "Sende Notification"
+      service: script.notify_rp
+      data:
+       title: 'Katzenklappe zu'
+       message: >
+         Durins Tor schliesst sich für einen sicheren Schlaf.
+    - condition: template
+      value_template: '{{ state_attr("cover.storen_wohnzimmer_rechts", "current_position") < 40 }}'
+    - service: cover.close_cover
+      entity_id: cover.storen_wohnzimmer_links
+    - delay:
+        seconds: 30
+    - service: cover.close_cover_tilt
+      data:
+       entity_id: cover.storen_wohnzimmer_links

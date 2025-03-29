@@ -2,63 +2,63 @@
 temperatur_terrasse:
   name: Temperatur Terrasse
   entities: 
-    - sensor.000ed8a9909c6d_actual_temperature
-    - sensor.000ed8a9909c6d_humidity
+    - sensor.temp_terrasse_actual_temperature
+    - sensor.temp_terrasse_humidity
 
 temperatur_fluegel:
   name: Temperatur Flügel
   entities:
-    - sensor.000ed8a9909c6f_actual_temperature
-    - sensor.000ed8a9909c6f_humidity
+    - sensor.klima_flugel_humidity
+    - sensor.klima_flugel_humidity
 
 temperatur_schreibtisch:
   name: Temperatur Schreibtisch
   entities:
-    - sensor.000ed8a9909c8e_actual_temperature
-    - sensor.000ed8a9909c8e_humidity
+    - sensor.temp_schreibtisch_actual_temperature
+    - sensor.temp_schreibtisch_humidity
 
 temperatur_reduit:
   name: Temperatur Reduit
   entities:
-    - sensor.000ed8a9909e0e_actual_temperature
-    - sensor.000ed8a9909e0e_humidity
+    - sensor.temp_reduit_actual_temperature
+    - sensor.temp_reduit_humidity
 
 temperatur_bad:
   name: Temperatur Bad
   entities:
-    - sensor.000ed8a9909c09_actual_temperature
-    - sensor.000ed8a9909c09_humidity
+    - sensor.temp_bad_actual_temperature
+    - sensor.temp_bad_humidity
 
 temperatur_garten:
   name: Temperatur Garten
   entities:
-    - sensor.0017d709ae2f48_actual_temperature
-    - sensor.0017d709ae2f48_humidity
-    - sensor.0017d709ae2f48_wind_speed
-    - sensor.0017d709ae2f48_illumination
-    - sensor.0017d709ae2f48_sunshineduration
+    - sensor.heizung_schlafzimmer_actual_temperature
+    - sensor.klima_garten_humidity
+    - sensor.klima_garten_wind_speed
+    - sensor.klima_garten_illumination
+    - sensor.klima_garten_sunshineduration
 
 temperatur_schlafzimmer:
   name: Temperatur Schlafzimmer
   entities:
-    - sensor.000c98a99501f3_actual_temperature
-    - sensor.000c98a99501f3_humidity
+    - sensor.heizung_schlafzimmer_actual_temperature
+    - sensor.heizung_schlafzimmer_humidity
 
 temperatur_flur:
   name: Temperatur Flur
   entities:
-    - sensor.000c98a99501c4_actual_temperature
-    - sensor.000c98a99501c4_humidity
+    - sensor.heizung_wohnzimmer_actual_temperature
+    - sensor.heizung_wohnzimmer_humidity
 
 
 strom_schreibtisch:
   name: Strom Schreibtisch
   entities:
-    - sensor.001015699eacfa_power
-    - sensor.001015699eacfa_energy_counter
-    - sensor.001015699eacfa_current
-    - sensor.001015699eacfa_voltage
-    - sensor.001015699eacfa_frequency
+    - sensor.strom_schreibtisch_power
+    - sensor.strom_schreibtisch_energy_counter
+    - sensor.strom_schreibtisch_current
+    - sensor.strom_schreibtisch_voltage
+    - sensor.strom_schreibtisch_frequency
 
 strom_brunnen:
   name: Strom Brunnen
@@ -72,29 +72,29 @@ strom_brunnen:
 strom_flur:
   name: Strom Flurlicht
   entities:
-    - sensor.000898a9951e58_power
-    - sensor.000898a9951e58_energy_counter
-    - sensor.000898a9951e58_current
-    - sensor.000898a9951e58_voltage
-    - sensor.000898a9951e58_frequency
+    - sensor.licht_gang_power
+    - sensor.licht_gang_energy_counter
+    - sensor.licht_gang_current
+    - sensor.licht_gang_voltage
+    - sensor.licht_gang_frequency
 
 strom_wohnzimmer:
   name: Strom Wohnzimmer Sofa
   entities:
-    - sensor.000898a9951a7c_power
-    - sensor.000898a9951a7c_energy_counter
-    - sensor.000898a9951a7c_current
-    - sensor.000898a9951a7c_voltage
-    - sensor.000898a9951a7c_frequency
+    - sensor.strom_sofa_power
+    - sensor.strom_sofa_energy_counter
+    - sensor.strom_sofa_current
+    - sensor.strom_sofa_voltage
+    - sensor.strom_sofa_frequency
 
 strom_kueche:
   name: Strom Küchenlicht
   entities:
-    - sensor.000898a9932fdf_power
-    - sensor.000898a9932fdf_energy_counter
-    - sensor.000898a9932fdf_current
-    - sensor.000898a9932fdf_voltage
-    - sensor.000898a9932fdf_frequency
+    - sensor.licht_kueche_power
+    - sensor.licht_kueche_energy_counter
+    - sensor.licht_kueche_current
+    - sensor.licht_kueche_voltage
+    - sensor.licht_kueche_frequency
 
 schalter_brunnen:
   name: Schalter Brunnen
@@ -104,29 +104,7 @@ schalter_brunnen:
 schalter_schreibtisch:
   name: Schalter Schreibtisch
   entities:
-    - switch.001015699eacfa
-
-# Group of devices
-fenster:
-  name: Fenster
-  entities:
-    - binary_sensor.0000d8a991d301_state
-    - binary_sensor.0000d8a991d331_state
-
-tueren:
-  name: Türen
-  entities:
-    - binary_sensor.0000d8a991d35c_state
-    - binary_sensor.0000d8a991d263_state
-
-licht:
-  name: Licht
-  entities:
-    - light.wohnzimmer_licht
-    - light.schlafzimmer
-    - light.hue_lightstrip_plus_1
-    - switch.000898a9951e58
-    - switch.000898a9932fdf
+    - switch.strom_schreibtisch
 
 schalter:
   name: Schalter
@@ -137,7 +115,7 @@ schalter:
 bewegung:
   name: Bewegungsmelder
   entities:
-    - binary_sensor.000915699a427d_motion
+    - binary_sensor.bewegung_wohnzimmer_motion
 
 # Automatisierungen
 notify_brunnen:
@@ -187,8 +165,8 @@ sicherheit:
   name: Sicherheit
 #  view: true
   entities:
-    - group.tueren
-    - group.fenster
+    - binary_sensor.tueren
+    - binary_sensor.fenster
     - group.bewegung
 
 Verbrauch:
@@ -203,4 +181,3 @@ automation:
 #  view: true
   entities:
     - group.all_automations
-

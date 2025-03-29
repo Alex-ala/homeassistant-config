@@ -1,0 +1,13 @@
+- alias: Update Grau2 device tracker
+  trigger:
+    - platform: state
+      entity_id: sensor.trackit_grau2_location
+      attribute: timestamp
+  action:
+    - service: device_tracker.see
+      data:
+        dev_id: "Grau2"
+        gps:
+          - "{{ state_attr('sensor.trackit_grau2_location','latitude') }}"
+          - "{{ state_attr('sensor.trackit_grau2_location','longitude') }}"
+        gps_accuracy: "{{ state_attr('sensor.trackit_grau2_location','accuracy') }}"

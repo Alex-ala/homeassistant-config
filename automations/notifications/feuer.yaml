@@ -1,12 +1,20 @@
-- alias: 'Subject fire!!'
+- alias: 'Meldung: Subject fire!!'
   id: meldung_feuer
   trigger:
     - platform: state
-      entity_id: sensor.000a58a9ac3c02_smoke_detector_alarm_status
+      entity_id: sensor.rauchmelder_reduit_smoke_detector_alarm_status
       from: "on"
       to: "off"
     - platform: state
-      entity_id: sensor.000a58a9ac3c02_smoke_detector_alarm_status
+      entity_id: sensor.rauchmelder_reduit_smoke_detector_alarm_status
+      from: "off"
+      to: "on"
+    - platform: state
+      entity_id: sensor.rauchmelder_wohnzimmer_smoke_detector_alarm_status
+      from: "on"
+      to: "off"
+    - platform: state
+      entity_id: sensor.rauchmelder_wohnzimmer_smoke_detector_alarm_status
       from: "off"
       to: "on"
   action:

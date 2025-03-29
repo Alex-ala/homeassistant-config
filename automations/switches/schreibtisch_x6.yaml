@@ -1,0 +1,57 @@
+- alias: "Schalter: Schreibtisch - PC"
+  trigger:
+    platform: event
+    event_type: homematic.keypress
+    event_data:
+      name: schalter_schreibtisch
+      subtype: 1
+      type: press_short
+  condition:
+    condition: numeric_state
+    entity_id: sensor.strom_schreibtisch_power
+    below: 100
+  action:
+    service: switch.toggle
+    entity_id: switch.strom_schreibtisch
+- alias: "Schalter: Schreibtisch - HO"
+  trigger:
+    platform: event
+    event_type: homematic.keypress
+    event_data:
+      name: schalter_schreibtisch
+      subtype: 3
+      type: press_short
+  action:
+    service: switch.toggle
+    entity_id: switch.homeoffice_switch
+- alias: "Schalter: Schreibtisch - Licht"
+  trigger:
+    platform: event
+    event_type: homematic.keypress
+    event_data:
+      name: schalter_schreibtisch
+      subtype: 4
+      type: press_short
+  action:
+    service: light.toggle
+    entity_id: light.schreibtisch_2
+- alias: "Schalter: Schreibtisch - Katzenklappe zu"
+  trigger:
+    platform: event
+    event_type: homematic.keypress
+    event_data:
+      name: schalter_schreibtisch
+      subtype: 5
+      type: press_short
+  action:
+    - service: script.katzenklappe_schliessen
+- alias: "Schalter: Schreibtisch - Katzenklappe auf"
+  trigger:
+    platform: event
+    event_type: homematic.keypress
+    event_data:
+      name: schalter_schreibtisch
+      subtype: 6
+      type: press_short
+  action:
+    - service: script.katzenklappe_oeffnen

@@ -2,32 +2,46 @@
   id: storen_bei_wind_oeffnen
   trigger:
     platform: numeric_state
-    entity_id: sensor.0017d709ae2f48_wind_speed
-    above: 40.0
+    entity_id: sensor.klima_garten_wind_speed
+    above: 70
   action:
     - condition: and
       conditions:
         - condition: or
           conditions:
             - condition: template
-              value_template: '{{ state_attr("cover.001397099c502f", "current_position") < 90 }}'
+              value_template: '{{ state_attr("cover.storen_terrasse_links", "current_position") < 90 }}'
             - condition: template
-              value_template: '{{ state_attr("cover.001397099c5042", "current_position") < 90 }}'
+              value_template: '{{ state_attr("cover.storen_terrasse_rechts", "current_position") < 90 }}'
             - condition: template
-              value_template: '{{ state_attr("cover.001397099c5046", "current_position") < 90 }}'
+              value_template: '{{ state_attr("cover.storen_wohnzimmer_links", "current_position") < 90 }}'
             - condition: template
-              value_template: '{{ state_attr("cover.001397099c503b", "current_position") < 90 }}'
+              value_template: '{{ state_attr("cover.storen_wohnzimmer_rechts", "current_position") < 90 }}'
             - condition: template
-              value_template: '{{ state_attr("cover.001397099c503e", "current_position") < 90 }}'
+              value_template: '{{ state_attr("cover.storen_kueche_links", "current_position") < 90 }}'
             - condition: template
-              value_template: '{{ state_attr("cover.001397099c5077", "current_position") < 90 }}'
+              value_template: '{{ state_attr("cover.storen_kueche_rechts", "current_position") < 90 }}'
             - condition: template
-              value_template: '{{ state_attr("cover.001397099c4d22", "current_position") < 90 }}'
+              value_template: '{{ state_attr("cover.storen_schlafzimmer_links", "current_position") < 90 }}'
             - condition: template
-              value_template: '{{ state_attr("cover.001397099c5053", "current_position") < 90 }}'
+              value_template: '{{ state_attr("cover.storen_schlafzimmer_rechts", "current_position") < 90 }}'
     - service: cover.open_cover_tilt
-      entity_id: cover.schlafzimmer, cover.wohnzimmer
+      entity_id:
+        - cover.terrasse_rechts
+        - cover.terrasse_links
+        - cover.wohnzimmer_rechts
+        - cover.wohnzimmer_links
+        - cover.kuche_rechts
+        - cover.kuche_links
+        - cover.schlafzimmer_rechts
     - delay:
         seconds: 10
     - service: cover.open_cover
-      entity_id: cover.schlafzimmer, cover.wohnzimmer
+      entity_id:
+        - cover.terrasse_rechts
+        - cover.terrasse_links
+        - cover.wohnzimmer_rechts
+        - cover.wohnzimmer_links
+        - cover.kuche_rechts
+        - cover.kuche_links
+        - cover.schlafzimmer_rechts

@@ -1,0 +1,26 @@
+- alias: 'Stinki alle 2h'
+  id: stinki_2h
+  trigger:
+    platform: time_pattern
+    hours: "/2"
+  condition:
+    condition: state
+    entity_id: fan.stinki
+    state: 'off'
+  action:
+    - service: homeassistant.turn_on
+      data_template:
+        entity_id: fan.stinki
+
+
+- alias: 'Stinki aus nach 15min'
+  id: stinki_off
+  trigger:
+    platform: state
+    entity_id: fan.stinki
+    to: 'on'
+    for: '0:15:00'
+  action:
+    - service: homeassistant.turn_off
+      data_template:
+        entity_id: fan.stinki

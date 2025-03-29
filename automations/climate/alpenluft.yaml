@@ -1,0 +1,13 @@
+- alias: 'Alpenluft alle 6h'
+  id: alpenluft_6h
+  trigger:
+    platform: time_pattern
+    hours: "/6"
+  condition:
+    condition: state
+    entity_id: fan.alpenluft
+    state: 'off'
+  action:
+    - service: homeassistant.turn_on
+      data_template:
+        entity_id: fan.alpenluft

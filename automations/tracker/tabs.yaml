@@ -1,0 +1,105 @@
+- alias: Update Tabs Auto device tracker
+  trigger:
+    - platform: state
+      entity_id: sensor.tabs1_location
+      attribute: timestamp
+  action:
+    - service: device_tracker.see
+      data:
+        dev_id: "Tabs Auto"
+        gps:
+          - "{{ state_attr('sensor.tabs1_location','latitude') }}"
+          - "{{ state_attr('sensor.tabs1_location','longitude') }}"
+        gps_accuracy: "{{ state_attr('sensor.tabs1_location','accuracy') }}"
+- alias: Update Tabs2 device tracker
+  trigger:
+    - platform: state
+      entity_id: sensor.tabs2_location
+      attribute: timestamp
+  conditions:
+    - and:
+      - condition: numeric_state
+        entity_id: sensor.tabs2_location
+        attribute: latitude
+        above: 0
+      - condition: numeric_state
+        entity_id: sensor.tabs2_location
+        attribute: longitude
+        above: 0
+  action:
+    - service: device_tracker.see
+      data:
+        dev_id: "Tabs2"
+        gps:
+          - "{{ state_attr('sensor.tabs2_location','latitude') }}"
+          - "{{ state_attr('sensor.tabs2_location','longitude') }}"
+        gps_accuracy: "{{ state_attr('sensor.tabs2_location','accuracy') }}"
+- alias: Update Tabs3 device tracker
+  trigger:
+    - platform: state
+      entity_id: sensor.tabs3_location
+      attribute: timestamp
+  conditions:
+    - and:
+      - condition: numeric_state
+        entity_id: sensor.tabs3_location
+        attribute: latitude
+        above: 0
+      - condition: numeric_state
+        entity_id: sensor.tabs3_location
+        attribute: longitude
+        above: 0
+  action:
+    - service: device_tracker.see
+      data:
+        dev_id: "Tabs3"
+        gps:
+          - "{{ state_attr('sensor.tabs3_location','latitude') }}"
+          - "{{ state_attr('sensor.tabs3_location','longitude') }}"
+        gps_accuracy: "{{ state_attr('sensor.tabs3_location','accuracy') }}"
+- alias: Update Tabs4 device tracker
+  trigger:
+    - platform: state
+      entity_id: sensor.tabs4_location
+      attribute: timestamp
+  conditions:
+    - and:
+      - condition: numeric_state
+        entity_id: sensor.tabs4_location
+        attribute: latitude
+        above: 0
+      - condition: numeric_state
+        entity_id: sensor.tabs4_location
+        attribute: longitude
+        above: 0
+  action:
+    - service: device_tracker.see
+      data:
+        dev_id: "Tabs4"
+        gps:
+          - "{{ state_attr('sensor.tabs4_location','latitude') }}"
+          - "{{ state_attr('sensor.tabs4_location','longitude') }}"
+        gps_accuracy: "{{ state_attr('sensor.tabs4_location','accuracy') }}"
+- alias: Update Tabs5 device tracker
+  trigger:
+    - platform: state
+      entity_id: sensor.tabs5_location
+      attribute: timestamp
+  conditions:
+    - and:
+      - condition: numeric_state
+        entity_id: sensor.tabs5_location
+        attribute: latitude
+        above: 0
+      - condition: numeric_state
+        entity_id: sensor.tabs5_location
+        attribute: longitude
+        above: 0
+  action:
+    - service: device_tracker.see
+      data:
+        dev_id: "Tabs5"
+        gps:
+          - "{{ state_attr('sensor.tabs5_location','latitude') }}"
+          - "{{ state_attr('sensor.tabs5_location','longitude') }}"
+        gps_accuracy: "{{ state_attr('sensor.tabs5_location','accuracy') }}"

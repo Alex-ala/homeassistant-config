@@ -1,0 +1,20 @@
+- alias: 'Meldung: Fenster offen obwohl es zu warm ist'
+  id: meldung_fenster_offen_bei_warm
+  trigger: 
+    - platform: state
+      entity_id: sensor.heizung_schlafzimmer_actual_temperature
+  condition:
+    - condition: and
+      conditions:
+        - "{{ float(states('sensor.heizung_schlafzimmer_actual_temperature')) > state_attr('climate.heizung_schlafzimmer','current_temperature')  }}"
+        - condition: or
+          conditions:
+            - condition: state
+              entity_id: binary_sensor.fenster
+              state: 'on'
+  action:
+    - service: script.notify_rp
+      data: 
+        title: 'Mach die Fenster zu, es ist heiss'
+        message: >
+          Ein Fenster ist offen obwohl es draussen scheisse heiss ist.

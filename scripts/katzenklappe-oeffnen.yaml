@@ -1,0 +1,29 @@
+katzenklappe_oeffnen:
+  alias: 'Öffne Katzenklappe'
+  sequence:
+    - alias: "Öffne Katzenklappe"
+      service: sureha.set_lock_state
+      data:
+        flap_id: 692469
+        lock_state: unlocked
+    - alias: "Sende Notification"
+      service: script.notify_rp
+      data:
+       title: 'Katzenklappe offen'
+       message: >
+         Durins Tor öffnet sich für die felinen Abenteurer
+    - condition: template
+      value_template: '{{ state_attr("cover.storen_wohnzimmer_links", "current_position") < 25 }}'
+    - service:  cover.set_cover_position
+      entity_id: cover.storen_wohnzimmer_links
+      data:
+        position: 25
+    - condition: template
+      value_template: '{{ state_attr("cover.storen_wohnzimmer_rechts", "current_position") > 40 }}'
+    - service: cover.open_cover
+      entity_id: cover.storen_wohnzimmer_links
+    - delay:
+        seconds: 30
+    - service: cover.open_cover_tilt
+      data:
+       entity_id: cover.storen_wohnzimmer_links

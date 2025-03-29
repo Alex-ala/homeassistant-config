@@ -1,0 +1,10 @@
+schmales_hochbeet:
+  sensors:
+    moisture: sensor.schmales_hochbeet_feuchtigkeit
+    temperature: sensor.schmales_hochbeet_temperatur
+    conductivity: sensor.schmales_hochbeet_leitfahigkeit
+    brightness: sensor.schmales_hochbeet_helligkeit
+  min_moisture: 15
+  max_moisture: 60
+  min_conductivity: 350
+  min_temperature: 5

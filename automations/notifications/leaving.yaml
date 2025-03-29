@@ -2,22 +2,22 @@
   id: meldung_offen_gelassen
   trigger:
     platform: state
-    entity_id: binary_sensor.0000d8a991d35c_state
+    entity_id: binary_sensor.tur_haustur_state
     from: "off"
     to: "on"
   condition:
     condition: and
     conditions:
       - condition: state
-        entity_id: device_tracker.74_b5_87_65_1e_ff
+        entity_id: person.alex
         state: 'home'
       - condition: or
         conditions:
           - condition: state
-            entity_id: group.fenster
+            entity_id: binary_sensor.fenster
             state: 'on'
           - condition: state
-            entity_id: binary_sensor.0000d8a991d263_state
+            entity_id: binary_sensor.tur_terrasse_state
             state: 'on'
   action:
     - service: script.notify_rp
@@ -26,11 +26,11 @@
         message: >
           Türen Zustand geändert:
 
-          {% for entity_id in states.group.tueren.attributes.entity_id %}
+          {% for entity_id in states.binary_sensor.tueren.attributes.entity_id %}
           {% set domain, device = entity_id.split('.') %}
           {{ states[domain][device].attributes.friendly_name }} : {{ states[domain][device].state }}
           {% endfor %}
-          {% for entity_id in states.group.fenster.attributes.entity_id %}
+          {% for entity_id in states.binary_sensor.fenster.attributes.entity_id %}
           {% set domain, device = entity_id.split('.') %}
           {{ states[domain][device].attributes.friendly_name }} : {{ states[domain][device].state }}
           {% endfor %}

@@ -1,301 +1,215 @@
 homematic.ccu2:
   hidden: true
-
 group.all_automations:
   hidden: false
   name: Automations
-
-##########   Fensterkontakte   ###########
-binary_sensor.0000d8a991d263_state:
+binary_sensor.tur_terrasse_state:
   friendly_name: Terassentür
   icon: mdi:door-closed
-binary_sensor.0000d8a991d301_state:
+binary_sensor.fenster_kuche_state:
   friendly_name: Küchenfenster
-  icon: mdi:application
-binary_sensor.0000d8a991d331_state:
+  icon: mdi:application-outline
+binary_sensor.fenster_schlafzimmer_state:
   friendly_name: Schlafzimmerfenster
-  icon: mdi:application
-binary_sensor.0000d8a991d35c_state:
+  icon: mdi:application-outline
+binary_sensor.tur_haustur_state:
   friendly_name: Haustür
   icon: mdi:door
-binary_sensor.0000d8a9aaa854_state:
+binary_sensor.briefkasten_state:
   friendly_name: Briefkasten
   icon: mdi:mailbox
-
-##########   Temperatur/Luftfeutchtigkeit   #########
-# Terrasse
-sensor.000ed8a9909c6d_actual_temperature:
+sensor.temp_terrasse_actual_temperature:
   friendly_name: Temperatur Terrasse
   icon: mdi:thermometer-lines
-sensor.000ed8a9909c6d_humidity:
+sensor.temp_terrasse_humidity:
   friendly_name: Luftfeuchtigkeit Terrasse
   icon: mdi:water-percent
-# Wohnzimmer (Flügel)
-sensor.000ed8a9909c6f_actual_temperature:
+sensor.klima_flugel_actual_temperature:
   friendly_name: Temperatur Flügel
   icon: mdi:thermometer-lines
-sensor.000ed8a9909c6f_humidity:
+sensor.klima_flugel_humidity:
   friendly_name: Luftfeuchtigkeit Flügel
   icon: mdi:water-percent
-# Wohnzimmer (Schreibtisch)
-sensor.000ed8a9909c8e_actual_temperature:
+sensor.temp_schreibtisch_actual_temperature:
   friendly_name: Temperatur Schreibtisch
   icon: mdi:thermometer-lines
-sensor.000ed8a9909c8e_humidity:
+sensor.temp_schreibtisch_humidity:
   friendly_name: Luftfeuchtigkeit Schreibtisch
   icon: mdi:water-percent
-# Reduit
-sensor.000ed8a9909e0e_actual_temperature:
+sensor.temp_reduit_actual_temperature:
   friendly_name: Temperatur Reduit
   icon: mdi:thermometer-lines
-sensor.000ed8a9909e0e_humidity:
+sensor.temp_reduit_humidity:
   friendly_name: Luftfeuchtigkeit Reduit
   icon: mdi:water-percent
-# Bad
-sensor.000ed8a9909c09_actual_temperature:
+sensor.temp_bad_actual_temperature:
   friendly_name: Temperatur Bad
   icon: mdi:thermometer-lines
-sensor.000ed8a9909c09_humidity:
+sensor.temp_bad_humidity:
   friendly_name: Luftfeuchtigkeit Bad
   icon: mdi:water-percent
-# Schlafzimmer
-sensor.000c98a99501f3_actual_temperature:
+sensor.heizung_schlafzimmer_actual_temperature:
   friendly_name: Temperatur Schlafzimmer
   icon: mdi:thermometer-lines
-sensor.000c98a99501f3_humidity:
+sensor.heizung_schlafzimmer_humidity:
   friendly_name: Luftfeuchtigkeit Schlafzimmer
   icon: mdi:water-percent
-# Flur
-sensor.000c98a99501c4_actual_temperature:
+sensor.heizung_wohnzimmer_actual_temperature:
   friendly_name: Temperatur Flur
   icon: mdi:thermometer-lines
-sensor.000c98a99501c4_humidity:
+sensor.heizung_wohnzimmer_humidity:
   friendly_name: Luftfeuchtigkeit Flur
   icon: mdi:water-percent
-# Garten
-sensor.0017D709AE2F48_actual_temperature:
+sensor.klima_garten_actual_temperature:
   friendly_name: Temperatur Garten
   icon: mdi:thermometer-lines
-sensor.0017D709AE2F48_humidity:
+sensor.klima_garten_humidity:
   friendly_name: Luftfeuchtigkeit Garten
   icon: mdi:water-percent
-
-# Wetter
-sensor.0017d709ae2f48_wind_speed:
+sensor.klima_garten_wind_speed:
   friendly_name: Windgeschwindigkeit
   icon: mdi:wind-turbine
-sensor.0017d709ae2f48_sunshineduration:
+sensor.klima_garten_sunshineduration:
   friendly_name: Sonneneinstrahlung
   icon: mdi:sunglasses
-sensor.0017d709ae2f48_illumination:
+sensor.klima_garten_illumination:
   friendly_name: Helligkeit
   icon: mdi:white-balance-sunny
-
-
-##########    Bewegungsmelder    ##########
-binary_sensor.000915699a427d_motion:
+binary_sensor.bewegung_wohnzimmer_motion:
   friendly_name: Bewegunsmelder Wohnzimmer
   icon: mdi:run
-binary_sensor.000915699a427d_motion_detection_active:
-  friendly_name: Bewegungsmelder Wohnzimmer aktiv
-  icon: mdi:run
-sensor.000915699a427d_illumination:
+sensor.bewegung_wohnzimmer_illumination:
   friendly_name: Helligkeit Wohnzimmer
   icon: mdi:run
-
-##########    Rauchmelder    ##########
-sensor.000a58a9ac3c02_smoke_detector_alarm_status:
+sensor.rauchmelder_reduit_smoke_detector_alarm_status:
   friendly_name: Rauchmelder Wohnzimmer
   icon: mdi:fire
-
-##########    Strom-Messgeräte   ##########
-# Brunnen Wohnzimmer
-sensor.meq1478516_current:
-  friendly_name: Brunnen Stromstärke
-  unit_of_measurement: mA
-sensor.meq1478516_energy_counter:
-  friendly_name: Brunnen Gesamtverbrauch
-  unit_of_measurement: Wh
-sensor.meq1478516_frequency:
-  friendly_name: Brunnen Frequenz
-  unit_of_measurement: Hz
-sensor.meq1478516_power:
-  friendly_name: Brunnen Verbrauch
-  unit_of_measurement: W
-sensor.meq1478516_voltage:
-  friendly_name: Brunnen Spannung
-  unit_of_measurement: V
-# Schreibtisch
-sensor.001015699eacfa_current:
+sensor.strom_schreibtisch_current:
   friendly_name: Schreibtisch Stromstärke
   unit_of_measurement: mA
-sensor.001015699eacfa_energy_counter:
+sensor.strom_schreibtisch_energy_counter:
   friendly_name: Schreibtisch Gesamtverbrauch
   unit_of_measurement: Wh
-sensor.001015699eacfa_frequency:
+sensor.strom_schreibtisch_frequency:
   friendly_name: Schreibtisch Frequenz
   unit_of_measurement: Hz
-sensor.001015699eacfa_power:
+sensor.strom_schreibtisch_power:
   friendly_name: Schreibtisch Verbrauch
   unit_of_measurement: W
-sensor.001015699eacfa_voltage:
+sensor.strom_schreibtisch_voltage:
   friendly_name: Schreibtisch Spannung
   unit_of_measurement: V
-# Terrasse
-sensor.001015699eaa6b_current:
-  friendly_name: Terrasse Stromstärke
+sensor.strom_schreibtisch_utility_current:
+  friendly_name: Schreibtisch Utility Stromstärke
   unit_of_measurement: mA
-sensor.001015699eaa6b_energy_counter:
-  friendly_name: Terrasse Gesamtverbrauch
+sensor.strom_schreibtisch_utility_energy_counter:
+  friendly_name: Schreibtisch Utility Gesamtverbrauch
   unit_of_measurement: Wh
-sensor.001015699eaa6b_frequency:
-  friendly_name: Terrasse Frequenz
+sensor.strom_schreibtisch_utility_frequency:
+  friendly_name: Schreibtisc Utility Frequenz
   unit_of_measurement: Hz
-sensor.001015699eaa6b_power:
-  friendly_name: Terrasse Verbrauch
+sensor.strom_schreibtisch_utility_power:
+  friendly_name: Schreibtisch Utility Verbrauch
   unit_of_measurement: W
-sensor.001015699eaa6b_voltage:
-  friendly_name: Terrasse Spannung
+sensor.strom_schreibtisch_utility_voltage:
+  friendly_name: Schreibtisch Utility Spannung
   unit_of_measurement: V
-#Flur
-sensor.000898a9951e58_power:
+sensor.licht_gang_power:
   friendly_name: Flur Verbrauch
   unit_of_measurement: W
-sensor.000898a9951e58_energy_counter:
+sensor.licht_gang_energy_counter:
   friendly_name: Flur Gesamtverbrauch
   unit_of_measurement: Wh
-sensor.000898a9951e58_current:
+sensor.licht_gang_current:
   friendly_name: Flur Stromstärke
   unit_of_measurement: mA
-sensor.000898a9951e58_voltage:
+sensor.licht_gang_voltage:
   friendly_name: Flur Spannung
   unit_of_measurement: V
-sensor.000898a9951e58_frequency:
+sensor.licht_gang_frequency:
   friendly_name: Flur Frequenz
   unit_of_measurement: Hz
-#Wohnzimmer
-sensor.000898a9951a7c_power:
+sensor.strom_sofa_power:
   friendly_name: Wohnzimmer Verbrauch
   unit_of_measurement: W
-sensor.000898a9951a7c_energy_counter:
+sensor.strom_sofa_energy_counter:
   friendly_name: Wohnzimmer Gesamtverbrauch
   unit_of_measurement: Wh
-sensor.000898a9951a7c_current:
+sensor.strom_sofa_current:
   friendly_name: Wohnzimmer Stromstärke
   unit_of_measurement: mA
-sensor.000898a9951a7c_voltage:
+sensor.strom_sofa_voltage:
   friendly_name: Wohnzimmer Spannung
   unit_of_measurement: V
-sensor.000898a9951a7c_frequency:
+sensor.strom_sofa_frequency:
   friendly_name: Wohnzimmer Frequenz
   unit_of_measurement: Hz
-#Küche
-sensor.000898a9932fdf_power:
+sensor.licht_kueche_power:
   friendly_name: Küche Verbrauch
   unit_of_measurement: W
-sensor.000898a9932fdf_energy_counter:
+sensor.licht_kueche_energy_counter:
   friendly_name: Küche Gesamtverbrauch
   unit_of_measurement: Wh
-sensor.000898a9932fdf_current:
+sensor.licht_kueche_current:
   friendly_name: Küche Stromstärke
   unit_of_measurement: mA
-sensor.000898a9932fdf_voltage:
+sensor.licht_kueche_voltage:
   friendly_name: Küche Spannung
   unit_of_measurement: V
-sensor.000898a9932fdf_frequency:
+sensor.licht_kueche_frequency:
   friendly_name: Küche Frequenz
   unit_of_measurement: Hz
-
-##########   Strom-Schalter   ##########
-switch.MEQ1478516:
-  friendly_name: Brunnen
-  icon: mdi:water
-switch.001015699eacfa:
+switch.strom_schreibtisch:
   friendly_name: Schreibtisch
   icon: mdi:desktop-classic
-switch.000898a9951a7c:
+switch.strom_sofa:
   friendly_name: Wohnzimmer Sofa
-  icon: mdi:apple-airplay
-switch.001015699eaa6b:
-  friendly_name: 3D-Drucker
-  icon: mdi:led-on
-##########   Licht-Schalter   ##########
-light.w1:
-  hidden: true
-light.w2:
-  hidden: true
-light.w3:
-  hidden: true
-light.color_temperature_light_1:
-  hidden: true
-light.w5:
-  hidden: true
-light.wohnzimmer:
-  hidden: true
-light.hue_lightstrip_plus_1:
-  friendly_name: Schrank-LED
-
-switch.000898a9951e58:
+  icon: mdi:cast-variant
+switch.strom_schreibtisch_utility:
+  friendly_name: Schreibtisch Utility
+switch.licht_gang:
   friendly_name: Flur-Licht
   icon: mdi:lightbulb
-switch.000898a9932fdf:
+switch.licht_kueche:
   friendly_name: Küchenlicht
   icon: mdi:lightbulb
-
-##########   Storen   ##########
-
-cover.001397099c502f:
+cover.storen_terrasse_links:
   friendly_name: Storen Terrasse links
   assumed_state: true
   device_class: window
-cover.001397099c5042:
+cover.storen_terrasse_rechts:
   friendly_name: Storen Terrasse rechts
   assumed_state: true
   device_class: window
-cover.001397099c5046:
+cover.storen_wohnzimmer_links:
   friendly_name: Storen Wohnzimmer links
   assumed_state: true
   device_class: window
-cover.001397099c503b:
+cover.storen_wohnzimmer_rechts:
   friendly_name: Storen Wohnzimmer rechts
   assumed_state: true
   device_class: window
-cover.001397099c503e:
+cover.storen_kueche_links:
   friendly_name: Storen Küche links
   assumed_state: true
   device_class: window
-cover.001397099c5077:
+cover.storen_kueche_rechts:
   friendly_name: Storen Küche rechts
   assumed_state: true
   device_class: window
-cover.001397099c4d22:
+cover.storen_schlafzimmer_links:
   friendly_name: Storen Schlafzimmer links
   assumed_state: true
   device_class: window
-cover.001397099c5053:
+cover.storen_schlafzimmer_rechts:
   friendly_name: Storen Schlafzimmer rechts
   assumed_state: true
   device_class: window
-
-##########  Device Tracker ##########
-
-device_tracker.74_b5_87_65_1e_ff:
-  friendly_name: iPhoneXR
-
-
-##########   Heizung   ##########
-
-climate.000c98a99501f3:
+climate.heizung_schlafzimmer:
   friendly_name: Heizung Schlafzimmer
-climate.000c98a99501c4:
+climate.heizung_wohnzimmer:
   friendly_name: Heizung Wohnzimmer
-binary_sensor.000c98a99501f3_state:
+binary_sensor.heizung_schlafzimmer_state:
   friendly_name: Heizung Schlafzimmer
-binary_sensor.000c98a99501c4_state:
+binary_sensor.heizung_wohnzimmer_state:
   friendly_name: Heizung Wohnzimmer
-
-########## Plants #############
-plant.lavendel:
-  friendly_name: Lavendel
-plant.thuja:
-  friendly_name: Thuja

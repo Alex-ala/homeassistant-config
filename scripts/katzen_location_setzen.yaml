@@ -1,0 +1,72 @@
+toggle_minna_home:
+  alias: 'Minna draussen/drinnen'
+  sequence:
+    choose:
+      - conditions:
+          - condition: state
+            entity_id: binary_sensor.minna
+            attribute: where
+            state: 1
+        sequence:
+          - service: sureha.set_pet_location
+            data:
+              pet_id: '263813'
+              where: Outside
+      - conditions:
+          - condition: state
+            entity_id: binary_sensor.minna
+            attribute: where
+            state: 2
+        sequence:
+          - service: sureha.set_pet_location
+            data:
+              pet_id: '263813'
+              where: Inside
+toggle_durin_home:
+  alias: 'Durin draussen/drinnen'
+  sequence:
+    choose:
+      - conditions:
+          - condition: state
+            entity_id: binary_sensor.durin
+            attribute: where
+            state: 1
+        sequence:
+          - service: sureha.set_pet_location
+            data:
+              pet_id: '369659'
+              where: Outside
+      - conditions:
+          - condition: state
+            entity_id: binary_sensor.durin
+            attribute: where
+            state: 2
+        sequence:
+          - service: sureha.set_pet_location
+            data:
+              pet_id: '369659'
+              where: Inside
+toggle_nuri_home:
+  alias: 'Nuri draussen/drinnen'
+  sequence:
+    choose:
+      - conditions:
+          - condition: state
+            entity_id: binary_sensor.nuri
+            attribute: where
+            state: 1
+        sequence:
+          - service: sureha.set_pet_location
+            data:
+              pet_id: '375448'
+              where: Outside
+      - conditions:
+          - condition: state
+            entity_id: binary_sensor.nuri
+            attribute: where
+            state: 2
+        sequence:
+          - service: sureha.set_pet_location
+            data:
+              pet_id: '375448'
+              where: Inside

@@ -1,119 +1,189 @@
 - platform: influxdb
   host: influxdb.ahome
   port: 80
-  queries:
-    - name: Erdbeere Feuchtigkeit
+  api_version: 2
+  ssl: false
+  token: !secret influxdb_read_token
+  organization: ahome
+  bucket: Plants
+  queries_flux:
+    # HOCHBEET RECHTS ---------------------------------
+    - name: Hochbeet rechts Feuchtigkeit
       unit_of_measurement: '%'
-      measurement: '"c4:7c:8d:6a:ab:4b"'
-      where: 'time > now() - 6h'
+      bucket: Plants
       group_function: last
-      database: plants
-      field: moisture
-    - name: Erdbeere Helligkeit
+      query: >
+          filter(fn: (r) =>
+            r._measurement == "miflora" and
+            r._field == "moisture" and
+            r.mac == "c4:7c:8d:6a:ab:4b"
+          )
+      range_start: "-6h"
+    - name: Hochbeet rechts Helligkeit
       unit_of_measurement: 'lx'
-      measurement: '"c4:7c:8d:6a:ab:4b"'
-      where: 'time > now() - 6h'
+      bucket: Plants
       group_function: last
-      database: plants
-      field: light
-    - name: Erdbeere Leitfähigkeit
-      unit_of_measurement: 'µS/cm'
-      measurement: '"c4:7c:8d:6a:ab:4b"'
-      where: 'time > now() - 6h'
+      query: >
+          filter(fn: (r) =>
+            r._measurement == "miflora" and
+            r._field == "light" and
+            r.mac == "c4:7c:8d:6a:ab:4b"
+          )
+      range_start: "-6h"
+    - name: Hochbeet rechts Leitfähigkeit
+      unit_of_measurement: ''
+      bucket: Plants
       group_function: last
-      database: plants
-      field: conductivity
-    - name: Erdbeere Temperatur
+      query: >
+          filter(fn: (r) =>
+            r._measurement == "miflora" and
+            r._field == "conductivity" and
+            r.mac == "c4:7c:8d:6a:ab:4b"
+          )
+      range_start: "-6h"
+    - name: Hochbeet rechts Temperatur
       unit_of_measurement: '°C'
-      measurement: '"c4:7c:8d:6a:ab:4b"'
-      where: 'time > now() - 6h'
+      bucket: Plants
       group_function: last
-      database: plants
-      field: temperature
-
-    - name: Salbei Feuchtigkeit
+      query: >
+          filter(fn: (r) =>
+            r._measurement == "miflora" and
+            r._field == "temperature" and
+            r.mac == "c4:7c:8d:6a:ab:4b"
+          )
+      range_start: "-6h"
+      # TOPF  ---------------------------------
+    - name: Topf Feuchtigkeit
       unit_of_measurement: '%'
-      measurement: '"c4:7c:8d:6a:b6:bf"'
-      where: 'time > now() - 6h'
+      bucket: Plants
       group_function: last
-      database: plants
-      field: moisture
-    - name: Salbei Helligkeit
+      query: >
+          filter(fn: (r) =>
+            r._measurement == "miflora" and
+            r._field == "moisture" and
+            r.mac == "c4:7c:8d:6a:b6:bf"
+          )
+      range_start: "-6h"
+    - name: Topf Helligkeit
       unit_of_measurement: 'lx'
-      measurement: '"c4:7c:8d:6a:b6:bf"'
-      where: 'time > now() - 6h'
+      bucket: Plants
       group_function: last
-      database: plants
-      field: light
-    - name: Salbei Leitfähigkeit
-      unit_of_measurement: 'µS/cm'
-      measurement: '"c4:7c:8d:6a:b6:bf"'
-      where: 'time > now() - 6h'
+      query: >
+          filter(fn: (r) =>
+            r._measurement == "miflora" and
+            r._field == "light" and
+            r.mac == "c4:7c:8d:6a:b6:bf"
+          )
+      range_start: "-6h"
+    - name: Topf Leitfähigkeit
+      unit_of_measurement: ''
+      bucket: Plants
       group_function: last
-      database: plants
-      field: conductivity
-    - name: Salbei Temperatur
+      query: >
+          filter(fn: (r) =>
+            r._measurement == "miflora" and
+            r._field == "conductivity" and
+            r.mac == "c4:7c:8d:6a:b6:bf"
+          )
+      range_start: "-6h"
+    - name: Topf Temperatur
       unit_of_measurement: '°C'
-      measurement: '"c4:7c:8d:6a:b6:bf"'
-      where: 'time > now() - 6h'
+      bucket: Plants
       group_function: last
-      database: plants
-      field: temperature
-
-    - name: Tomate Feuchtigkeit
+      query: >
+          filter(fn: (r) =>
+            r._measurement == "miflora" and
+            r._field == "temperature" and
+            r.mac == "c4:7c:8d:6a:b6:bf"
+          )
+      range_start: "-6h"
+      # HOCHBEET LINKS ---------------------------------
+    - name: Hochbeet links Feuchtigkeit
       unit_of_measurement: '%'
-      measurement: '"c4:7c:8d:6a:c8:6f"'
-      where: 'time > now() - 6h'
+      bucket: Plants
       group_function: last
-      database: plants
-      field: moisture
-    - name: Tomate Helligkeit
+      query: >
+          filter(fn: (r) =>
+            r._measurement == "miflora" and
+            r._field == "moisture" and
+            r.mac == "c4:7c:8d:6a:c8:6f"
+          )
+      range_start: "-6h"
+    - name: Hochbeet links Helligkeit
       unit_of_measurement: 'lx'
-      measurement: '"c4:7c:8d:6a:c8:6f"'
-      where: 'time > now() - 6h'
+      bucket: Plants
       group_function: last
-      database: plants
-      field: light
-    - name: Tomate Leitfähigkeit
-      unit_of_measurement: 'µS/cm'
-      measurement: '"c4:7c:8d:6a:c8:6f"'
-      where: 'time > now() - 6h'
+      query: >
+          filter(fn: (r) =>
+            r._measurement == "miflora" and
+            r._field == "light" and
+            r.mac == "c4:7c:8d:6a:c8:6f"
+          )
+      range_start: "-6h"
+    - name: Hochbeet links Leitfähigkeit
+      unit_of_measurement: ''
+      bucket: Plants
       group_function: last
-      database: plants
-      field: conductivity
-    - name: Tomate Temperatur
+      query: >
+          filter(fn: (r) =>
+            r._measurement == "miflora" and
+            r._field == "conductivity" and
+            r.mac == "c4:7c:8d:6a:c8:6f"
+          )
+      range_start: "-6h"
+    - name: Hochbeet links Temperatur
       unit_of_measurement: '°C'
-      measurement: '"c4:7c:8d:6a:c8:6f"'
-      where: 'time > now() - 6h'
+      bucket: Plants
       group_function: last
-      database: plants
-      field: temperature
-
-    - name: Ruebli Feuchtigkeit
+      query: >
+          filter(fn: (r) =>
+            r._measurement == "miflora" and
+            r._field == "temperature" and
+            r.mac == "c4:7c:8d:6a:c8:6f"
+          )
+      range_start: "-6h"
+      # SCHMALES HOCHBEET -----------------------------
+    - name: Schmales Hochbeet Feuchtigkeit
       unit_of_measurement: '%'
-      measurement: '"c4:7c:8d:6a:b9:d5"'
-      where: 'time > now() - 6h'
+      bucket: Plants
       group_function: last
-      database: plants
-      field: moisture
-    - name: Ruebli Helligkeit
+      query: >
+        filter(fn: (r) =>
+          r._measurement == "miflora" and
+          r._field == "moisture" and
+          r.mac == "c4:7c:8d:6a:b9:d5"
+        )
+      range_start: "-6h"
+    - name: Schmales Hochbeet Helligkeit
       unit_of_measurement: 'lx'
-      measurement: '"c4:7c:8d:6a:b9:d5"'
-      where: 'time > now() - 6h'
+      bucket: Plants
       group_function: last
-      database: plants
-      field: light
-    - name: Ruebli Leitfähigkeit
-      unit_of_measurement: 'µS/cm'
-      measurement: '"c4:7c:8d:6a:b9:d5"'
-      where: 'time > now() - 6h'
+      query: >
+        filter(fn: (r) =>
+          r._measurement == "miflora" and
+          r._field == "light" and
+          r.mac == "c4:7c:8d:6a:b9:d5"
+        )
+      range_start: "-6h"
+    - name: Schmales Hochbeet Leitfähigkeit
+      unit_of_measurement: ''
+      bucket: Plants
       group_function: last
-      database: plants
-      field: conductivity
-    - name: Ruebli Temperatur
+      query: >
+        filter(fn: (r) =>
+          r._measurement == "miflora" and
+          r._field == "conductivity" and
+          r.mac == "c4:7c:8d:6a:b9:d5"
+        )
+      range_start: "-6h"
+    - name: Schmales Hochbeet Temperatur
       unit_of_measurement: '°C'
-      measurement: '"c4:7c:8d:6a:b9:d5"'
-      where: 'time > now() - 6h'
+      bucket: Plants
       group_function: last
-      database: plants
-      field: temperature
+      query: >
+        filter(fn: (r) =>
+          r._measurement == "miflora" and
+          r._field == "temperature" and
+          r.mac == "c4:7c:8d:6a:b9:d5"
+        )
+      range_start: "-6h"

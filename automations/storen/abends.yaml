@@ -8,31 +8,48 @@
     conditions:
       - condition: or
         conditions:
-          - condition: state
-            entity_id: cover.schlafzimmer
-            state: 'open'
-          - condition: state
-            entity_id: cover.wohnzimmer
-            state: 'open'
+          - condition: template
+            value_template: '{{ state_attr("cover.schlafzimmer", "current_position") > 50 }}'
+          - condition: template
+            value_template: '{{ state_attr("cover.wohnzimmer", "current_position") > 50 }}'
       - condition: or
         conditions:
           - condition: sun
             after: sunset
-            after_offset: '+00:45:00'
           - condition: time
             after: '21:30:00'
   action:
     - delay:
         minutes: "{{ range(0,9) | random | int }}"
         seconds: "{{ range(0,59) | random | int }}"
-    - service: cover.set_cover_tilt_position
-      data:
-        entity_id: cover.schlafzimmer
-        tilt_position: 9
-    - service: cover.set_cover_tilt_position
-      data:
-        entity_id: cover.wohnzimmer
-        tilt_position: 9
+    - service: cover.close_cover_tilt
+      entity_id: cover.terrasse_rechts
+    - service: cover.close_cover_tilt
+      entity_id: cover.terrasse_links
+    - service: cover.close_cover_tilt
+      entity_id: cover.wohnzimmer_rechts
+    - service: cover.close_cover_tilt
+      entity_id: cover.wohnzimmer_links
+    - service: cover.close_cover_tilt
+      entity_id: cover.kuche_links
+    - service: cover.close_cover_tilt
+      entity_id: cover.kuche_rechts
+    - service: cover.close_cover_tilt
+      entity_id: cover.schlafzimmer_rechts
+    - service: cover.close_cover_tilt
+      entity_id: cover.schlafzimmer_links
+#     - service: cover.set_cover_tilt_position
+#       data:
+#         entity_id:
+#           - cover.terrasse_rechts
+#           - cover.terrasse_links
+#           - cover.wohnzimmer_rechts
+#           - cover.wohnzimmer_links
+#           - cover.kuche_rechts
+#           - cover.kuche_links
+#           - cover.schlafzimmer_rechts
+#           - cover.schlafzimmer_links
+#         tilt_position: 9
     - delay:
         seconds: 5
     - service: cover.close_cover
